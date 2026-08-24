@@ -52,3 +52,19 @@ table{border-collapse:collapse;width:100%}th{text-align:left;color:var(--muted);
 .profile-team .team-logo {
   flex-shrink: 0;
 }
+.player-name-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ineligible-label {
+  display: block;
+  color: var(--accent);
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  line-height: 1.1;
+  margin-top: 2px;
+}
