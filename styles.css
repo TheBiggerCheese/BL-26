@@ -26,6 +26,33 @@ table{border-collapse:collapse;width:100%}th{text-align:left;color:var(--muted);
   gap: 9px;
 }
 
+.player-name-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.15;
+}
+
+.player-name-wrap > span:first-child {
+  font-weight: 800;
+}
+
+.ineligible-label {
+  display: block !important;
+  color: #e9bd5b !important;
+  font-size: 9px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  line-height: 1 !important;
+  margin-top: 3px;
+  padding: 0 !important;
+  border: 0 !important;
+  background: none !important;
+  white-space: nowrap;
+}
+}
+
 .team-name-cell {
   display: flex;
   align-items: center;
