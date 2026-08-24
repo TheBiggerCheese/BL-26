@@ -204,74 +204,6 @@ function sortedPlayers(team=null){
 
 
 /* =========================================================
-   ROUND PLAYERS
-   ========================================================= */
-
-function roundPlayers(){
-
-  const q=S.search.trim().toLowerCase();
-
-  return S.data.players
-
-    .filter(p=>
-      (S.team==='ALL'||p.team===S.team) &&
-      (!q||p.name.toLowerCase().includes(q))
-    )
-
-    .map(p=>{
-
-      const allocations=
-        S.data.allocations.filter(
-          a=>
-            a.player===p.name &&
-            a.roundNumber===S.round &&
-            (
-              S.includeHalf ||
-              Number(a.human_vote)!==0.5
-            )
-        );
-
-      const human=
-        allocations.reduce(
-          (s,a)=>s+Number(a.human_vote),
-          0
-        );
-
-      const model=
-        allocations.reduce(
-          (s,a)=>s+Number(a.modelEV),
-          0
-        );
-
-      return {
-        ...p,
-        roundHuman:human,
-        roundModel:model,
-        roundAllocations:allocations
-      };
-
-    })
-
-    .filter(p=>
-      S.metric==='human'
-        ?p.roundHuman>0
-        :p.roundModel>0
-    )
-
-    .sort(
-      (a,b)=>
-        (
-          S.metric==='human'
-            ?b.roundHuman-a.roundHuman
-            :b.roundModel-a.roundModel
-        ) ||
-        a.name.localeCompare(b.name)
-    );
-
-}
-
-
-/* =========================================================
    INITIALISE
    ========================================================= */
 
@@ -317,9 +249,7 @@ function init(){
   `;
 
 
-  /* =======================================================
-     ADD BY ROUND BUTTON
-     ======================================================= */
+  /* ADD BY ROUND BUTTON */
 
   const viewToggle=$('#viewToggle');
 
@@ -553,7 +483,7 @@ function renderSnapshot(ps){
 
 
 /* =========================================================
-   TABLE
+   STANDARD TABLE
    ========================================================= */
 
 function tableHtml(ps,title,team){
@@ -786,10 +716,10 @@ function tableHtml(ps,title,team){
 
 
 /* =========================================================
-   ROUND TABLE
+   BY ROUND — GROUPED BY GAME
    ========================================================= */
 
-function roundTableHtml(ps){
+function roundTableHtml(){
 
   const roundLabel=
     S.round===0
@@ -797,181 +727,315 @@ function roundTableHtml(ps){
       :`Round ${S.round}`;
 
 
-  const rows=
-    ps.map((p,i)=>{
-
-      const value=
-        S.metric==='human'
-          ?p.roundHuman
-          :p.roundModel;
+  const q=S.search.trim().toLowerCase();
 
 
-      const allocations=p.roundAllocations;
+  /*
+     Get all allocations from the selected round.
+  */
+
+  let allocations=
+    S.data.allocations.filter(
+      a=>
+        a.roundNumber===S.round &&
+        (
+          S.includeHalf ||
+          Number(a.human_vote)!==0.5
+        )
+    );
 
 
-      const opponents=
-        allocations
-          .map(a=>
-            `${a.homeAway==='Home'?'vs':'@'} ${a.opponent}`
-          )
-          .join(' · ');
+  /*
+     Apply club filter.
+     The player receiving the vote must belong
+     to the selected club.
+  */
+
+  if(S.team!=='ALL'){
+
+    allocations=
+      allocations.filter(a=>{
+
+        const p=
+          S.data.players.find(
+            x=>x.name===a.player
+          );
+
+        return p && p.team===S.team;
+
+      });
+
+  }
 
 
-      return `
+  /*
+     Apply player search.
+  */
 
-        <tr data-player="${encodeURIComponent(p.name)}">
+  if(q){
 
-          <td class="rank">
-            ${i+1}
-          </td>
+    allocations=
+      allocations.filter(a=>
+        a.player.toLowerCase().includes(q)
+      );
+
+  }
 
 
-          <td>
+  /*
+     Group allocations by game.
+     The game number is used first because your
+     JSON already contains a.game.
+  */
 
-            <div class="player-cell">
+  const games={};
 
-              ${clubLogoHtml(p.team,'30px')}
 
-              <div class="player-name-wrap">
+  allocations.forEach(a=>{
 
-                <span>${p.name}</span>
+    const key=
+      `${a.roundNumber}-${a.game}`;
 
-                ${
-                  INELIGIBLE_PLAYERS.has(p.name)
-                    ? '<span class="ineligible-label">Ineligible</span>'
-                    : ''
-                }
+
+    if(!games[key]){
+
+      games[key]={
+        game:a.game,
+        allocations:[]
+      };
+
+    }
+
+
+    games[key].allocations.push(a);
+
+  });
+
+
+  const gameList=
+    Object.values(games)
+      .sort(
+        (a,b)=>
+          Number(a.game)-Number(b.game)
+      );
+
+
+  /*
+     Build each game.
+  */
+
+  const gameHtml=
+    gameList
+      .map(game=>{
+
+        const votes=
+          game.allocations
+            .sort(
+              (a,b)=>
+                Number(b.human_vote)-
+                Number(a.human_vote)
+            );
+
+
+        if(!votes.length)return'';
+
+
+        /*
+           Determine the two teams from the players
+           appearing in this game.
+        */
+
+        const teams=[];
+
+
+        votes.forEach(a=>{
+
+          const p=
+            S.data.players.find(
+              x=>x.name===a.player
+            );
+
+
+          if(
+            p &&
+            !teams.includes(p.team)
+          ){
+
+            teams.push(p.team);
+
+          }
+
+        });
+
+
+        const teamText=
+          teams.length>=2
+            ?`${teams[0]} vs ${teams[1]}`
+            :teams.join('');
+
+
+        const voteRows=
+          votes
+            .map(a=>{
+
+              const p=
+                S.data.players.find(
+                  x=>x.name===a.player
+                );
+
+
+              const c=
+                p
+                  ?clubStyle(p.team)
+                  :clubStyle('');
+
+
+              const value=
+                S.metric==='human'
+                  ?Number(a.human_vote)
+                  :Number(a.modelEV);
+
+
+              return `
+
+                <div
+                  class="round-vote-row"
+                  data-player="${encodeURIComponent(a.player)}"
+                >
+
+                  <div class="round-vote-player">
+
+                    ${
+                      p
+                        ?clubLogoHtml(p.team,'32px')
+                        :''
+                    }
+
+                    <div class="player-name-wrap">
+
+                      <span>
+                        ${a.player}
+                      </span>
+
+                      ${
+                        INELIGIBLE_PLAYERS.has(a.player)
+                          ?'<span class="ineligible-label">Ineligible</span>'
+                          :''
+                      }
+
+                    </div>
+
+                  </div>
+
+
+                  <div
+                    class="round-vote-pill"
+                    style="
+                      background:${c.primary};
+                      color:${c.text};
+                    "
+                  >
+
+                    ${
+                      S.metric==='human'
+                        ?fmt(value)
+                        :Number(value).toFixed(2)
+                    }
+
+                  </div>
+
+                </div>
+
+              `;
+
+            })
+            .join('');
+
+
+        return `
+
+          <section class="round-game-card">
+
+            <div class="round-game-header">
+
+              <div>
+
+                <div class="round-game-number">
+                  Game ${game.game}
+                </div>
+
+                <h2>
+                  ${teamText}
+                </h2>
 
               </div>
 
-            </div>
-
-          </td>
-
-
-          <td class="hide-mobile">
-
-            <div class="team-name-cell">
-
-              ${clubLogoHtml(p.team,'26px')}
-
-              <span>
-                ${p.team}
+              <span class="badge">
+                ${votes.length} vote signals
               </span>
 
             </div>
 
-          </td>
 
+            <div class="round-votes">
 
-          <td>
+              ${voteRows}
 
-            <span class="round-opponent">
-              ${opponents}
-            </span>
+            </div>
 
-          </td>
+          </section>
 
+        `;
 
-          <td class="num score">
-
-            ${scoreFmt(
-              value,
-              S.metric
-            )}
-
-          </td>
-
-        </tr>
-
-      `;
-
-    })
-    .join('');
+      })
+      .join('');
 
 
   return `
 
-    <section class="table-card">
+    <section>
 
-      <div class="table-title">
+      <div class="table-card">
 
-        <div>
+        <div class="table-title">
 
-          <h2>
-            ${roundLabel}
-          </h2>
+          <div>
 
-          <div class="sub">
-            Votes recorded in this round only
+            <h2>
+              ${roundLabel}
+            </h2>
+
+            <div class="sub">
+              Vote allocations by game
+            </div>
+
           </div>
+
+          <span class="badge">
+            ${gameList.length} games
+          </span>
 
         </div>
 
-        <span class="badge">
-          ${ps.length} players
-        </span>
-
       </div>
 
 
-      <div style="overflow:auto">
+      ${
+        gameHtml ||
 
-        <table>
+        `
+          <section class="table-card">
 
-          <thead>
+            <div class="empty">
 
-            <tr>
+              No vote signals found for
+              ${roundLabel}.
 
-              <th>
-                Rank
-              </th>
+            </div>
 
-              <th>
-                Player
-              </th>
-
-              <th class="hide-mobile">
-                Club
-              </th>
-
-              <th>
-                Match
-              </th>
-
-              <th class="num">
-                ${S.metric==='human'?'Votes':'EV'}
-              </th>
-
-            </tr>
-
-          </thead>
-
-
-          <tbody>
-
-            ${
-              rows ||
-
-              `
-                <tr>
-
-                  <td
-                    colspan="5"
-                    class="empty"
-                  >
-                    No vote signals recorded in this round.
-                  </td>
-
-                </tr>
-              `
-            }
-
-          </tbody>
-
-        </table>
-
-      </div>
+          </section>
+        `
+      }
 
     </section>
 
@@ -995,27 +1059,31 @@ function render(){
 
   if(S.view==='round'){
 
-    const roundPs=roundPlayers();
-
     renderSnapshot(all);
 
     $('#leaderboard').innerHTML=
-      roundTableHtml(roundPs);
+      roundTableHtml();
 
-    $$('#leaderboard tr[data-player]')
-      .forEach(tr=>{
 
-        tr.onclick=()=>{
+    /*
+       Make every player clickable.
+    */
+
+    $$('.round-vote-row[data-player]')
+      .forEach(row=>{
+
+        row.onclick=()=>{
 
           openProfile(
             decodeURIComponent(
-              tr.dataset.player
+              row.dataset.player
             )
           );
 
         };
 
       });
+
 
     return;
 
@@ -1207,70 +1275,4 @@ function openProfile(name){
 
   const shown=
     allA.filter(
-      a=>
-        a.roundNumber<=S.round &&
-        (
-          S.includeHalf ||
-          Number(a.human_vote)!==0.5
-        )
-    );
-
-
-  const curr=scoreAt(p);
-
-
-  const voteRows=
-    shown
-      .map(a=>`
-
-        <div class="vote-row">
-
-          <b>
-            ${
-              a.round==='Round 0'
-                ?'Opening Round'
-                :a.round
-            }
-          </b>
-
-
-          <span>
-            ${a.homeAway==='Home'?'vs':'@'}
-            ${a.opponent}
-          </span>
-
-
-          <span
-            class="vote-pill"
-            style="
-              background:${c.primary};
-              color:${c.text}
-            "
-          >
-            ${fmt(a.human_vote)}
-          </span>
-
-
-          <span class="model-cell num">
-            ${Number(a.modelEV).toFixed(2)}
-            EV
-          </span>
-
-        </div>
-
-      `)
-      .join('')
-
-      ||
-
-      `
-        <div class="empty">
-          No vote signals through this round.
-        </div>
-      `;
-
-
-  $('#profile').innerHTML=`
-
-    <div
-      cla
+      a=
