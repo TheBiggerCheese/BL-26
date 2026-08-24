@@ -1,69 +1,943 @@
-const S={data:null,metric:'human',round:24,team:'ALL',includeHalf:true,view:'overall',search:''};
-const $=s=>document.querySelector(s); const $$=s=>[...document.querySelectorAll(s)];
+```javascript
+const S={
+  data:null,
+  metric:'human',
+  round:24,
+  team:'ALL',
+  includeHalf:true,
+  view:'overall',
+  search:''
+};
+
+const $=s=>document.querySelector(s);
+const $$=s=>[...document.querySelectorAll(s)];
+
 const roundN=r=>Number(String(r).replace(/\D/g,''));
 const fmt=n=>Number(n).toFixed(Number(n)%1?1:0);
 const scoreFmt=(n,metric)=>metric==='model'?Number(n).toFixed(1):fmt(n);
-function clubStyle(team){return S.data.clubs[team]||{primary:'#334155',secondary:'#94a3b8',accent:'#fff',text:'#fff'};}
-function playerAllocations(name,maxRound=S.round){return S.data.allocations.filter(a=>a.player===name&&a.roundNumber<=maxRound&&(S.includeHalf||Number(a.human_vote)!==0.5));}
+
+
+/* =========================================================
+   TEAM LOGOS
+   ========================================================= */
+
+const TEAM_LOGOS={
+  'Adelaide Crows':'ADL.png',
+  'Brisbane Lions':'BRI.png',
+  'Carlton':'CAR.png',
+  'Collingwood':'COL.png',
+  'Essendon':'ESS.png',
+  'Fremantle':'FRE.png',
+  'Gold Coast':'GCS.png',
+  'Geelong':'GEE.png',
+  'Greater Western Sydney':'GWS.png',
+  'Hawthorn':'HAW.png',
+  'Melbourne':'MEL.png',
+  'North Melbourne':'NTH.png',
+  'Port Adelaide':'PA.png',
+  'Richmond':'RIC.png',
+  'St Kilda':'STK.png',
+  'Sydney':'SYD.png',
+  'Western Bulldogs':'WBD.png',
+  'West Coast':'WCE.png'
+};
+
+
+/*
+  Returns the logo filename for a club.
+
+  This also supports abbreviated team names in the data,
+  just in case your JSON uses AFL abbreviations instead of
+  full club names.
+*/
+const TEAM_CODES={
+  'Adelaide Crows':'ADL',
+  'Brisbane Lions':'BRI',
+  'Carlton':'CAR',
+  'Collingwood':'COL',
+  'Essendon':'ESS',
+  'Fremantle':'FRE',
+  'Gold Coast':'GCS',
+  'Geelong':'GEE',
+  'Greater Western Sydney':'GWS',
+  'Hawthorn':'HAW',
+  'Melbourne':'MEL',
+  'North Melbourne':'NTH',
+  'Port Adelaide':'PA',
+  'Richmond':'RIC',
+  'St Kilda':'STK',
+  'Sydney':'SYD',
+  'Western Bulldogs':'WBD',
+  'West Coast':'WCE',
+
+  // Abbreviations
+  'ADL':'ADL',
+  'BRI':'BRI',
+  'CAR':'CAR',
+  'COL':'COL',
+  'ESS':'ESS',
+  'FRE':'FRE',
+  'GCS':'GCS',
+  'GEE':'GEE',
+  'GWS':'GWS',
+  'HAW':'HAW',
+  'MEL':'MEL',
+  'NTH':'NTH',
+  'PA':'PA',
+  'RIC':'RIC',
+  'STK':'STK',
+  'SYD':'SYD',
+  'WBD':'WBD',
+  'WCE':'WCE'
+};
+
+
+function clubLogo(team){
+  const code=TEAM_CODES[team];
+
+  if(!code) return '';
+
+  return `logos/${code}.png`;
+}
+
+
+function clubLogoHtml(team,size='32px'){
+  const src=clubLogo(team);
+
+  if(!src) return '';
+
+  return `
+    <img
+      class="team-logo"
+      src="${src}"
+      alt="${team} logo"
+      style="width:${size};height:${size};object-fit:contain;"
+      onerror="this.style.display='none'"
+    >
+  `;
+}
+
+
+/* =========================================================
+   CLUB STYLING
+   ========================================================= */
+
+function clubStyle(team){
+  return S.data.clubs[team]||{
+    primary:'#334155',
+    secondary:'#94a3b8',
+    accent:'#fff',
+    text:'#fff'
+  };
+}
+
+
+/* =========================================================
+   PLAYER / VOTE FUNCTIONS
+   ========================================================= */
+
+function playerAllocations(name,maxRound=S.round){
+  return S.data.allocations.filter(
+    a=>
+      a.player===name &&
+      a.roundNumber<=maxRound &&
+      (S.includeHalf||Number(a.human_vote)!==0.5)
+  );
+}
+
+
 function scoreAt(player){
   const as=playerAllocations(player.name);
-  if(S.metric==='human') return as.reduce((s,a)=>s+Number(a.human_vote),0);
+
+  if(S.metric==='human'){
+    return as.reduce((s,a)=>s+Number(a.human_vote),0);
+  }
+
   return as.reduce((s,a)=>s+Number(a.modelEV),0);
 }
+
+
 function sortedPlayers(team=null){
   const q=S.search.trim().toLowerCase();
-  return S.data.players.filter(p=>(!team||p.team===team)&&(S.team==='ALL'||p.team===S.team)&&(!q||p.name.toLowerCase().includes(q)))
-    .map(p=>({...p,currentScore:scoreAt(p)})).sort((a,b)=>b.currentScore-a.currentScore||b.modelEV-a.modelEV||a.name.localeCompare(b.name));
+
+  return S.data.players
+    .filter(p=>
+      (!team||p.team===team) &&
+      (S.team==='ALL'||p.team===S.team) &&
+      (!q||p.name.toLowerCase().includes(q))
+    )
+    .map(p=>({
+      ...p,
+      currentScore:scoreAt(p)
+    }))
+    .sort(
+      (a,b)=>
+        b.currentScore-a.currentScore ||
+        b.modelEV-a.modelEV ||
+        a.name.localeCompare(b.name)
+    );
 }
+
+
+/* =========================================================
+   INITIALISE APP
+   ========================================================= */
+
 function init(){
-  $('#roundSelect').innerHTML=S.data.rounds.map(r=>`<option value="${roundN(r)}" ${roundN(r)===24?'selected':''}>${r==='Round 0'?'Opening Round':r}</option>`).join('');
-  Object.keys(S.data.clubs).sort().forEach(t=>$('#teamSelect').insertAdjacentHTML('beforeend',`<option value="${t}">${t}</option>`));
-  $('#heroKpis').innerHTML=`<div class="kpi"><b>${S.data.meta.players}</b><span>Players</span></div><div class="kpi"><b>${S.data.meta.matches}</b><span>Matches</span></div><div class="kpi"><b>${S.data.meta.allocations}</b><span>Vote signals</span></div>`;
-  $$('#metricToggle button').forEach(b=>b.onclick=()=>{S.metric=b.dataset.metric;$$('#metricToggle button').forEach(x=>x.classList.toggle('active',x===b));render();});
-  $$('#viewToggle button').forEach(b=>b.onclick=()=>{S.view=b.dataset.view;$$('#viewToggle button').forEach(x=>x.classList.toggle('active',x===b));render();});
-  $('#roundSelect').onchange=e=>{S.round=Number(e.target.value);render();}; $('#teamSelect').onchange=e=>{S.team=e.target.value;render();};
-  $('#halfToggle').onchange=e=>{S.includeHalf=e.target.checked;render();}; $('#searchInput').oninput=e=>{S.search=e.target.value;render();};
-  $('#closeModal').onclick=closeProfile; $('#modalBackdrop').onclick=e=>{if(e.target.id==='modalBackdrop')closeProfile();}; document.addEventListener('keydown',e=>{if(e.key==='Escape')closeProfile();});
+
+  $('#roundSelect').innerHTML=
+    S.data.rounds
+      .map(r=>
+        `<option value="${roundN(r)}" ${roundN(r)===24?'selected':''}>
+          ${r==='Round 0'?'Opening Round':r}
+        </option>`
+      )
+      .join('');
+
+
+  Object.keys(S.data.clubs)
+    .sort()
+    .forEach(t=>
+      $('#teamSelect').insertAdjacentHTML(
+        'beforeend',
+        `
+        <option value="${t}">
+          ${t}
+        </option>
+        `
+      )
+    );
+
+
+  $('#heroKpis').innerHTML=`
+    <div class="kpi">
+      <b>${S.data.meta.players}</b>
+      <span>Players</span>
+    </div>
+
+    <div class="kpi">
+      <b>${S.data.meta.matches}</b>
+      <span>Matches</span>
+    </div>
+
+    <div class="kpi">
+      <b>${S.data.meta.allocations}</b>
+      <span>Vote signals</span>
+    </div>
+  `;
+
+
+  $$('#metricToggle button').forEach(b=>
+    b.onclick=()=>{
+      S.metric=b.dataset.metric;
+
+      $$('#metricToggle button')
+        .forEach(x=>x.classList.toggle('active',x===b));
+
+      render();
+    }
+  );
+
+
+  $$('#viewToggle button').forEach(b=>
+    b.onclick=()=>{
+      S.view=b.dataset.view;
+
+      $$('#viewToggle button')
+        .forEach(x=>x.classList.toggle('active',x===b));
+
+      render();
+    }
+  );
+
+
+  $('#roundSelect').onchange=e=>{
+    S.round=Number(e.target.value);
+    render();
+  };
+
+
+  $('#teamSelect').onchange=e=>{
+    S.team=e.target.value;
+    render();
+  };
+
+
+  $('#halfToggle').onchange=e=>{
+    S.includeHalf=e.target.checked;
+    render();
+  };
+
+
+  $('#searchInput').oninput=e=>{
+    S.search=e.target.value;
+    render();
+  };
+
+
+  $('#closeModal').onclick=closeProfile;
+
+
+  $('#modalBackdrop').onclick=e=>{
+    if(e.target.id==='modalBackdrop') closeProfile();
+  };
+
+
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape') closeProfile();
+  });
+
+
   render();
 }
+
+
+/* =========================================================
+   SNAPSHOT
+   ========================================================= */
+
 function renderSnapshot(ps){
-  const leader=ps[0]; const score=leader?scoreFmt(leader.currentScore,S.metric):'—'; const roundLabel=S.round===0?'Opening Round':`Round ${S.round}`;
-  const teamLabel=S.team==='ALL'?'All clubs':S.team; const candidate=ps.filter(p=>p.currentScore>0).length;
+
+  const leader=ps[0];
+
+  const score=
+    leader
+      ? scoreFmt(leader.currentScore,S.metric)
+      : '—';
+
+  const roundLabel=
+    S.round===0
+      ? 'Opening Round'
+      : `Round ${S.round}`;
+
+  const teamLabel=
+    S.team==='ALL'
+      ? 'All clubs'
+      : S.team;
+
+  const candidate=
+    ps.filter(p=>p.currentScore>0).length;
+
+
   $('#snapshot').innerHTML=`
-  <div class="stat-card"><div class="label">Leader</div><div class="value">${leader?leader.name:'—'}</div><div class="sub">${score} ${S.metric==='human'?'tracker':'EV'} after ${roundLabel}</div></div>
-  <div class="stat-card"><div class="label">Metric</div><div class="value">${S.metric==='human'?'Human':'Model EV'}</div><div class="sub">0.5 signals ${S.includeHalf?'included':'excluded'}</div></div>
-  <div class="stat-card"><div class="label">Scope</div><div class="value">${teamLabel}</div><div class="sub">${ps.length} listed players</div></div>
-  <div class="stat-card"><div class="label">Poll candidates</div><div class="value">${candidate}</div><div class="sub">players above 0 at this point</div></div>`;
+
+    <div class="stat-card">
+      <div class="label">Leader</div>
+      <div class="value">
+        ${leader?leader.name:'—'}
+      </div>
+      <div class="sub">
+        ${score}
+        ${S.metric==='human'?'tracker':'EV'}
+        after ${roundLabel}
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="label">Metric</div>
+      <div class="value">
+        ${S.metric==='human'?'Human':'Model EV'}
+      </div>
+      <div class="sub">
+        0.5 signals
+        ${S.includeHalf?'included':'excluded'}
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="label">Scope</div>
+      <div class="value">
+        ${teamLabel}
+      </div>
+      <div class="sub">
+        ${ps.length} listed players
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="label">Poll candidates</div>
+      <div class="value">
+        ${candidate}
+      </div>
+      <div class="sub">
+        players above 0 at this point
+      </div>
+    </div>
+  `;
 }
+
+
+/* =========================================================
+   LEADERBOARD TABLE
+   ========================================================= */
+
 function tableHtml(ps,title,team){
+
   const st=team?clubStyle(team):null;
-  const heading=team?`<div class="club-heading"><span class="club-dot" style="--secondary:${st.secondary};background:${st.primary}"></span><h2>${team}</h2></div>`:`<h2>${title}</h2>`;
-  const rows=ps.map((p,i)=>{const c=clubStyle(p.team);return `<tr data-player="${encodeURIComponent(p.name)}"><td class="rank">${i+1}</td><td><div class="player-cell"><span class="team-chip" style="--club:${c.primary};--club2:${c.secondary}"></span>${p.name}</div></td><td class="hide-mobile">${p.team}</td><td class="num score">${scoreFmt(p.currentScore,S.metric)}</td><td class="num hide-mobile">${p.threes}</td><td class="num hide-mobile">${p.twos}</td><td class="num hide-mobile">${p.ones}</td><td class="num hide-mobile">${p.halves}</td><td class="num hide-mobile range">${p.low}–${p.high}</td><td class="hide-mobile"><span class="badge">${p.confidence}</span></td></tr>`}).join('');
-  return `<section class="table-card"><div class="table-title">${heading}<span class="badge">${ps.length} players</span></div><div style="overflow:auto"><table><thead><tr><th>Rank</th><th>Player</th><th class="hide-mobile">Club</th><th class="num">${S.metric==='human'?'Votes':'EV'}</th><th class="num hide-mobile">3s</th><th class="num hide-mobile">2s</th><th class="num hide-mobile">1s</th><th class="num hide-mobile">0.5s</th><th class="num hide-mobile">Final range</th><th class="hide-mobile">Confidence</th></tr></thead><tbody>${rows||`<tr><td colspan="10" class="empty">No matching players.</td></tr>`}</tbody></table></div></section>`;
+
+
+  const heading=team
+    ?`
+      <div class="club-heading">
+
+        ${clubLogoHtml(team,'42px')}
+
+        <span
+          class="club-dot"
+          style="
+            --secondary:${st.secondary};
+            background:${st.primary}
+          "
+        ></span>
+
+        <h2>${team}</h2>
+
+      </div>
+    `
+    :`
+      <h2>${title}</h2>
+    `;
+
+
+  const rows=ps.map((p,i)=>{
+
+    const c=clubStyle(p.team);
+
+
+    return `
+      <tr data-player="${encodeURIComponent(p.name)}">
+
+        <td class="rank">
+          ${i+1}
+        </td>
+
+        <td>
+
+          <div class="player-cell">
+
+            ${clubLogoHtml(p.team,'30px')}
+
+            <span
+              class="team-chip"
+              style="
+                --club:${c.primary};
+                --club2:${c.secondary}
+              "
+            ></span>
+
+            ${p.name}
+
+          </div>
+
+        </td>
+
+        <td class="hide-mobile">
+
+          <div class="team-name-cell">
+
+            ${clubLogoHtml(p.team,'26px')}
+
+            <span>${p.team}</span>
+
+          </div>
+
+        </td>
+
+        <td class="num score">
+          ${scoreFmt(p.currentScore,S.metric)}
+        </td>
+
+        <td class="num hide-mobile">
+          ${p.threes}
+        </td>
+
+        <td class="num hide-mobile">
+          ${p.twos}
+        </td>
+
+        <td class="num hide-mobile">
+          ${p.ones}
+        </td>
+
+        <td class="num hide-mobile">
+          ${p.halves}
+        </td>
+
+        <td class="num hide-mobile range">
+          ${p.low}–${p.high}
+        </td>
+
+        <td class="hide-mobile">
+          <span class="badge">
+            ${p.confidence}
+          </span>
+        </td>
+
+      </tr>
+    `;
+
+  }).join('');
+
+
+  return `
+
+    <section class="table-card">
+
+      <div class="table-title">
+
+        ${heading}
+
+        <span class="badge">
+          ${ps.length} players
+        </span>
+
+      </div>
+
+      <div style="overflow:auto">
+
+        <table>
+
+          <thead>
+
+            <tr>
+
+              <th>Rank</th>
+
+              <th>Player</th>
+
+              <th class="hide-mobile">
+                Club
+              </th>
+
+              <th class="num">
+                ${S.metric==='human'?'Votes':'EV'}
+              </th>
+
+              <th class="num hide-mobile">
+                3s
+              </th>
+
+              <th class="num hide-mobile">
+                2s
+              </th>
+
+              <th class="num hide-mobile">
+                1s
+              </th>
+
+              <th class="num hide-mobile">
+                0.5s
+              </th>
+
+              <th class="num hide-mobile">
+                Final range
+              </th>
+
+              <th class="hide-mobile">
+                Confidence
+              </th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+
+            ${
+              rows ||
+              `
+              <tr>
+                <td colspan="10" class="empty">
+                  No matching players.
+                </td>
+              </tr>
+              `
+            }
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </section>
+
+  `;
 }
+
+
+/* =========================================================
+   RENDER LEADERBOARD
+   ========================================================= */
+
 function render(){
-  const all=sortedPlayers(); renderSnapshot(all);
-  if(S.view==='overall') $('#leaderboard').innerHTML=tableHtml(all,'Overall leaderboard',null);
-  else { const clubs=(S.team==='ALL'?Object.keys(S.data.clubs).sort():[S.team]); $('#leaderboard').innerHTML=clubs.map(t=>tableHtml(sortedPlayers(t),t,t)).join(''); }
-  $$('#leaderboard tr[data-player]').forEach(tr=>tr.onclick=()=>openProfile(decodeURIComponent(tr.dataset.player)));
+
+  const all=sortedPlayers();
+
+  renderSnapshot(all);
+
+
+  if(S.view==='overall'){
+
+    $('#leaderboard').innerHTML=
+      tableHtml(
+        all,
+        'Overall leaderboard',
+        null
+      );
+
+  }else{
+
+    const clubs=
+      S.team==='ALL'
+        ?Object.keys(S.data.clubs).sort()
+        :[S.team];
+
+
+    $('#leaderboard').innerHTML=
+      clubs
+        .map(t=>
+          tableHtml(
+            sortedPlayers(t),
+            t,
+            t
+          )
+        )
+        .join('');
+  }
+
+
+  $$('#leaderboard tr[data-player]')
+    .forEach(tr=>
+      tr.onclick=()=>
+        openProfile(
+          decodeURIComponent(
+            tr.dataset.player
+          )
+        )
+    );
 }
+
+
+/* =========================================================
+   PLAYER PROGRESSION CHART
+   ========================================================= */
+
 function sparkline(name){
-  const p=S.data.players.find(x=>x.name===name); let cum=0; const vals=[];
-  for(let r=0;r<=24;r++){const as=S.data.allocations.filter(a=>a.player===name&&a.roundNumber===r&&(S.includeHalf||Number(a.human_vote)!==0.5));cum+=as.reduce((s,a)=>s+Number(S.metric==='human'?a.human_vote:a.modelEV),0);vals.push(cum)}
-  const max=Math.max(...vals,1),W=570,H=140,pad=10;const pts=vals.map((v,i)=>`${pad+i*(W-2*pad)/(vals.length-1)},${H-pad-v*(H-2*pad)/max}`).join(' ');
-  return `<svg class="round-chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none"><line x1="${pad}" y1="${H-pad}" x2="${W-pad}" y2="${H-pad}" stroke="#263a54"/><polyline points="${pts}" fill="none" stroke="#e9bd5b" stroke-width="3" vector-effect="non-scaling-stroke"/></svg>`;
+
+  const p=
+    S.data.players.find(
+      x=>x.name===name
+    );
+
+
+  let cum=0;
+
+  const vals=[];
+
+
+  for(let r=0;r<=24;r++){
+
+    const as=
+      S.data.allocations.filter(
+        a=>
+          a.player===name &&
+          a.roundNumber===r &&
+          (
+            S.includeHalf ||
+            Number(a.human_vote)!==0.5
+          )
+      );
+
+
+    cum+=
+      as.reduce(
+        (s,a)=>
+          s+
+          Number(
+            S.metric==='human'
+              ?a.human_vote
+              :a.modelEV
+          ),
+        0
+      );
+
+
+    vals.push(cum);
+  }
+
+
+  const max=Math.max(...vals,1);
+
+  const W=570;
+  const H=140;
+  const pad=10;
+
+
+  const pts=
+    vals
+      .map(
+        (v,i)=>
+          `${pad+i*(W-2*pad)/(vals.length-1)},${H-pad-v*(H-2*pad)/max}`
+      )
+      .join(' ');
+
+
+  return `
+    <svg
+      class="round-chart"
+      viewBox="0 0 ${W} ${H}"
+      preserveAspectRatio="none"
+    >
+
+      <line
+        x1="${pad}"
+        y1="${H-pad}"
+        x2="${W-pad}"
+        y2="${H-pad}"
+        stroke="#263a54"
+      />
+
+      <polyline
+        points="${pts}"
+        fill="none"
+        stroke="#e9bd5b"
+        stroke-width="3"
+        vector-effect="non-scaling-stroke"
+      />
+
+    </svg>
+  `;
 }
+
+
+/* =========================================================
+   PLAYER PROFILE
+   ========================================================= */
+
 function openProfile(name){
-  const p=S.data.players.find(x=>x.name===name); if(!p)return; const c=clubStyle(p.team);
-  const allA=S.data.allocations.filter(a=>a.player===name).sort((a,b)=>a.roundNumber-b.roundNumber||a.game-b.game);
-  const shown=allA.filter(a=>a.roundNumber<=S.round&&(S.includeHalf||Number(a.human_vote)!==0.5));
+
+  const p=
+    S.data.players.find(
+      x=>x.name===name
+    );
+
+
+  if(!p)return;
+
+
+  const c=clubStyle(p.team);
+
+
+  const allA=
+    S.data.allocations
+      .filter(a=>a.player===name)
+      .sort(
+        (a,b)=>
+          a.roundNumber-b.roundNumber ||
+          a.game-b.game
+      );
+
+
+  const shown=
+    allA.filter(
+      a=>
+        a.roundNumber<=S.round &&
+        (
+          S.includeHalf ||
+          Number(a.human_vote)!==0.5
+        )
+    );
+
+
   const curr=scoreAt(p);
-  const voteRows=shown.map(a=>`<div class="vote-row"><b>${a.round==='Round 0'?'Opening Round':a.round}</b><span>${a.homeAway==='Home'?'vs':'@'} ${a.opponent}</span><span class="vote-pill" style="background:${c.primary};color:${c.text}">${fmt(a.human_vote)}</span><span class="model-cell num">${Number(a.modelEV).toFixed(2)} EV</span></div>`).join('')||'<div class="empty">No vote signals through this round.</div>';
-  $('#profile').innerHTML=`<div class="profile-head" style="border-top:6px solid ${c.primary}"><div class="profile-team" style="color:${c.secondary}">${p.team}</div><h2 id="profileName">${p.name}</h2><div class="badge">${p.confidence} confidence · final range ${p.low}–${p.high}</div>${p.note?`<div class="note">${p.note}</div>`:''}</div>
-  <div class="profile-grid"><div class="mini"><b>${scoreFmt(curr,S.metric)}</b><span>${S.metric==='human'?'Current tracker':'Current EV'}</span></div><div class="mini"><b>${p.humanTotal}</b><span>Final human</span></div><div class="mini"><b>${p.modelEV.toFixed(1)}</b><span>Final model EV</span></div><div class="mini"><b>${p.lockedVote}</b><span>Locked vote</span></div></div>
-  <div class="profile-section"><h3>Leaderboard progression</h3>${sparkline(name)}</div>
-  <div class="profile-section"><h3>Where the votes came from</h3><div class="vote-list">${voteRows}</div></div>`;
-  $('#modalBackdrop').hidden=false; document.body.style.overflow='hidden';
+
+
+  const voteRows=
+    shown
+      .map(a=>`
+
+        <div class="vote-row">
+
+          <b>
+            ${
+              a.round==='Round 0'
+                ?'Opening Round'
+                :a.round
+            }
+          </b>
+
+          <span>
+            ${a.homeAway==='Home'?'vs':'@'}
+            ${a.opponent}
+          </span>
+
+          <span
+            class="vote-pill"
+            style="
+              background:${c.primary};
+              color:${c.text}
+            "
+          >
+            ${fmt(a.human_vote)}
+          </span>
+
+          <span class="model-cell num">
+            ${Number(a.modelEV).toFixed(2)} EV
+          </span>
+
+        </div>
+
+      `)
+      .join('') ||
+      `
+        <div class="empty">
+          No vote signals through this round.
+        </div>
+      `;
+
+
+  $('#profile').innerHTML=`
+
+    <div
+      class="profile-head"
+      style="border-top:6px solid ${c.primary}"
+    >
+
+      <div class="profile-team">
+
+        ${clubLogoHtml(p.team,'56px')}
+
+        <div
+          style="
+            color:${c.secondary};
+            font-weight:700;
+          "
+        >
+          ${p.team}
+        </div>
+
+      </div>
+
+      <h2 id="profileName">
+        ${p.name}
+      </h2>
+
+      <div class="badge">
+        ${p.confidence} confidence
+        · final range ${p.low}–${p.high}
+      </div>
+
+      ${
+        p.note
+          ?`<div class="note">${p.note}</div>`
+          :''
+      }
+
+    </div>
+
+
+    <div class="profile-grid">
+
+      <div class="mini">
+        <b>${scoreFmt(curr,S.metric)}</b>
+        <span>
+          ${S.metric==='human'
+            ?'Current tracker'
+            :'Current EV'}
+        </span>
+      </div>
+
+      <div class="mini">
+        <b>${p.humanTotal}</b>
+        <span>Final human</span>
+      </div>
+
+      <div class="mini">
+        <b>${p.modelEV.toFixed(1)}</b>
+        <span>Final model EV</span>
+      </div>
+
+      <div class="mini">
+        <b>${p.lockedVote}</b>
+        <span>Locked vote</span>
+      </div>
+
+    </div>
+
+
+    <div class="profile-section">
+
+      <h3>
+        Leaderboard progression
+      </h3>
+
+      ${sparkline(name)}
+
+    </div>
+
+
+    <div class="profile-section">
+
+      <h3>
+        Where the votes came from
+      </h3>
+
+      <div class="vote-list">
+        ${voteRows}
+      </div>
+
+    </div>
+
+  `;
+
+
+  $('#modalBackdrop').hidden=false;
+
+  document.body.style.overflow='hidden';
 }
-function closeProfile(){$('#modalBackdrop').hidden=true;document.body.style.overflow='';}
-fetch('brownlow-data.json').then(r=>r.json()).then(d=>{S.data=d;init();}).catch(err=>{document.body.innerHTML=`<div class="empty">Could not load data. If opening locally, run a local web server or use GitHub Pages.<br>${err}</div>`});
+
+
+/* =========================================================
+   CLOSE PLAYER PROFILE
+   ========================================================= */
+
+function closeProfile(){
+
+  $('#modalBackdrop').hidden=true;
+
+  document.body.style.overflow='';
+}
+
+
+/* =========================================================
+   LOAD DATA
+   ========================================================= */
+
+fetch('brownlow-data.json')
+  .then(r=>r.json())
+  .then(d=>{
+    S.data=d;
+    init();
+  })
+  .catch(err=>{
+
+    document.body.innerHTML=`
+
+      <div class="empty">
+
+        Could not load data.
+
+        If opening locally, run a local web server
+        or use GitHub Pages.
+
+        <br>
+
+        ${err}
+
+      </div>
+
+    `;
+
+  });
+```
