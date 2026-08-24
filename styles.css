@@ -1353,4 +1353,75 @@ footer a{
   justify-content: center;
 }
 
+.round-game-card{
+  background:rgba(16,28,47,.9);
+  border:1px solid var(--line);
+  border-radius:18px;
+  box-shadow:var(--shadow);
+  margin-bottom:18px;
+  overflow:hidden;
+}
 
+.round-game-header{
+  padding:16px 18px;
+  border-bottom:1px solid var(--line);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.round-game-header h2{
+  margin:2px 0 0;
+  font-size:20px;
+}
+
+.round-game-number{
+  color:var(--accent);
+  font-size:11px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+.round-votes{
+  padding:10px;
+  display:grid;
+  gap:7px;
+}
+
+.round-vote-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  padding:10px 12px;
+  background:#13233a;
+  border:1px solid var(--line);
+  border-radius:10px;
+  cursor:pointer;
+  transition:.15s;
+}
+
+.round-vote-row:hover{
+  background:rgba(255,255,255,.045);
+}
+
+.round-vote-player{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:800;
+}
+
+.round-vote-pill{
+  min-width:45px;
+  text-align:center;
+  padding:6px 10px;
+  border-radius:8px;
+  font-weight:900;
+}
+
+.round-opponent{
+  color:var(--muted);
+}
