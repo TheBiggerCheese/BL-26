@@ -13,8 +13,8 @@ const scoreFmt=(n,metric)=>metric==='model'?Number(n).toFixed(1):fmt(n);
    ========================================================= */
 
 const TEAM_CODES={
-  'Adelaide Crows':'ADL',
-  'Brisbane Lions':'BRL',
+  'Adelaide':'ADL',
+  'Brisbane':'BRL',
   'Carlton':'CARL',
   'Collingwood':'COLL',
   'Essendon':'ESS',
