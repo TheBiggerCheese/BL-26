@@ -1,1427 +1,1264 @@
 [hidden] {
-  display: none !important;
+display: none !important;
 }
 
 :root{
-  --bg:#08111f;
-  --panel:#101c2f;
-  --panel2:#13233a;
-  --text:#f5f7fb;
-  --muted:#98a8bd;
-  --line:#243650;
-  --accent:#e9bd5b;
-  --shadow:0 20px 50px rgba(0,0,0,.25)
+--bg:#08111f;
+--panel:#101c2f;
+--panel2:#13233a;
+--text:#f5f7fb;
+--muted:#98a8bd;
+--line:#243650;
+--accent:#e9bd5b;
+--shadow:0 20px 50px rgba(0,0,0,.25)
 }
 
 *{
-  box-sizing:border-box
+box-sizing:border-box
 }
 
 html{
-  scroll-behavior:smooth
+scroll-behavior:smooth
 }
 
 body{
-  margin:0;
-  background:radial-gradient(circle at 10% -10%,#173152 0,transparent 34%),var(--bg);
-  color:var(--text);
-  font:15px/1.45 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif
+margin:0;
+background:radial-gradient(circle at 10% -10%,#173152 0,transparent 34%),var(--bg);
+color:var(--text);
+font:15px/1.45 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif
 }
 
 
 /* =========================================================
-   HERO
-   ========================================================= */
+HERO
+========================================================= */
 
 .hero{
-  border-bottom:1px solid var(--line);
-  background:linear-gradient(120deg,rgba(19,35,58,.96),rgba(8,17,31,.96));
+border-bottom:1px solid var(--line);
+background:linear-gradient(120deg,rgba(19,35,58,.96),rgba(8,17,31,.96));
 }
 
 .hero-inner{
-  max-width:1440px;
-  margin:auto;
-  padding:38px 24px 30px;
-  display:flex;
-  justify-content:space-between;
-  gap:32px;
-  align-items:end
+max-width:1440px;
+margin:auto;
+padding:38px 24px 30px;
+display:flex;
+justify-content:space-between;
+gap:32px;
+align-items:end
 }
 
 .eyebrow{
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:.14em;
-  color:var(--accent);
-  margin-bottom:8px
+font-size:12px;
+font-weight:800;
+letter-spacing:.14em;
+color:var(--accent);
+margin-bottom:8px
 }
 
 .hero h1{
-  font-size:clamp(36px,5vw,64px);
-  letter-spacing:-.045em;
-  line-height:.95;
-  margin:0
+font-size:clamp(36px,5vw,64px);
+letter-spacing:-.045em;
+line-height:.95;
+margin:0
 }
 
 .hero p{
-  color:var(--muted);
-  font-size:17px;
-  margin:14px 0 0
+color:var(--muted);
+font-size:17px;
+margin:14px 0 0
 }
 
 .hero-kpis{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  justify-content:flex-end
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+justify-content:flex-end
 }
 
 .kpi{
-  background:rgba(255,255,255,.055);
-  border:1px solid var(--line);
-  border-radius:15px;
-  padding:12px 15px;
-  min-width:105px
+background:rgba(255,255,255,.055);
+border:1px solid var(--line);
+border-radius:15px;
+padding:12px 15px;
+min-width:105px
 }
 
 .kpi b{
-  display:block;
-  font-size:21px
+display:block;
+font-size:21px
 }
 
 .kpi span{
-  color:var(--muted);
-  font-size:11px;
-  text-transform:uppercase;
-  letter-spacing:.08em
+color:var(--muted);
+font-size:11px;
+text-transform:uppercase;
+letter-spacing:.08em
 }
 
 
 /* =========================================================
-   MAIN SHELL
-   ========================================================= */
+MAIN SHELL
+========================================================= */
 
 .shell{
-  max-width:1440px;
-  margin:auto;
-  padding:22px 24px 60px
+max-width:1440px;
+margin:auto;
+padding:22px 24px 60px
 }
 
 .card{
-  background:rgba(16,28,47,.9);
-  border:1px solid var(--line);
-  border-radius:18px;
-  box-shadow:var(--shadow)
+background:rgba(16,28,47,.9);
+border:1px solid var(--line);
+border-radius:18px;
+box-shadow:var(--shadow)
 }
 
 
 /* =========================================================
-   CONTROLS
-   ========================================================= */
+CONTROLS
+========================================================= */
 
 .controls{
-  position:sticky;
-  top:10px;
-  z-index:20;
-  padding:13px;
-  display:flex;
-  gap:12px;
-  align-items:end;
-  flex-wrap:wrap;
-  backdrop-filter:blur(16px)
+position:sticky;
+top:10px;
+z-index:20;
+padding:13px;
+display:flex;
+gap:12px;
+align-items:end;
+flex-wrap:wrap;
+backdrop-filter:blur(16px)
 }
 
 .segmented{
-  display:flex;
-  border:1px solid var(--line);
-  border-radius:11px;
-  overflow:hidden
+display:flex;
+border:1px solid var(--line);
+border-radius:11px;
+overflow:hidden
 }
 
 .segmented button{
-  border:0;
-  background:transparent;
-  color:var(--muted);
-  padding:10px 13px;
-  cursor:pointer;
-  font-weight:700
+border:0;
+background:transparent;
+color:var(--muted);
+padding:10px 13px;
+cursor:pointer;
+font-weight:700
 }
 
 .segmented button.active{
-  background:#203755;
-  color:white
+background:#203755;
+color:white
 }
 
 .control,
 .search{
-  display:grid;
-  gap:5px;
-  color:var(--muted);
-  font-size:11px;
-  font-weight:800;
-  text-transform:uppercase;
-  letter-spacing:.07em
+display:grid;
+gap:5px;
+color:var(--muted);
+font-size:11px;
+font-weight:800;
+text-transform:uppercase;
+letter-spacing:.07em
 }
 
 .control select,
 .search input{
-  height:39px;
-  min-width:140px;
-  background:#0c1727;
-  border:1px solid var(--line);
-  border-radius:10px;
-  color:white;
-  padding:0 10px;
-  outline:none
+height:39px;
+min-width:140px;
+background:#0c1727;
+border:1px solid var(--line);
+border-radius:10px;
+color:white;
+padding:0 10px;
+outline:none
 }
 
 .search{
-  margin-left:auto
+margin-left:auto
 }
 
 .search input{
-  min-width:190px
+min-width:190px
 }
 
 .switch{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  color:#d7e0eb;
-  font-weight:700;
-  cursor:pointer
+display:flex;
+align-items:center;
+gap:8px;
+color:#d7e0eb;
+font-weight:700;
+cursor:pointer
 }
 
 .switch input{
-  display:none
+display:none
 }
 
 .slider{
-  width:42px;
-  height:23px;
-  border-radius:20px;
-  background:#34445b;
-  position:relative;
-  transition:.2s
+width:42px;
+height:23px;
+border-radius:20px;
+background:#34445b;
+position:relative;
+transition:.2s
 }
 
 .slider:before{
-  content:"";
-  width:17px;
-  height:17px;
-  border-radius:50%;
-  background:white;
-  position:absolute;
-  left:3px;
-  top:3px;
-  transition:.2s
+content:"";
+width:17px;
+height:17px;
+border-radius:50%;
+background:white;
+position:absolute;
+left:3px;
+top:3px;
+transition:.2s
 }
 
 .switch input:checked+.slider{
-  background:#a57a25
+background:#a57a25
 }
 
 .switch input:checked+.slider:before{
-  transform:translateX(19px)
+transform:translateX(19px)
 }
 
 
 /* =========================================================
-   SNAPSHOT
-   ========================================================= */
+SNAPSHOT
+========================================================= */
 
 .snapshot{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:12px;
-  margin:18px 0
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:12px;
+margin:18px 0
 }
 
 .stat-card{
-  padding:18px;
-  border-radius:16px;
-  background:linear-gradient(145deg,#13233a,#0e1a2c);
-  border:1px solid var(--line)
+padding:18px;
+border-radius:16px;
+background:linear-gradient(145deg,#13233a,#0e1a2c);
+border:1px solid var(--line)
 }
 
 .stat-card .label{
-  color:var(--muted);
-  text-transform:uppercase;
-  letter-spacing:.09em;
-  font-size:11px;
-  font-weight:800
+color:var(--muted);
+text-transform:uppercase;
+letter-spacing:.09em;
+font-size:11px;
+font-weight:800
 }
 
 .stat-card .value{
-  font-size:27px;
-  font-weight:850;
-  margin-top:3px
+font-size:27px;
+font-weight:850;
+margin-top:3px
 }
 
 .stat-card .sub{
-  color:var(--muted);
-  font-size:12px;
-  margin-top:3px
+color:var(--muted);
+font-size:12px;
+margin-top:3px
 }
 
 
 /* =========================================================
-   TABLES
-   ========================================================= */
+TABLES
+========================================================= */
 
 .table-card{
-  overflow:hidden;
-  background:rgba(16,28,47,.9);
-  border:1px solid var(--line);
-  border-radius:18px;
-  box-shadow:var(--shadow);
-  margin-bottom:18px
+overflow:hidden;
+background:rgba(16,28,47,.9);
+border:1px solid var(--line);
+border-radius:18px;
+box-shadow:var(--shadow);
+margin-bottom:18px
 }
 
 .table-title{
-  padding:15px 18px;
-  border-bottom:1px solid var(--line);
-  display:flex;
-  align-items:center;
-  justify-content:space-between
+padding:15px 18px;
+border-bottom:1px solid var(--line);
+display:flex;
+align-items:center;
+justify-content:space-between
 }
 
 .table-title h2{
-  font-size:18px;
-  margin:0
+font-size:18px;
+margin:0
 }
 
 
 /* =========================================================
-   CLUB HEADINGS
-   ========================================================= */
+CLUB HEADINGS
+========================================================= */
 
 .club-heading{
-  display:flex;
-  align-items:center;
-  gap:10px
+display:flex;
+align-items:center;
+gap:10px
 }
 
 .club-heading .team-logo{
-  flex-shrink:0
+flex-shrink:0
 }
 
 .club-dot{
-  width:12px;
-  height:28px;
-  border-radius:6px;
-  box-shadow:inset -4px 0 var(--secondary)
+width:12px;
+height:28px;
+border-radius:6px;
+box-shadow:inset -4px 0 var(--secondary)
 }
 
 
 /* =========================================================
-   TABLE
-   ========================================================= */
+TABLE
+========================================================= */
 
 table{
-  border-collapse:collapse;
-  width:100%
+border-collapse:collapse;
+width:100%
 }
 
 th{
-  text-align:left;
-  color:var(--muted);
-  font-size:11px;
-  text-transform:uppercase;
-  letter-spacing:.08em;
-  font-weight:800;
-  padding:11px 13px;
-  border-bottom:1px solid var(--line);
-  white-space:nowrap
+text-align:left;
+color:var(--muted);
+font-size:11px;
+text-transform:uppercase;
+letter-spacing:.08em;
+font-weight:800;
+padding:11px 13px;
+border-bottom:1px solid var(--line);
+white-space:nowrap
 }
 
 td{
-  padding:11px 13px;
-  border-bottom:1px solid rgba(36,54,80,.65)
+padding:11px 13px;
+border-bottom:1px solid rgba(36,54,80,.65)
 }
 
 tbody tr{
-  cursor:pointer;
-  transition:.15s
+cursor:pointer;
+transition:.15s
 }
 
 tbody tr:hover{
-  background:rgba(255,255,255,.045)
+background:rgba(255,255,255,.045)
 }
 
 tbody tr:last-child td{
-  border-bottom:0
+border-bottom:0
 }
 
 
 /* =========================================================
-   PLAYER NAME + LOGO
-   ========================================================= */
+PLAYER NAME + LOGO
+========================================================= */
 
 .rank{
-  font-weight:900;
-  color:#dce6f2;
-  width:58px
+font-weight:900;
+color:#dce6f2;
+width:58px
 }
 
 .player-cell{
-  display:flex;
-  align-items:center;
-  gap:9px;
-  font-weight:800
+display:flex;
+align-items:center;
+gap:9px;
+font-weight:800
 }
 
 
 /* Hide the old coloured stripe */
 .team-chip{
-  display:none
+display:none
 }
 
 
 /* Player name and ineligible label */
 .player-name-wrap{
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  justify-content:center;
-  line-height:1.15
+display:flex;
+flex-direction:column;
+align-items:flex-start;
+justify-content:center;
+line-height:1.15
 }
 
 .player-name-wrap > span:first-child{
-  font-weight:800
+font-weight:800
 }
 
 
 /* Small yellow INELIGIBLE label */
 .ineligible-label{
-  display:block !important;
-  color:#e9bd5b !important;
-  font-size:9px !important;
-  font-weight:700 !important;
-  text-transform:uppercase;
-  letter-spacing:.04em;
-  line-height:1 !important;
-  margin-top:3px;
-  padding:0 !important;
-  border:0 !important;
-  background:none !important;
-  white-space:nowrap
+display:block !important;
+color:#e9bd5b !important;
+font-size:9px !important;
+font-weight:700 !important;
+text-transform:uppercase;
+letter-spacing:.04em;
+line-height:1 !important;
+margin-top:3px;
+padding:0 !important;
+border:0 !important;
+background:none !important;
+white-space:nowrap
 }
 
 
 /* AFL team logos */
 .team-logo{
-  display:inline-block;
-  flex-shrink:0;
-  object-fit:contain;
-  vertical-align:middle
+display:inline-block;
+flex-shrink:0;
+object-fit:contain;
+vertical-align:middle
 }
 
 
 /* Club name + logo */
 .team-name-cell{
-  display:flex;
-  align-items:center;
-  gap:8px
+display:flex;
+align-items:center;
+gap:8px
 }
 
 
 /* Numbers and scores */
 .num{
-  text-align:right;
-  font-variant-numeric:tabular-nums
+text-align:right;
+font-variant-numeric:tabular-nums
 }
 
 .score{
-  font-size:18px;
-  font-weight:900
+font-size:18px;
+font-weight:900
 }
 
 .range{
-  color:var(--muted)
+color:var(--muted)
 }
 
 .badge{
-  display:inline-flex;
-  padding:4px 7px;
-  border:1px solid var(--line);
-  border-radius:999px;
-  font-size:11px;
-  color:#dbe5f1
+display:inline-flex;
+padding:4px 7px;
+border:1px solid var(--line);
+border-radius:999px;
+font-size:11px;
+color:#dbe5f1
 }
 
 .empty{
-  padding:44px;
-  text-align:center;
-  color:var(--muted)
+padding:44px;
+text-align:center;
+color:var(--muted)
 }
 
 
 /* =========================================================
-   MODAL
-   ========================================================= */
+MODAL
+========================================================= */
 
 .modal-backdrop{
-  position:fixed;
-  inset:0;
-  background:rgba(1,6,12,.72);
-  z-index:100;
-  display:flex;
-  justify-content:flex-end
+position:fixed;
+inset:0;
+background:rgba(1,6,12,.72);
+z-index:100;
+display:flex;
+justify-content:flex-end
 }
 
 .player-modal{
-  width:min(650px,96vw);
-  height:100%;
-  overflow:auto;
-  background:#0d192a;
-  border-left:1px solid var(--line);
-  box-shadow:-30px 0 70px rgba(0,0,0,.4);
-  padding:30px;
-  position:relative
+width:min(650px,96vw);
+height:100%;
+overflow:auto;
+background:#0d192a;
+border-left:1px solid var(--line);
+box-shadow:-30px 0 70px rgba(0,0,0,.4);
+padding:30px;
+position:relative
 }
 
 .close{
-  position:sticky;
-  top:0;
-  float:right;
-  border:1px solid var(--line);
-  background:#15263c;
-  color:white;
-  width:38px;
-  height:38px;
-  border-radius:50%;
-  font-size:24px;
-  cursor:pointer;
-  z-index:2
+position:sticky;
+top:0;
+float:right;
+border:1px solid var(--line);
+background:#15263c;
+color:white;
+width:38px;
+height:38px;
+border-radius:50%;
+font-size:24px;
+cursor:pointer;
+z-index:2
 }
 
 
 /* =========================================================
-   PLAYER PROFILE
-   ========================================================= */
+PLAYER PROFILE
+========================================================= */
 
 .profile-head{
-  padding:8px 0 24px;
-  border-bottom:1px solid var(--line)
+padding:8px 0 24px;
+border-bottom:1px solid var(--line)
 }
 
 .profile-team{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  margin-bottom:8px;
-  font-size:12px;
-  font-weight:850;
-  text-transform:uppercase;
-  letter-spacing:.1em
+display:flex;
+align-items:center;
+gap:12px;
+margin-bottom:8px;
+font-size:12px;
+font-weight:850;
+text-transform:uppercase;
+letter-spacing:.1em
 }
 
 .profile-team .team-logo{
-  flex-shrink:0
+flex-shrink:0
 }
 
 .profile-head h2{
-  font-size:38px;
-  letter-spacing:-.035em;
-  margin:5px 0
+font-size:38px;
+letter-spacing:-.035em;
+margin:5px 0
 }
 
 .profile-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:9px;
-  margin:20px 0
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:9px;
+margin:20px 0
 }
 
 .mini{
-  padding:12px;
-  border-radius:12px;
-  background:#13233a;
-  border:1px solid var(--line)
+padding:12px;
+border-radius:12px;
+background:#13233a;
+border:1px solid var(--line)
 }
 
 .mini b{
-  display:block;
-  font-size:21px
+display:block;
+font-size:21px
 }
 
 .mini span{
-  font-size:10px;
-  color:var(--muted);
-  text-transform:uppercase;
-  font-weight:800
+font-size:10px;
+color:var(--muted);
+text-transform:uppercase;
+font-weight:800
 }
 
 .profile-section{
-  margin-top:24px
+margin-top:24px
 }
 
 .profile-section h3{
-  margin:0 0 10px
+margin:0 0 10px
 }
 
 
 /* =========================================================
-   ROUND CHART
-   ========================================================= */
+ROUND CHART
+========================================================= */
 
 .round-chart{
-  height:160px;
-  width:100%;
-  background:#0a1524;
-  border:1px solid var(--line);
-  border-radius:12px;
-  padding:8px
+height:160px;
+width:100%;
+background:#0a1524;
+border:1px solid var(--line);
+border-radius:12px;
+padding:8px
 }
 
 
 /* =========================================================
-   VOTE LIST
-   ========================================================= */
+VOTE LIST
+========================================================= */
 
 .vote-list{
-  display:grid;
-  gap:8px
+display:grid;
+gap:8px
 }
 
 .vote-row{
-  display:grid;
-  grid-template-columns:90px 1fr 64px 82px;
-  align-items:center;
-  gap:8px;
-  background:#13233a;
-  border:1px solid var(--line);
-  padding:10px;
-  border-radius:10px
+display:grid;
+grid-template-columns:90px 1fr 64px 82px;
+align-items:center;
+gap:8px;
+background:#13233a;
+border:1px solid var(--line);
+padding:10px;
+border-radius:10px
 }
 
 .vote-pill{
-  font-weight:900;
-  text-align:center;
-  border-radius:8px;
-  padding:5px
+font-weight:900;
+text-align:center;
+border-radius:8px;
+padding:5px
 }
 
 .note{
-  color:#c8d4e2;
-  background:#121f33;
-  border-left:3px solid var(--accent);
-  padding:12px 14px;
-  border-radius:6px;
-  margin-top:14px
+color:#c8d4e2;
+background:#121f33;
+border-left:3px solid var(--accent);
+padding:12px 14px;
+border-radius:6px;
+margin-top:14px
 }
 
 
 /* =========================================================
-   FOOTER
-   ========================================================= */
+FOOTER
+========================================================= */
 
 footer{
-  max-width:1440px;
-  margin:0 auto 30px;
-  padding:0 24px;
-  color:var(--muted);
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  font-size:12px
+max-width:1440px;
+margin:0 auto 30px;
+padding:0 24px;
+color:var(--muted);
+display:flex;
+justify-content:space-between;
+gap:20px;
+font-size:12px
 }
 
 footer a{
-  color:#d7e0eb
+color:#d7e0eb
 }
 
 
 /* =========================================================
-   MOBILE
-   ========================================================= */
+MOBILE
+========================================================= */
 
 @media(max-width:850px){
 
-  .hero-inner{
-    display:block
-  }
+.hero-inner{
+display:block
+}
 
-  .hero-kpis{
-    justify-content:flex-start;
-    margin-top:20px
-  }
+.hero-kpis{
+justify-content:flex-start;
+margin-top:20px
+}
 
-  .snapshot{
-    grid-template-columns:1fr 1fr
-  }
+.snapshot{
+grid-template-columns:1fr 1fr
+}
 
-  .search{
-    margin-left:0;
-    width:100%
-  }
+.search{
+margin-left:0;
+width:100%
+}
 
-  .search input{
-    width:100%
-  }
+.search input{
+width:100%
+}
 
-  .profile-grid{
-    grid-template-columns:1fr 1fr
-  }
+.profile-grid{
+grid-template-columns:1fr 1fr
+}
 
-  .hide-mobile{
-    display:none
-  }
+.hide-mobile{
+display:none
+}
 
-  .vote-row{
-    grid-template-columns:72px 1fr 54px
-  }
+.vote-row{
+grid-template-columns:72px 1fr 54px
+}
 
-  .vote-row .model-cell{
-    display:none
-  }
+.vote-row .model-cell{
+display:none
+}
 
-  .shell{
-    padding-left:12px;
-    padding-right:12px
-  }
+.shell{
+padding-left:12px;
+padding-right:12px
+}
 
-  .hero-inner{
-    padding-left:16px;
-    padding-right:16px
-  }
+.hero-inner{
+padding-left:16px;
+padding-right:16px
+}
 
-}  flex-wrap:wrap;
-  justify-content:flex-end
+} flex-wrap:wrap;
+justify-content:flex-end
 }
 
 .kpi{
-  background:rgba(255,255,255,.055);
-  border:1px solid var(--line);
-  border-radius:15px;
-  padding:12px 15px;
-  min-width:105px
+background:rgba(255,255,255,.055);
+border:1px solid var(--line);
+border-radius:15px;
+padding:12px 15px;
+min-width:105px
 }
 
 .kpi b{
-  display:block;
-  font-size:21px
+display:block;
+font-size:21px
 }
 
 .kpi span{
-  color:var(--muted);
-  font-size:11px;
-  text-transform:uppercase;
-  letter-spacing:.08em
+color:var(--muted);
+font-size:11px;
+text-transform:uppercase;
+letter-spacing:.08em
 }
 
 
 /* =========================================================
-   MAIN SHELL
-   ========================================================= */
+MAIN SHELL
+========================================================= */
 
 .shell{
-  max-width:1440px;
-  margin:auto;
-  padding:22px 24px 60px
+max-width:1440px;
+margin:auto;
+padding:22px 24px 60px
 }
 
 .card{
-  background:rgba(16,28,47,.9);
-  border:1px solid var(--line);
-  border-radius:18px;
-  box-shadow:var(--shadow)
+background:rgba(16,28,47,.9);
+border:1px solid var(--line);
+border-radius:18px;
+box-shadow:var(--shadow)
 }
 
 
 /* =========================================================
-   CONTROLS
-   ========================================================= */
+CONTROLS
+========================================================= */
 
 .controls{
-  position:sticky;
-  top:10px;
-  z-index:20;
-  padding:13px;
-  display:flex;
-  gap:12px;
-  align-items:end;
-  flex-wrap:wrap;
-  backdrop-filter:blur(16px)
+position:sticky;
+top:10px;
+z-index:20;
+padding:13px;
+display:flex;
+gap:12px;
+align-items:end;
+flex-wrap:wrap;
+backdrop-filter:blur(16px)
 }
 
 .segmented{
-  display:flex;
-  border:1px solid var(--line);
-  border-radius:11px;
-  overflow:hidden
+display:flex;
+border:1px solid var(--line);
+border-radius:11px;
+overflow:hidden
 }
 
 .segmented button{
-  border:0;
-  background:transparent;
-  color:var(--muted);
-  padding:10px 13px;
-  cursor:pointer;
-  font-weight:700
+border:0;
+background:transparent;
+color:var(--muted);
+padding:10px 13px;
+cursor:pointer;
+font-weight:700
 }
 
 .segmented button.active{
-  background:#203755;
-  color:white
+background:#203755;
+color:white
 }
 
 .control,
 .search{
-  display:grid;
-  gap:5px;
-  color:var(--muted);
-  font-size:11px;
-  font-weight:800;
-  text-transform:uppercase;
-  letter-spacing:.07em
+display:grid;
+gap:5px;
+color:var(--muted);
+font-size:11px;
+font-weight:800;
+text-transform:uppercase;
+letter-spacing:.07em
 }
 
 .control select,
 .search input{
-  height:39px;
-  min-width:140px;
-  background:#0c1727;
-  border:1px solid var(--line);
-  border-radius:10px;
-  color:white;
-  padding:0 10px;
-  outline:none
+height:39px;
+min-width:140px;
+background:#0c1727;
+border:1px solid var(--line);
+border-radius:10px;
+color:white;
+padding:0 10px;
+outline:none
 }
 
 .search{
-  margin-left:auto
+margin-left:auto
 }
 
 .search input{
-  min-width:190px
+min-width:190px
 }
 
 .switch{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  color:#d7e0eb;
-  font-weight:700;
-  cursor:pointer
+display:flex;
+align-items:center;
+gap:8px;
+color:#d7e0eb;
+font-weight:700;
+cursor:pointer
 }
 
 .switch input{
-  display:none
+display:none
 }
 
 .slider{
-  width:42px;
-  height:23px;
-  border-radius:20px;
-  background:#34445b;
-  position:relative;
-  transition:.2s
+width:42px;
+height:23px;
+border-radius:20px;
+background:#34445b;
+position:relative;
+transition:.2s
 }
 
 .slider:before{
-  content:"";
-  width:17px;
-  height:17px;
-  border-radius:50%;
-  background:white;
-  position:absolute;
-  left:3px;
-  top:3px;
-  transition:.2s
+content:"";
+width:17px;
+height:17px;
+border-radius:50%;
+background:white;
+position:absolute;
+left:3px;
+top:3px;
+transition:.2s
 }
 
 .switch input:checked+.slider{
-  background:#a57a25
+background:#a57a25
 }
 
 .switch input:checked+.slider:before{
-  transform:translateX(19px)
+transform:translateX(19px)
 }
 
 
 /* =========================================================
-   SNAPSHOT
-   ========================================================= */
+SNAPSHOT
+========================================================= */
 
 .snapshot{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:12px;
-  margin:18px 0
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:12px;
+margin:18px 0
 }
 
 .stat-card{
-  padding:18px;
-  border-radius:16px;
-  background:linear-gradient(145deg,#13233a,#0e1a2c);
-  border:1px solid var(--line)
+padding:18px;
+border-radius:16px;
+background:linear-gradient(145deg,#13233a,#0e1a2c);
+border:1px solid var(--line)
 }
 
 .stat-card .label{
-  color:var(--muted);
-  text-transform:uppercase;
-  letter-spacing:.09em;
-  font-size:11px;
-  font-weight:800
+color:var(--muted);
+text-transform:uppercase;
+letter-spacing:.09em;
+font-size:11px;
+font-weight:800
 }
 
 .stat-card .value{
-  font-size:27px;
-  font-weight:850;
-  margin-top:3px
+font-size:27px;
+font-weight:850;
+margin-top:3px
 }
 
 .stat-card .sub{
-  color:var(--muted);
-  font-size:12px;
-  margin-top:3px
+color:var(--muted);
+font-size:12px;
+margin-top:3px
 }
 
 
 /* =========================================================
-   TABLES
-   ========================================================= */
+TABLES
+========================================================= */
 
 .table-card{
-  overflow:hidden;
-  background:rgba(16,28,47,.9);
-  border:1px solid var(--line);
-  border-radius:18px;
-  box-shadow:var(--shadow);
-  margin-bottom:18px
+overflow:hidden;
+background:rgba(16,28,47,.9);
+border:1px solid var(--line);
+border-radius:18px;
+box-shadow:var(--shadow);
+margin-bottom:18px
 }
 
 .table-title{
-  padding:15px 18px;
-  border-bottom:1px solid var(--line);
-  display:flex;
-  align-items:center;
-  justify-content:space-between
+padding:15px 18px;
+border-bottom:1px solid var(--line);
+display:flex;
+align-items:center;
+justify-content:space-between
 }
 
 .table-title h2{
-  font-size:18px;
-  margin:0
+font-size:18px;
+margin:0
 }
 
 
 /* =========================================================
-   CLUB HEADINGS
-   ========================================================= */
+CLUB HEADINGS
+========================================================= */
 
 .club-heading{
-  display:flex;
-  align-items:center;
-  gap:10px
+display:flex;
+align-items:center;
+gap:10px
 }
 
 .club-heading .team-logo{
-  flex-shrink:0
+flex-shrink:0
 }
 
 .club-dot{
-  width:12px;
-  height:28px;
-  border-radius:6px;
-  box-shadow:inset -4px 0 var(--secondary)
+width:12px;
+height:28px;
+border-radius:6px;
+box-shadow:inset -4px 0 var(--secondary)
 }
 
 
 /* =========================================================
-   TABLE
-   ========================================================= */
+TABLE
+========================================================= */
 
 table{
-  border-collapse:collapse;
-  width:100%
+border-collapse:collapse;
+width:100%
 }
 
 th{
-  text-align:left;
-  color:var(--muted);
-  font-size:11px;
-  text-transform:uppercase;
-  letter-spacing:.08em;
-  font-weight:800;
-  padding:11px 13px;
-  border-bottom:1px solid var(--line);
-  white-space:nowrap
+text-align:left;
+color:var(--muted);
+font-size:11px;
+text-transform:uppercase;
+letter-spacing:.08em;
+font-weight:800;
+padding:11px 13px;
+border-bottom:1px solid var(--line);
+white-space:nowrap
 }
 
 td{
-  padding:11px 13px;
-  border-bottom:1px solid rgba(36,54,80,.65)
+padding:11px 13px;
+border-bottom:1px solid rgba(36,54,80,.65)
 }
 
 tbody tr{
-  cursor:pointer;
-  transition:.15s
+cursor:pointer;
+transition:.15s
 }
 
 tbody tr:hover{
-  background:rgba(255,255,255,.045)
+background:rgba(255,255,255,.045)
 }
 
 tbody tr:last-child td{
-  border-bottom:0
+border-bottom:0
 }
 
 
 /* =========================================================
-   PLAYER NAME + LOGO
-   ========================================================= */
+PLAYER NAME + LOGO
+========================================================= */
 
 .rank{
-  font-weight:900;
-  color:#dce6f2;
-  width:58px
+font-weight:900;
+color:#dce6f2;
+width:58px
 }
 
 .player-cell{
-  display:flex;
-  align-items:center;
-  gap:9px;
-  font-weight:800
+display:flex;
+align-items:center;
+gap:9px;
+font-weight:800
 }
 
 
 /* Hide the old coloured stripe */
 .team-chip{
-  display:none
+display:none
 }
 
 
 /* Player name and ineligible label */
 .player-name-wrap{
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  justify-content:center;
-  line-height:1.15
+display:flex;
+flex-direction:column;
+align-items:flex-start;
+justify-content:center;
+line-height:1.15
 }
 
 .player-name-wrap > span:first-child{
-  font-weight:800
+font-weight:800
 }
 
 
 /* Small yellow INELIGIBLE label */
 .ineligible-label{
-  display:block !important;
-  color:#e9bd5b !important;
-  font-size:9px !important;
-  font-weight:700 !important;
-  text-transform:uppercase;
-  letter-spacing:.04em;
-  line-height:1 !important;
-  margin-top:3px;
-  padding:0 !important;
-  border:0 !important;
-  background:none !important;
-  white-space:nowrap
+display:block !important;
+color:#e9bd5b !important;
+font-size:9px !important;
+font-weight:700 !important;
+text-transform:uppercase;
+letter-spacing:.04em;
+line-height:1 !important;
+margin-top:3px;
+padding:0 !important;
+border:0 !important;
+background:none !important;
+white-space:nowrap
 }
 
 
 /* AFL team logos */
 .team-logo{
-  display:inline-block;
-  flex-shrink:0;
-  object-fit:contain;
-  vertical-align:middle
+display:inline-block;
+flex-shrink:0;
+object-fit:contain;
+vertical-align:middle
 }
 
 
 /* Club name + logo */
 .team-name-cell{
-  display:flex;
-  align-items:center;
-  gap:8px
+display:flex;
+align-items:center;
+gap:8px
 }
 
 
 /* Numbers and scores */
 .num{
-  text-align:right;
-  font-variant-numeric:tabular-nums
+text-align:right;
+font-variant-numeric:tabular-nums
 }
 
 .score{
-  font-size:18px;
-  font-weight:900
+font-size:18px;
+font-weight:900
 }
 
 .range{
-  color:var(--muted)
+color:var(--muted)
 }
 
 .badge{
-  display:inline-flex;
-  padding:4px 7px;
-  border:1px solid var(--line);
-  border-radius:999px;
-  font-size:11px;
-  color:#dbe5f1
+display:inline-flex;
+padding:4px 7px;
+border:1px solid var(--line);
+border-radius:999px;
+font-size:11px;
+color:#dbe5f1
 }
 
 .empty{
-  padding:44px;
-  text-align:center;
-  color:var(--muted)
+padding:44px;
+text-align:center;
+color:var(--muted)
 }
 
 
 /* =========================================================
-   MODAL
-   ========================================================= */
+MODAL
+========================================================= */
 
 .modal-backdrop{
-  position:fixed;
-  inset:0;
-  background:rgba(1,6,12,.72);
-  z-index:100;
-  display:flex;
-  justify-content:flex-end
+position:fixed;
+inset:0;
+background:rgba(1,6,12,.72);
+z-index:100;
+display:flex;
+justify-content:flex-end
 }
 
 .player-modal{
-  width:min(650px,96vw);
-  height:100%;
-  overflow:auto;
-  background:#0d192a;
-  border-left:1px solid var(--line);
-  box-shadow:-30px 0 70px rgba(0,0,0,.4);
-  padding:30px;
-  position:relative
+width:min(650px,96vw);
+height:100%;
+overflow:auto;
+background:#0d192a;
+border-left:1px solid var(--line);
+box-shadow:-30px 0 70px rgba(0,0,0,.4);
+padding:30px;
+position:relative
 }
 
 .close{
-  position:sticky;
-  top:0;
-  float:right;
-  border:1px solid var(--line);
-  background:#15263c;
-  color:white;
-  width:38px;
-  height:38px;
-  border-radius:50%;
-  font-size:24px;
-  cursor:pointer;
-  z-index:2
+position:sticky;
+top:0;
+float:right;
+border:1px solid var(--line);
+background:#15263c;
+color:white;
+width:38px;
+height:38px;
+border-radius:50%;
+font-size:24px;
+cursor:pointer;
+z-index:2
 }
 
 
 /* =========================================================
-   PLAYER PROFILE
-   ========================================================= */
+PLAYER PROFILE
+========================================================= */
 
 .profile-head{
-  padding:8px 0 24px;
-  border-bottom:1px solid var(--line)
+padding:8px 0 24px;
+border-bottom:1px solid var(--line)
 }
 
 .profile-team{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  margin-bottom:8px;
-  font-size:12px;
-  font-weight:850;
-  text-transform:uppercase;
-  letter-spacing:.1em
+display:flex;
+align-items:center;
+gap:12px;
+margin-bottom:8px;
+font-size:12px;
+font-weight:850;
+text-transform:uppercase;
+letter-spacing:.1em
 }
 
 .profile-team .team-logo{
-  flex-shrink:0
+flex-shrink:0
 }
 
 .profile-head h2{
-  font-size:38px;
-  letter-spacing:-.035em;
-  margin:5px 0
+font-size:38px;
+letter-spacing:-.035em;
+margin:5px 0
 }
 
 .profile-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:9px;
-  margin:20px 0
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:9px;
+margin:20px 0
 }
 
 .mini{
-  padding:12px;
-  border-radius:12px;
-  background:#13233a;
-  border:1px solid var(--line)
+padding:12px;
+border-radius:12px;
+background:#13233a;
+border:1px solid var(--line)
 }
 
 .mini b{
-  display:block;
-  font-size:21px
+display:block;
+font-size:21px
 }
 
 .mini span{
-  font-size:10px;
-  color:var(--muted);
-  text-transform:uppercase;
-  font-weight:800
+font-size:10px;
+color:var(--muted);
+text-transform:uppercase;
+font-weight:800
 }
 
 .profile-section{
-  margin-top:24px
+margin-top:24px
 }
 
 .profile-section h3{
-  margin:0 0 10px
+margin:0 0 10px
 }
 
 
 /* =========================================================
-   ROUND CHART
-   ========================================================= */
+ROUND CHART
+========================================================= */
 
 .round-chart{
-  height:160px;
-  width:100%;
-  background:#0a1524;
-  border:1px solid var(--line);
-  border-radius:12px;
-  padding:8px
+height:160px;
+width:100%;
+background:#0a1524;
+border:1px solid var(--line);
+border-radius:12px;
+padding:8px
 }
 
 
 /* =========================================================
-   VOTE LIST
-   ========================================================= */
+VOTE LIST
+========================================================= */
 
 .vote-list{
-  display:grid;
-  gap:8px
+display:grid;
+gap:8px
 }
 
 .vote-row{
-  display:grid;
-  grid-template-columns:90px 1fr 64px 82px;
-  align-items:center;
-  gap:8px;
-  background:#13233a;
-  border:1px solid var(--line);
-  padding:10px;
-  border-radius:10px
+display:grid;
+grid-template-columns:90px 1fr 64px 82px;
+align-items:center;
+gap:8px;
+background:#13233a;
+border:1px solid var(--line);
+padding:10px;
+border-radius:10px
 }
 
 .vote-pill{
-  font-weight:900;
-  text-align:center;
-  border-radius:8px;
-  padding:5px
+font-weight:900;
+text-align:center;
+border-radius:8px;
+padding:5px
 }
 
 .note{
-  color:#c8d4e2;
-  background:#121f33;
-  border-left:3px solid var(--accent);
-  padding:12px 14px;
-  border-radius:6px;
-  margin-top:14px
+color:#c8d4e2;
+background:#121f33;
+border-left:3px solid var(--accent);
+padding:12px 14px;
+border-radius:6px;
+margin-top:14px
 }
 
 
 /* =========================================================
-   FOOTER
-   ========================================================= */
+FOOTER
+========================================================= */
 
 footer{
-  max-width:1440px;
-  margin:0 auto 30px;
-  padding:0 24px;
-  color:var(--muted);
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  font-size:12px
+max-width:1440px;
+margin:0 auto 30px;
+padding:0 24px;
+color:var(--muted);
+display:flex;
+justify-content:space-between;
+gap:20px;
+font-size:12px
 }
 
 footer a{
-  color:#d7e0eb
+color:#d7e0eb
 }
 
 
 /* =========================================================
-   MOBILE
-   ========================================================= */
+MOBILE
+========================================================= */
 
 @media(max-width:850px){
 
-  .hero-inner{
-    display:block
-  }
-
-  .hero-kpis{
-    justify-content:flex-start;
-    margin-top:20px
-  }
-
-  .snapshot{
-    grid-template-columns:1fr 1fr
-  }
-
-  .search{
-    margin-left:0;
-    width:100%
-  }
-
-  .search input{
-    width:100%
-  }
-
-  .profile-grid{
-    grid-template-columns:1fr 1fr
-  }
-
-  .hide-mobile{
-    display:none
-  }
-
-  .vote-row{
-    grid-template-columns:72px 1fr 54px
-  }
-
-  .vote-row .model-cell{
-    display:none
-  }
-
-  .shell{
-    padding-left:12px;
-    padding-right:12px
-  }
-
-  .hero-inner{
-    padding-left:16px;
-    padding-right:16px
-  }
-
-}  font-weight: 800;
+.hero-inner{
+display:block
 }
 
-.ineligible-label {
-  display: block !important;
-  color: #e9bd5b !important;
-  font-size: 9px !important;
-  font-weight: 700 !important;
-  text-transform: uppercase;
-  letter-spacing: .04em;
-  line-height: 1 !important;
-  margin-top: 3px;
-  padding: 0 !important;
-  border: 0 !important;
-  background: none !important;
-  white-space: nowrap;
-}
-}
+.hero-kpis{
+justify-content:flex-start;
+margin-top:20px
 
-.team-name-cell {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.club-heading {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.club-heading .team-logo {
-  flex-shrink: 0;
-}
-
-.profile-team {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 8px;
-}
-
-.profile-team .team-logo {
-  flex-shrink: 0;
-}
-.player-name-wrap {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.round-game-card{
-  background:rgba(16,28,47,.9);
-  border:1px solid var(--line);
-  border-radius:18px;
-  box-shadow:var(--shadow);
-  margin-bottom:18px;
-  overflow:hidden;
-}
-
-.round-game-header{
-  padding:16px 18px;
-  border-bottom:1px solid var(--line);
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:15px;
-}
-
-.round-game-header h2{
-  margin:2px 0 0;
-  font-size:20px;
-}
-
-.round-game-number{
-  color:var(--accent);
-  font-size:11px;
-  font-weight:800;
-  text-transform:uppercase;
-  letter-spacing:.08em;
-}
-
-.round-votes{
-  padding:10px;
-  display:grid;
-  gap:7px;
-}
-
-.round-vote-row{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:15px;
-  padding:10px 12px;
-  background:#13233a;
-  border:1px solid var(--line);
-  border-radius:10px;
-  cursor:pointer;
-  transition:.15s;
-}
-
-.round-vote-row:hover{
-  background:rgba(255,255,255,.045);
-}
-
-.round-vote-player{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-weight:800;
-}
-
-.round-vote-pill{
-  min-width:45px;
-  text-align:center;
-  padding:6px 10px;
-  border-radius:8px;
-  font-weight:900;
-}
-
-.round-opponent{
-  color:var(--muted);
-}
