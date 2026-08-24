@@ -526,12 +526,21 @@ function tableHtml(ps,title,team){
 
             <div class="player-cell">
 
-              ${clubLogoHtml(p.team,'30px')}
+  ${clubLogoHtml(p.team,'30px')}
 
-              ${p.name}
+  <div class="player-name-wrap">
 
-            </div>
+    <span>${p.name}</span>
 
+    ${
+      INELIGIBLE_PLAYERS.has(p.name)
+        ? '<span class="ineligible-label">Ineligible</span>'
+        : ''
+    }
+
+  </div>
+
+</div>
           </td>
 
 
