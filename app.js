@@ -18,11 +18,7 @@ const scoreFmt=(n,metric)=>metric==='model'?Number(n).toFixed(1):fmt(n);
 
 /* =========================================================
    TEAM LOGOS
-   =========================================================
-   
-   These names MUST match the team names in brownlow-data.json.
-   The files are located inside the /logos/ folder.
-*/
+   ========================================================= */
 
 const TEAM_CODES={
   'Adelaide':'ADL',
@@ -44,6 +40,11 @@ const TEAM_CODES={
   'Western Bulldogs':'WBD',
   'West Coast':'WCE'
 };
+
+
+/* =========================================================
+   INELIGIBLE PLAYERS
+   ========================================================= */
 
 const INELIGIBLE_PLAYERS = new Set([
   'Dan Butler',
@@ -80,6 +81,11 @@ const INELIGIBLE_PLAYERS = new Set([
   'Jed Walter',
   'Mykelti Lefau'
 ]);
+
+
+/* =========================================================
+   TEAM LOGO FUNCTIONS
+   ========================================================= */
 
 function clubLogo(team){
 
@@ -208,6 +214,81 @@ function sortedPlayers(team=null){
 
 
 /* =========================================================
+   ROUND PLAYER SCORE
+   ========================================================= */
+
+function roundPlayerScore(playerName,roundNumber){
+
+  const allocations=
+    S.data.allocations.filter(
+      a=>
+        a.player===playerName &&
+        a.roundNumber===roundNumber &&
+        (
+          S.includeHalf ||
+          Number(a.human_vote)!==0.5
+        )
+    );
+
+
+  if(S.metric==='human'){
+
+    return allocations.reduce(
+      (sum,a)=>sum+Number(a.human_vote),
+      0
+    );
+
+  }
+
+
+  return allocations.reduce(
+    (sum,a)=>sum+Number(a.modelEV),
+    0
+  );
+
+}
+
+
+/* =========================================================
+   ROUND PLAYERS
+   ========================================================= */
+
+function sortedRoundPlayers(roundNumber){
+
+  const q=S.search.trim().toLowerCase();
+
+
+  return S.data.players
+
+    .filter(p=>
+      (S.team==='ALL'||p.team===S.team) &&
+      (!q||p.name.toLowerCase().includes(q))
+    )
+
+    .map(p=>({
+
+      ...p,
+
+      roundScore:
+        roundPlayerScore(
+          p.name,
+          roundNumber
+        )
+
+    }))
+
+    .filter(p=>p.roundScore>0)
+
+    .sort(
+      (a,b)=>
+        b.roundScore-a.roundScore ||
+        a.name.localeCompare(b.name)
+    );
+
+}
+
+
+/* =========================================================
    INITIALISE
    ========================================================= */
 
@@ -251,6 +332,25 @@ function init(){
     </div>
 
   `;
+
+
+  /* =======================================================
+     ADD BY ROUND BUTTON
+     ======================================================= */
+
+  const viewToggle=$('#viewToggle');
+
+  if(
+    viewToggle &&
+    !viewToggle.querySelector('[data-view="round"]')
+  ){
+
+    viewToggle.insertAdjacentHTML(
+      'beforeend',
+      `<button data-view="round">By Round</button>`
+    );
+
+  }
 
 
   $$('#metricToggle button').forEach(b=>{
@@ -470,16 +570,10 @@ function renderSnapshot(ps){
 
 
 /* =========================================================
-   TABLE
+   NORMAL TABLE
    ========================================================= */
 
 function tableHtml(ps,title,team){
-
-  const st=
-    team
-      ?clubStyle(team)
-      :null;
-
 
   const heading=
     team
@@ -510,9 +604,6 @@ function tableHtml(ps,title,team){
   const rows=
     ps.map((p,i)=>{
 
-      const c=clubStyle(p.team);
-
-
       return `
 
         <tr data-player="${encodeURIComponent(p.name)}">
@@ -526,21 +617,22 @@ function tableHtml(ps,title,team){
 
             <div class="player-cell">
 
-  ${clubLogoHtml(p.team,'30px')}
+              ${clubLogoHtml(p.team,'30px')}
 
-  <div class="player-name-wrap">
+              <div class="player-name-wrap">
 
-    <span>${p.name}</span>
+                <span>${p.name}</span>
 
-    ${
-      INELIGIBLE_PLAYERS.has(p.name)
-        ? '<span class="ineligible-label">Ineligible</span>'
-        : ''
-    }
+                ${
+                  INELIGIBLE_PLAYERS.has(p.name)
+                    ? '<span class="ineligible-label">Ineligible</span>'
+                    : ''
+                }
 
-  </div>
+              </div>
 
-</div>
+            </div>
+
           </td>
 
 
@@ -631,13 +723,9 @@ function tableHtml(ps,title,team){
 
             <tr>
 
-              <th>
-                Rank
-              </th>
+              <th>Rank</th>
 
-              <th>
-                Player
-              </th>
+              <th>Player</th>
 
               <th class="hide-mobile">
                 Club
@@ -709,6 +797,214 @@ function tableHtml(ps,title,team){
 
 
 /* =========================================================
+   BY ROUND TABLE
+   ========================================================= */
+
+function roundTableHtml(roundNumber){
+
+  const players=
+    sortedRoundPlayers(
+      roundNumber
+    );
+
+
+  const roundLabel=
+    roundNumber===0
+      ?'Opening Round'
+      :`Round ${roundNumber}`;
+
+
+  const rows=
+    players
+      .map((p,i)=>{
+
+        return `
+
+          <tr data-player="${encodeURIComponent(p.name)}">
+
+            <td class="rank">
+              ${i+1}
+            </td>
+
+
+            <td>
+
+              <div class="player-cell">
+
+                ${clubLogoHtml(p.team,'30px')}
+
+                <div class="player-name-wrap">
+
+                  <span>${p.name}</span>
+
+                  ${
+                    INELIGIBLE_PLAYERS.has(p.name)
+                      ? '<span class="ineligible-label">Ineligible</span>'
+                      : ''
+                  }
+
+                </div>
+
+              </div>
+
+            </td>
+
+
+            <td class="hide-mobile">
+
+              <div class="team-name-cell">
+
+                ${clubLogoHtml(p.team,'26px')}
+
+                <span>
+                  ${p.team}
+                </span>
+
+              </div>
+
+            </td>
+
+
+            <td class="num score">
+
+              ${scoreFmt(
+                p.roundScore,
+                S.metric
+              )}
+
+            </td>
+
+          </tr>
+
+        `;
+
+      })
+      .join('');
+
+
+  return `
+
+    <section class="table-card">
+
+      <div class="table-title">
+
+        <div class="club-heading">
+
+          <h2>
+            ${roundLabel}
+          </h2>
+
+        </div>
+
+        <span class="badge">
+          ${players.length} players
+        </span>
+
+      </div>
+
+
+      <div style="overflow:auto">
+
+        <table>
+
+          <thead>
+
+            <tr>
+
+              <th>
+                Rank
+              </th>
+
+              <th>
+                Player
+              </th>
+
+              <th class="hide-mobile">
+                Club
+              </th>
+
+              <th class="num">
+                ${S.metric==='human'?'Votes':'EV'}
+              </th>
+
+            </tr>
+
+          </thead>
+
+
+          <tbody>
+
+            ${
+              rows ||
+
+              `
+                <tr>
+
+                  <td
+                    colspan="4"
+                    class="empty"
+                  >
+                    No votes recorded for this round.
+                  </td>
+
+                </tr>
+              `
+            }
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </section>
+
+  `;
+
+}
+
+
+/* =========================================================
+   BY ROUND RENDER
+   ========================================================= */
+
+function renderByRound(){
+
+  const rounds=
+    S.data.rounds
+      .map(roundN)
+      .filter(
+        r=>r<=S.round
+      );
+
+
+  $('#leaderboard').innerHTML=
+    rounds
+      .map(
+        r=>roundTableHtml(r)
+      )
+      .join('');
+
+
+  $$('#leaderboard tr[data-player]')
+    .forEach(tr=>{
+
+      tr.onclick=()=>{
+
+        openProfile(
+          decodeURIComponent(
+            tr.dataset.player
+          )
+        );
+
+      };
+
+    });
+
+}
+
+
+/* =========================================================
    RENDER
    ========================================================= */
 
@@ -718,6 +1014,10 @@ function render(){
 
   renderSnapshot(all);
 
+
+  /* =======================================================
+     OVERALL
+     ======================================================= */
 
   if(S.view==='overall'){
 
@@ -730,7 +1030,12 @@ function render(){
 
   }
 
-  else{
+
+  /* =======================================================
+     BY CLUB
+     ======================================================= */
+
+  else if(S.view==='club'){
 
     const clubs=
       S.team==='ALL'
@@ -751,6 +1056,23 @@ function render(){
 
   }
 
+
+  /* =======================================================
+     BY ROUND
+     ======================================================= */
+
+  else if(S.view==='round'){
+
+    renderByRound();
+
+    return;
+
+  }
+
+
+  /* =======================================================
+     PLAYER CLICK
+     ======================================================= */
 
   $$('#leaderboard tr[data-player]')
     .forEach(tr=>{
@@ -924,231 +1246,4 @@ function openProfile(name){
           </b>
 
 
-          <span>
-            ${a.homeAway==='Home'?'vs':'@'}
-            ${a.opponent}
-          </span>
-
-
-          <span
-            class="vote-pill"
-            style="
-              background:${c.primary};
-              color:${c.text}
-            "
-          >
-            ${fmt(a.human_vote)}
-          </span>
-
-
-          <span class="model-cell num">
-            ${Number(a.modelEV).toFixed(2)}
-            EV
-          </span>
-
-        </div>
-
-      `)
-      .join('')
-
-      ||
-
-      `
-        <div class="empty">
-          No vote signals through this round.
-        </div>
-      `;
-
-
-  $('#profile').innerHTML=`
-
-    <div
-      class="profile-head"
-      style="
-        border-top:6px solid ${c.primary}
-      "
-    >
-
-      <div class="profile-team">
-
-        ${clubLogoHtml(p.team,'56px')}
-
-        <span
-          style="
-            color:${c.secondary};
-            font-weight:700;
-          "
-        >
-          ${p.team}
-        </span>
-
-      </div>
-
-
-      <h2 id="profileName">
-        ${p.name}
-      </h2>
-
-
-      <div class="badge">
-        ${p.confidence}
-        confidence
-        · final range
-        ${p.low}–${p.high}
-      </div>
-
-
-      ${
-        p.note
-          ?`<div class="note">${p.note}</div>`
-          :''
-      }
-
-    </div>
-
-
-    <div class="profile-grid">
-
-      <div class="mini">
-
-        <b>
-          ${scoreFmt(
-            curr,
-            S.metric
-          )}
-        </b>
-
-        <span>
-          ${
-            S.metric==='human'
-              ?'Current tracker'
-              :'Current EV'
-          }
-        </span>
-
-      </div>
-
-
-      <div class="mini">
-
-        <b>
-          ${p.humanTotal}
-        </b>
-
-        <span>
-          Final human
-        </span>
-
-      </div>
-
-
-      <div class="mini">
-
-        <b>
-          ${p.modelEV.toFixed(1)}
-        </b>
-
-        <span>
-          Final model EV
-        </span>
-
-      </div>
-
-
-      <div class="mini">
-
-        <b>
-          ${p.lockedVote}
-        </b>
-
-        <span>
-          Locked vote
-        </span>
-
-      </div>
-
-    </div>
-
-
-    <div class="profile-section">
-
-      <h3>
-        Leaderboard progression
-      </h3>
-
-      ${sparkline(name)}
-
-    </div>
-
-
-    <div class="profile-section">
-
-      <h3>
-        Where the votes came from
-      </h3>
-
-      <div class="vote-list">
-        ${voteRows}
-      </div>
-
-    </div>
-
-  `;
-
-
-  $('#modalBackdrop').hidden=false;
-
-  document.body.style.overflow='hidden';
-
-}
-
-
-/* =========================================================
-   CLOSE PROFILE
-   ========================================================= */
-
-function closeProfile(){
-
-  $('#modalBackdrop').hidden=true;
-
-  document.body.style.overflow='';
-
-}
-
-
-/* =========================================================
-   LOAD DATA
-   ========================================================= */
-
-fetch('brownlow-data.json')
-
-  .then(r=>r.json())
-
-  .then(d=>{
-
-    S.data=d;
-
-    init();
-
-  })
-
-  .catch(err=>{
-
-    document.body.innerHTML=`
-
-      <div class="empty">
-
-        Could not load data.
-
-        If opening locally, run a local web server
-        or use GitHub Pages.
-
-        <br>
-
-        ${err}
-
-      </div>
-
-    `;
-
-  });
+    
