@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Interactive 2026 AFL Brownlow Medal predictor using a 3-2-1-0.5 human tracker and calibrated expected-votes model." />
+  <title>2026 Brownlow Predictor</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="eyebrow">FINAL PRE-MARKET MODEL · FROZEN 23 AUG 2026</div>
+        <h1>2026 Brownlow Predictor</h1>
+        <p>Every player. Every round. Human 3–2–1–0.5 tracker vs calibrated Model EV.</p>
+      </div>
+      <div class="hero-kpis" id="heroKpis"></div>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="controls card">
+      <div class="segmented" id="metricToggle">
+        <button class="active" data-metric="human">Human tracker</button>
+        <button data-metric="model">Model EV</button>
+      </div>
+      <label class="control"><span>After round</span><select id="roundSelect"></select></label>
+      <label class="control"><span>Club</span><select id="teamSelect"><option value="ALL">All clubs</option></select></label>
+      <label class="switch"><input id="halfToggle" type="checkbox" checked><span class="slider"></span><span>Include 0.5 signals</span></label>
+      <div class="segmented" id="viewToggle">
+        <button class="active" data-view="overall">Overall</button>
+        <button data-view="clubs">By club</button>
+      </div>
+      <label class="search"><span>Search</span><input id="searchInput" type="search" placeholder="Player name…"></label>
+    </section>
+
+    <section class="snapshot" id="snapshot"></section>
+    <section id="leaderboard"></section>
+  </main>
+
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <aside class="player-modal" id="playerModal" role="dialog" aria-modal="true" aria-labelledby="profileName">
+      <button class="close" id="closeModal" aria-label="Close">×</button>
+      <div id="profile"></div>
+    </aside>
+  </div>
+
+  <footer>
+    <div>Independent research model. The official Brownlow awards only 3–2–1; 0.5 is a near-poll modelling signal.</div>
+    <div><a href="methodology.md">Methodology</a> · <a href="sources.md">Sources</a> · <a href="player-summary.csv">CSV</a></div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

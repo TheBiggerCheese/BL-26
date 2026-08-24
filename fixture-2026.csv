@@ -1,0 +1,208 @@
+round,fixtureGame,home,away
+Round 0,1,Sydney,Carlton
+Round 0,2,Gold Coast,Geelong
+Round 0,3,Greater Western Sydney,Hawthorn
+Round 0,4,Brisbane,Western Bulldogs
+Round 0,5,St Kilda,Collingwood
+Round 1,1,Carlton,Richmond
+Round 1,2,Essendon,Hawthorn
+Round 1,3,Western Bulldogs,Greater Western Sydney
+Round 1,4,Geelong,Fremantle
+Round 1,5,Sydney,Brisbane
+Round 1,6,Collingwood,Adelaide
+Round 1,7,North Melbourne,Port Adelaide
+Round 1,8,Melbourne,St Kilda
+Round 1,9,Gold Coast,West Coast
+Round 2,1,Hawthorn,Sydney
+Round 2,2,Adelaide,Western Bulldogs
+Round 2,3,Richmond,Gold Coast
+Round 2,4,Greater Western Sydney,St Kilda
+Round 2,5,Fremantle,Melbourne
+Round 2,6,Port Adelaide,Essendon
+Round 2,7,West Coast,North Melbourne
+Round 3,1,Geelong,Adelaide
+Round 3,2,Collingwood,Greater Western Sydney
+Round 3,3,St Kilda,Brisbane
+Round 3,4,Fremantle,Richmond
+Round 3,5,Essendon,North Melbourne
+Round 3,6,Port Adelaide,West Coast
+Round 3,7,Carlton,Melbourne
+Round 4,1,Brisbane,Collingwood
+Round 4,2,North Melbourne,Carlton
+Round 4,3,Adelaide,Fremantle
+Round 4,4,Richmond,Port Adelaide
+Round 4,5,West Coast,Sydney
+Round 4,6,Melbourne,Gold Coast
+Round 4,7,Western Bulldogs,Essendon
+Round 4,8,Hawthorn,Geelong
+Round 5,1,Adelaide,Carlton
+Round 5,2,Collingwood,Fremantle
+Round 5,3,North Melbourne,Brisbane
+Round 5,4,Essendon,Melbourne
+Round 5,5,Sydney,Gold Coast
+Round 5,6,Hawthorn,Western Bulldogs
+Round 5,7,Geelong,West Coast
+Round 5,8,Greater Western Sydney,Richmond
+Round 5,9,Port Adelaide,St Kilda
+Round 6,1,Carlton,Collingwood
+Round 6,2,Geelong,Western Bulldogs
+Round 6,3,Sydney,Greater Western Sydney
+Round 6,4,Gold Coast,Essendon
+Round 6,5,Hawthorn,Port Adelaide
+Round 6,6,Adelaide,St Kilda
+Round 6,7,North Melbourne,Richmond
+Round 6,8,West Coast,Fremantle
+Round 6,9,Melbourne,Brisbane
+Round 7,1,Western Bulldogs,Sydney
+Round 7,2,Richmond,Melbourne
+Round 7,3,Hawthorn,Gold Coast
+Round 7,4,Essendon,Collingwood
+Round 7,5,Port Adelaide,Geelong
+Round 7,6,Fremantle,Carlton
+Round 7,7,St Kilda,West Coast
+Round 7,8,Brisbane,Adelaide
+Round 7,9,Greater Western Sydney,North Melbourne
+Round 8,1,Collingwood,Hawthorn
+Round 8,2,Western Bulldogs,Fremantle
+Round 8,3,Adelaide,Port Adelaide
+Round 8,4,Essendon,Brisbane
+Round 8,5,West Coast,Richmond
+Round 8,6,Geelong,North Melbourne
+Round 8,7,Carlton,St Kilda
+Round 8,8,Sydney,Melbourne
+Round 8,9,Gold Coast,Greater Western Sydney
+Round 9,1,Fremantle,Hawthorn
+Round 9,2,Brisbane,Carlton
+Round 9,3,Port Adelaide,Western Bulldogs
+Round 9,4,North Melbourne,Sydney
+Round 9,5,Greater Western Sydney,Essendon
+Round 9,6,Gold Coast,St Kilda
+Round 9,7,Geelong,Collingwood
+Round 9,8,Melbourne,West Coast
+Round 9,9,Richmond,Adelaide
+Round 10,1,Brisbane,Geelong
+Round 10,2,Sydney,Collingwood
+Round 10,3,Gold Coast,Port Adelaide
+Round 10,4,Adelaide,North Melbourne
+Round 10,5,Melbourne,Hawthorn
+Round 10,6,Carlton,Western Bulldogs
+Round 10,7,Essendon,Fremantle
+Round 10,8,St Kilda,Richmond
+Round 10,9,West Coast,Greater Western Sydney
+Round 11,1,Hawthorn,Adelaide
+Round 11,2,Fremantle,St Kilda
+Round 11,3,Richmond,Essendon
+Round 11,4,North Melbourne,Gold Coast
+Round 11,5,Geelong,Sydney
+Round 11,6,Collingwood,West Coast
+Round 11,7,Port Adelaide,Carlton
+Round 11,8,Greater Western Sydney,Brisbane
+Round 11,9,Western Bulldogs,Melbourne
+Round 12,1,St Kilda,Hawthorn
+Round 12,2,Carlton,Geelong
+Round 12,3,Sydney,Richmond
+Round 12,4,Brisbane,Fremantle
+Round 12,5,Western Bulldogs,Collingwood
+Round 12,6,Melbourne,Greater Western Sydney
+Round 12,7,West Coast,Essendon
+Round 13,1,Adelaide,Geelong
+Round 13,2,Hawthorn,Western Bulldogs
+Round 13,3,North Melbourne,Fremantle
+Round 13,4,Gold Coast,Brisbane
+Round 13,5,West Coast,Port Adelaide
+Round 13,6,Sydney,St Kilda
+Round 13,7,Essendon,Carlton
+Round 13,8,Collingwood,Melbourne
+Round 14,1,Western Bulldogs,Adelaide
+Round 14,2,Geelong,Gold Coast
+Round 14,3,Melbourne,Essendon
+Round 14,4,North Melbourne,West Coast
+Round 14,5,Port Adelaide,Sydney
+Round 14,6,Richmond,Brisbane
+Round 14,7,St Kilda,Greater Western Sydney
+Round 15,1,Fremantle,Geelong
+Round 15,2,Gold Coast,Hawthorn
+Round 15,3,Adelaide,Melbourne
+Round 15,4,Greater Western Sydney,Carlton
+Round 15,5,Collingwood,Port Adelaide
+Round 15,6,Richmond,North Melbourne
+Round 15,7,St Kilda,Western Bulldogs
+Round 16,1,Brisbane,Sydney
+Round 16,2,Hawthorn,Greater Western Sydney
+Round 16,3,Carlton,West Coast
+Round 16,4,Collingwood,Richmond
+Round 16,5,Port Adelaide,Adelaide
+Round 16,6,Fremantle,Gold Coast
+Round 16,7,North Melbourne,Essendon
+Round 17,1,Geelong,Brisbane
+Round 17,2,West Coast,Adelaide
+Round 17,3,Sydney,Western Bulldogs
+Round 17,4,Hawthorn,Melbourne
+Round 17,5,Greater Western Sydney,Fremantle
+Round 17,6,Gold Coast,Collingwood
+Round 17,7,Richmond,Carlton
+Round 17,8,Essendon,St Kilda
+Round 17,9,Port Adelaide,North Melbourne
+Round 18,1,Fremantle,Sydney
+Round 18,2,Collingwood,North Melbourne
+Round 18,3,St Kilda,Port Adelaide
+Round 18,4,Greater Western Sydney,Geelong
+Round 18,5,Carlton,Hawthorn
+Round 18,6,Adelaide,Gold Coast
+Round 18,7,Western Bulldogs,West Coast
+Round 18,8,Melbourne,Richmond
+Round 18,9,Brisbane,Essendon
+Round 19,1,Geelong,St Kilda
+Round 19,2,Sydney,Adelaide
+Round 19,3,Port Adelaide,Fremantle
+Round 19,4,North Melbourne,Melbourne
+Round 19,5,West Coast,Brisbane
+Round 19,6,Collingwood,Carlton
+Round 19,7,Richmond,Hawthorn
+Round 19,8,Gold Coast,Western Bulldogs
+Round 19,9,Essendon,Greater Western Sydney
+Round 20,1,Adelaide,Collingwood
+Round 20,2,Fremantle,West Coast
+Round 20,3,Melbourne,Geelong
+Round 20,4,Carlton,Gold Coast
+Round 20,5,Hawthorn,Essendon
+Round 20,6,Greater Western Sydney,Sydney
+Round 20,7,Western Bulldogs,Richmond
+Round 20,8,Brisbane,Port Adelaide
+Round 20,9,North Melbourne,St Kilda
+Round 21,1,Collingwood,Geelong
+Round 21,2,Fremantle,Western Bulldogs
+Round 21,3,St Kilda,Sydney
+Round 21,4,Hawthorn,North Melbourne
+Round 21,5,Port Adelaide,Greater Western Sydney
+Round 21,6,Carlton,Brisbane
+Round 21,7,Richmond,West Coast
+Round 21,8,Gold Coast,Melbourne
+Round 21,9,Essendon,Adelaide
+Round 22,1,Western Bulldogs,North Melbourne
+Round 22,2,Brisbane,Hawthorn
+Round 22,3,Melbourne,Fremantle
+Round 22,4,Sydney,Port Adelaide
+Round 22,5,Geelong,Essendon
+Round 22,6,Adelaide,Richmond
+Round 22,7,Greater Western Sydney,Gold Coast
+Round 22,8,West Coast,Collingwood
+Round 22,9,St Kilda,Carlton
+Round 23,1,Fremantle,Adelaide
+Round 23,2,Richmond,St Kilda
+Round 23,3,North Melbourne,Geelong
+Round 23,4,Brisbane,Gold Coast
+Round 23,5,Hawthorn,Collingwood
+Round 23,6,Port Adelaide,Melbourne
+Round 23,7,Greater Western Sydney,West Coast
+Round 23,8,Western Bulldogs,Carlton
+Round 23,9,Essendon,Sydney
+Round 24,1,St Kilda,Gold Coast
+Round 24,2,Collingwood,Brisbane
+Round 24,3,Carlton,Fremantle
+Round 24,4,Melbourne,Western Bulldogs
+Round 24,5,Adelaide,Greater Western Sydney
+Round 24,6,Geelong,Richmond
+Round 24,7,Essendon,Port Adelaide
+Round 24,8,Sydney,North Melbourne
+Round 24,9,West Coast,Hawthorn

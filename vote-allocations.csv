@@ -1,0 +1,829 @@
+round,roundNumber,game,fixtureGame,matchup,player,team,opponent,homeAway,human_vote,modelEV
+Round 0,0,1,1,Sydney v Carlton,Justin McInerney,Sydney,Carlton,Home,3.0,2.798
+Round 5,5,5,5,Sydney v Gold Coast,Justin McInerney,Sydney,Gold Coast,Home,2.0,1.917
+Round 6,6,3,3,Sydney v Greater Western Sydney,Justin McInerney,Sydney,Greater Western Sydney,Home,2.0,1.917
+Round 8,8,8,8,Sydney v Melbourne,Justin McInerney,Sydney,Melbourne,Home,1.0,0.912
+Round 0,0,1,1,Sydney v Carlton,Errol Gulden,Sydney,Carlton,Home,2.0,2.105
+Round 20,20,6,6,Greater Western Sydney v Sydney,Errol Gulden,Sydney,Greater Western Sydney,Away,3.0,3.007
+Round 21,21,3,3,St Kilda v Sydney,Errol Gulden,Sydney,St Kilda,Away,3.0,3.007
+Round 22,22,4,4,Sydney v Port Adelaide,Errol Gulden,Sydney,Port Adelaide,Home,3.0,3.007
+Round 23,23,9,9,Essendon v Sydney,Errol Gulden,Sydney,Essendon,Away,3.0,3.007
+Round 24,24,8,8,Sydney v North Melbourne,Errol Gulden,Sydney,North Melbourne,Home,3.0,3.007
+Round 0,0,1,1,Sydney v Carlton,Isaac Heeney,Sydney,Carlton,Home,1.0,1.009
+Round 4,4,5,5,West Coast v Sydney,Isaac Heeney,Sydney,West Coast,Away,3.0,2.937
+Round 5,5,5,5,Sydney v Gold Coast,Isaac Heeney,Sydney,Gold Coast,Home,3.0,2.937
+Round 8,8,8,8,Sydney v Melbourne,Isaac Heeney,Sydney,Melbourne,Home,0.5,0.448
+Round 9,9,4,4,North Melbourne v Sydney,Isaac Heeney,Sydney,North Melbourne,Away,3.0,2.937
+Round 10,10,2,2,Sydney v Collingwood,Isaac Heeney,Sydney,Collingwood,Home,0.5,0.448
+Round 12,12,3,3,Sydney v Richmond,Isaac Heeney,Sydney,Richmond,Home,3.0,2.937
+Round 13,13,6,6,Sydney v St Kilda,Isaac Heeney,Sydney,St Kilda,Home,3.0,2.937
+Round 14,14,5,5,Port Adelaide v Sydney,Isaac Heeney,Sydney,Port Adelaide,Away,3.0,2.937
+Round 17,17,2,3,Sydney v Western Bulldogs,Isaac Heeney,Sydney,Western Bulldogs,Home,1.0,1.009
+Round 23,23,9,9,Essendon v Sydney,Isaac Heeney,Sydney,Essendon,Away,2.0,2.037
+Round 0,0,1,1,Sydney v Carlton,Sam Walsh,Carlton,Sydney,Away,0.5,0.366
+Round 1,1,1,1,Carlton v Richmond,Sam Walsh,Carlton,Richmond,Home,1.0,0.919
+Round 6,6,1,1,Carlton v Collingwood,Sam Walsh,Carlton,Collingwood,Home,0.5,0.366
+Round 7,7,6,6,Fremantle v Carlton,Sam Walsh,Carlton,Fremantle,Away,1.0,0.919
+Round 12,12,2,2,Carlton v Geelong,Sam Walsh,Carlton,Geelong,Home,1.0,0.919
+Round 15,15,4,4,Greater Western Sydney v Carlton,Sam Walsh,Carlton,Greater Western Sydney,Away,3.0,2.82
+Round 16,16,3,3,Carlton v West Coast,Sam Walsh,Carlton,West Coast,Home,0.5,0.366
+Round 20,20,4,4,Carlton v Gold Coast,Sam Walsh,Carlton,Gold Coast,Home,0.5,0.366
+Round 22,22,9,9,St Kilda v Carlton,Sam Walsh,Carlton,St Kilda,Away,3.0,2.82
+Round 24,24,3,3,Carlton v Fremantle,Sam Walsh,Carlton,Fremantle,Home,2.0,1.932
+Round 0,0,2,2,Gold Coast v Geelong,Christian Petracca,Gold Coast,Geelong,Home,3.0,2.867
+Round 1,1,9,9,Gold Coast v West Coast,Christian Petracca,Gold Coast,West Coast,Home,3.0,2.867
+Round 6,6,4,4,Gold Coast v Essendon,Christian Petracca,Gold Coast,Essendon,Home,3.0,2.867
+Round 8,8,9,9,Gold Coast v Greater Western Sydney,Christian Petracca,Gold Coast,Greater Western Sydney,Home,2.0,1.964
+Round 0,0,2,2,Gold Coast v Geelong,John Noble,Gold Coast,Geelong,Home,2.0,1.948
+Round 8,8,9,9,Gold Coast v Greater Western Sydney,John Noble,Gold Coast,Greater Western Sydney,Home,3.0,2.843
+Round 9,9,6,6,Gold Coast v St Kilda,John Noble,Gold Coast,St Kilda,Home,3.0,2.843
+Round 10,10,3,3,Gold Coast v Port Adelaide,John Noble,Gold Coast,Port Adelaide,Home,2.0,1.948
+Round 24,24,1,1,St Kilda v Gold Coast,John Noble,Gold Coast,St Kilda,Away,0.5,0.369
+Round 0,0,2,2,Gold Coast v Geelong,Touk Miller,Gold Coast,Geelong,Home,1.0,0.912
+Round 2,2,3,3,Richmond v Gold Coast,Touk Miller,Gold Coast,Richmond,Away,2.0,1.917
+Round 6,6,4,4,Gold Coast v Essendon,Touk Miller,Gold Coast,Essendon,Home,0.5,0.363
+Round 19,19,8,8,Gold Coast v Western Bulldogs,Touk Miller,Gold Coast,Western Bulldogs,Home,2.0,1.917
+Round 22,22,7,7,Greater Western Sydney v Gold Coast,Touk Miller,Gold Coast,Greater Western Sydney,Away,2.0,1.917
+Round 24,24,1,1,St Kilda v Gold Coast,Touk Miller,Gold Coast,St Kilda,Away,3.0,2.797
+Round 0,0,2,2,Gold Coast v Geelong,Bailey Humphrey,Gold Coast,Geelong,Home,0.5,0.382
+Round 0,0,3,3,Greater Western Sydney v Hawthorn,Clayton Oliver,Greater Western Sydney,Hawthorn,Home,3.0,2.84
+Round 5,5,8,8,Greater Western Sydney v Richmond,Clayton Oliver,Greater Western Sydney,Richmond,Home,0.5,0.368
+Round 6,6,3,3,Sydney v Greater Western Sydney,Clayton Oliver,Greater Western Sydney,Sydney,Away,1.0,0.926
+Round 8,8,9,9,Gold Coast v Greater Western Sydney,Clayton Oliver,Greater Western Sydney,Gold Coast,Away,1.0,0.926
+Round 10,10,9,9,West Coast v Greater Western Sydney,Clayton Oliver,Greater Western Sydney,West Coast,Away,0.5,0.368
+Round 11,11,8,8,Greater Western Sydney v Brisbane,Clayton Oliver,Greater Western Sydney,Brisbane,Home,3.0,2.84
+Round 14,14,7,7,St Kilda v Greater Western Sydney,Clayton Oliver,Greater Western Sydney,St Kilda,Away,0.5,0.368
+Round 17,17,5,5,Greater Western Sydney v Fremantle,Clayton Oliver,Greater Western Sydney,Fremantle,Home,1.0,0.926
+Round 18,18,4,4,Greater Western Sydney v Geelong,Clayton Oliver,Greater Western Sydney,Geelong,Home,3.0,2.84
+Round 0,0,3,3,Greater Western Sydney v Hawthorn,Jake Stringer,Greater Western Sydney,Hawthorn,Home,2.0,1.896
+Round 17,17,5,5,Greater Western Sydney v Fremantle,Jake Stringer,Greater Western Sydney,Fremantle,Home,2.0,1.896
+Round 0,0,3,3,Greater Western Sydney v Hawthorn,Stephen Coniglio,Greater Western Sydney,Hawthorn,Home,1.0,0.863
+Round 21,21,5,5,Port Adelaide v Greater Western Sydney,Stephen Coniglio,Greater Western Sydney,Port Adelaide,Away,1.0,0.863
+Round 0,0,3,3,Greater Western Sydney v Hawthorn,Finn Callaghan,Greater Western Sydney,Hawthorn,Home,0.5,0.372
+Round 3,3,2,2,Collingwood v Greater Western Sydney,Finn Callaghan,Greater Western Sydney,Collingwood,Away,1.0,0.935
+Round 5,5,8,8,Greater Western Sydney v Richmond,Finn Callaghan,Greater Western Sydney,Richmond,Home,3.0,2.868
+Round 9,9,5,5,Greater Western Sydney v Essendon,Finn Callaghan,Greater Western Sydney,Essendon,Home,0.5,0.372
+Round 12,12,6,6,Melbourne v Greater Western Sydney,Finn Callaghan,Greater Western Sydney,Melbourne,Away,3.0,2.868
+Round 16,16,2,2,Hawthorn v Greater Western Sydney,Finn Callaghan,Greater Western Sydney,Hawthorn,Away,0.5,0.372
+Round 0,0,4,4,Brisbane v Western Bulldogs,Ed Richards,Western Bulldogs,Brisbane,Away,3.0,3.048
+Round 9,9,3,3,Port Adelaide v Western Bulldogs,Ed Richards,Western Bulldogs,Port Adelaide,Away,0.5,0.48
+Round 11,11,9,9,Western Bulldogs v Melbourne,Ed Richards,Western Bulldogs,Melbourne,Home,3.0,3.048
+Round 12,12,5,5,Western Bulldogs v Collingwood,Ed Richards,Western Bulldogs,Collingwood,Home,3.0,3.048
+Round 18,18,7,7,Western Bulldogs v West Coast,Ed Richards,Western Bulldogs,West Coast,Home,2.0,2.119
+Round 20,20,7,7,Western Bulldogs v Richmond,Ed Richards,Western Bulldogs,Richmond,Home,3.0,3.048
+Round 21,21,2,2,Fremantle v Western Bulldogs,Ed Richards,Western Bulldogs,Fremantle,Away,1.0,1.059
+Round 23,23,8,8,Western Bulldogs v Carlton,Ed Richards,Western Bulldogs,Carlton,Home,3.0,3.048
+Round 24,24,4,4,Melbourne v Western Bulldogs,Ed Richards,Western Bulldogs,Melbourne,Away,3.0,3.048
+Round 0,0,4,4,Brisbane v Western Bulldogs,Lachie Neale,Brisbane,Western Bulldogs,Home,2.0,2.008
+Round 4,4,1,1,Brisbane v Collingwood,Lachie Neale,Brisbane,Collingwood,Home,0.5,0.394
+Round 5,5,3,3,North Melbourne v Brisbane,Lachie Neale,Brisbane,North Melbourne,Away,3.0,2.922
+Round 6,6,8,9,Melbourne v Brisbane,Lachie Neale,Brisbane,Melbourne,Away,2.0,2.008
+Round 7,7,8,8,Brisbane v Adelaide,Lachie Neale,Brisbane,Adelaide,Home,2.0,2.008
+Round 8,8,4,4,Essendon v Brisbane,Lachie Neale,Brisbane,Essendon,Away,0.5,0.394
+Round 9,9,2,2,Brisbane v Carlton,Lachie Neale,Brisbane,Carlton,Home,3.0,2.922
+Round 13,13,4,4,Gold Coast v Brisbane,Lachie Neale,Brisbane,Gold Coast,Away,2.0,2.008
+Round 14,14,6,6,Richmond v Brisbane,Lachie Neale,Brisbane,Richmond,Away,0.5,0.394
+Round 18,18,9,9,Brisbane v Essendon,Lachie Neale,Brisbane,Essendon,Home,2.0,2.008
+Round 22,22,2,2,Brisbane v Hawthorn,Lachie Neale,Brisbane,Hawthorn,Home,3.0,2.922
+Round 24,24,2,2,Collingwood v Brisbane,Lachie Neale,Brisbane,Collingwood,Away,2.0,2.008
+Round 0,0,4,4,Brisbane v Western Bulldogs,Bailey Williams,Western Bulldogs,Brisbane,Away,1.0,0.863
+Round 2,2,2,2,Adelaide v Western Bulldogs,Bailey Williams,Western Bulldogs,Adelaide,Away,1.0,0.863
+Round 19,19,8,8,Gold Coast v Western Bulldogs,Bailey Williams,Western Bulldogs,Gold Coast,Away,1.0,0.863
+Round 0,0,4,4,Brisbane v Western Bulldogs,Marcus Bontempelli,Western Bulldogs,Brisbane,Away,0.5,0.393
+Round 1,1,3,3,Western Bulldogs v Greater Western Sydney,Marcus Bontempelli,Western Bulldogs,Greater Western Sydney,Home,3.0,2.878
+Round 2,2,2,2,Adelaide v Western Bulldogs,Marcus Bontempelli,Western Bulldogs,Adelaide,Away,3.0,2.878
+Round 4,4,7,7,Western Bulldogs v Essendon,Marcus Bontempelli,Western Bulldogs,Essendon,Home,3.0,2.878
+Round 7,7,1,1,Western Bulldogs v Sydney,Marcus Bontempelli,Western Bulldogs,Sydney,Home,2.0,1.979
+Round 8,8,2,2,Western Bulldogs v Fremantle,Marcus Bontempelli,Western Bulldogs,Fremantle,Home,0.5,0.393
+Round 9,9,3,3,Port Adelaide v Western Bulldogs,Marcus Bontempelli,Western Bulldogs,Port Adelaide,Away,3.0,2.878
+Round 11,11,9,9,Western Bulldogs v Melbourne,Marcus Bontempelli,Western Bulldogs,Melbourne,Home,2.0,1.979
+Round 13,13,2,2,Hawthorn v Western Bulldogs,Marcus Bontempelli,Western Bulldogs,Hawthorn,Away,3.0,2.878
+Round 15,15,7,7,St Kilda v Western Bulldogs,Marcus Bontempelli,Western Bulldogs,St Kilda,Away,3.0,2.878
+Round 18,18,7,7,Western Bulldogs v West Coast,Marcus Bontempelli,Western Bulldogs,West Coast,Home,3.0,2.878
+Round 19,19,8,8,Gold Coast v Western Bulldogs,Marcus Bontempelli,Western Bulldogs,Gold Coast,Away,3.0,2.878
+Round 20,20,7,7,Western Bulldogs v Richmond,Marcus Bontempelli,Western Bulldogs,Richmond,Home,2.0,1.979
+Round 24,24,4,4,Melbourne v Western Bulldogs,Marcus Bontempelli,Western Bulldogs,Melbourne,Away,1.0,0.953
+Round 0,0,5,5,St Kilda v Collingwood,Nick Daicos,Collingwood,St Kilda,Away,3.0,2.895
+Round 1,1,6,6,Collingwood v Adelaide,Nick Daicos,Collingwood,Adelaide,Home,2.0,2.003
+Round 3,3,2,2,Collingwood v Greater Western Sydney,Nick Daicos,Collingwood,Greater Western Sydney,Home,3.0,2.895
+Round 5,5,2,2,Collingwood v Fremantle,Nick Daicos,Collingwood,Fremantle,Home,1.0,0.986
+Round 6,6,1,1,Carlton v Collingwood,Nick Daicos,Collingwood,Carlton,Away,3.0,2.895
+Round 7,7,4,4,Essendon v Collingwood,Nick Daicos,Collingwood,Essendon,Away,2.0,2.003
+Round 8,8,1,1,Collingwood v Hawthorn,Nick Daicos,Collingwood,Hawthorn,Home,1.0,0.986
+Round 10,10,2,2,Sydney v Collingwood,Nick Daicos,Collingwood,Sydney,Away,1.0,0.986
+Round 11,11,6,6,Collingwood v West Coast,Nick Daicos,Collingwood,West Coast,Home,3.0,2.895
+Round 12,12,5,5,Western Bulldogs v Collingwood,Nick Daicos,Collingwood,Western Bulldogs,Away,1.0,0.986
+Round 13,13,8,8,Collingwood v Melbourne,Nick Daicos,Collingwood,Melbourne,Home,2.0,2.003
+Round 15,15,5,5,Collingwood v Port Adelaide,Nick Daicos,Collingwood,Port Adelaide,Home,3.0,2.895
+Round 16,16,4,4,Collingwood v Richmond,Nick Daicos,Collingwood,Richmond,Home,3.0,2.895
+Round 17,17,6,6,Gold Coast v Collingwood,Nick Daicos,Collingwood,Gold Coast,Away,3.0,2.895
+Round 18,18,2,2,Collingwood v North Melbourne,Nick Daicos,Collingwood,North Melbourne,Home,1.0,0.986
+Round 19,19,5,6,Collingwood v Carlton,Nick Daicos,Collingwood,Carlton,Home,3.0,2.895
+Round 20,20,1,1,Adelaide v Collingwood,Nick Daicos,Collingwood,Adelaide,Away,3.0,2.895
+Round 21,21,1,1,Collingwood v Geelong,Nick Daicos,Collingwood,Geelong,Home,2.0,2.003
+Round 22,22,8,8,West Coast v Collingwood,Nick Daicos,Collingwood,West Coast,Away,3.0,2.895
+Round 23,23,5,5,Hawthorn v Collingwood,Nick Daicos,Collingwood,Hawthorn,Away,3.0,2.895
+Round 0,0,5,5,St Kilda v Collingwood,Josh Daicos,Collingwood,St Kilda,Away,2.0,1.908
+Round 3,3,2,2,Collingwood v Greater Western Sydney,Josh Daicos,Collingwood,Greater Western Sydney,Home,2.0,1.908
+Round 7,7,4,4,Essendon v Collingwood,Josh Daicos,Collingwood,Essendon,Away,1.0,0.908
+Round 16,16,4,4,Collingwood v Richmond,Josh Daicos,Collingwood,Richmond,Home,0.5,0.361
+Round 18,18,2,2,Collingwood v North Melbourne,Josh Daicos,Collingwood,North Melbourne,Home,3.0,2.785
+Round 22,22,8,8,West Coast v Collingwood,Josh Daicos,Collingwood,West Coast,Away,2.0,1.908
+Round 23,23,5,5,Hawthorn v Collingwood,Josh Daicos,Collingwood,Hawthorn,Away,1.0,0.908
+Round 0,0,5,5,St Kilda v Collingwood,Jack Sinclair,St Kilda,Collingwood,Home,1.0,0.903
+Round 1,1,8,8,Melbourne v St Kilda,Jack Sinclair,St Kilda,Melbourne,Away,0.5,0.359
+Round 2,2,4,4,Greater Western Sydney v St Kilda,Jack Sinclair,St Kilda,Greater Western Sydney,Away,2.0,1.898
+Round 6,6,6,6,Adelaide v St Kilda,Jack Sinclair,St Kilda,Adelaide,Away,2.0,1.898
+Round 10,10,8,8,St Kilda v Richmond,Jack Sinclair,St Kilda,Richmond,Home,0.5,0.359
+Round 0,0,5,5,St Kilda v Collingwood,Jordan De Goey,Collingwood,St Kilda,Away,0.5,0.362
+Round 9,9,7,7,Geelong v Collingwood,Jordan De Goey,Collingwood,Geelong,Away,0.5,0.362
+Round 11,11,6,6,Collingwood v West Coast,Jordan De Goey,Collingwood,West Coast,Home,0.5,0.362
+Round 12,12,5,5,Western Bulldogs v Collingwood,Jordan De Goey,Collingwood,Western Bulldogs,Away,2.0,1.915
+Round 15,15,5,5,Collingwood v Port Adelaide,Jordan De Goey,Collingwood,Port Adelaide,Home,2.0,1.915
+Round 16,16,4,4,Collingwood v Richmond,Jordan De Goey,Collingwood,Richmond,Home,2.0,1.915
+Round 1,1,1,1,Carlton v Richmond,Patrick Cripps,Carlton,Richmond,Home,3.0,2.945
+Round 7,7,6,6,Fremantle v Carlton,Patrick Cripps,Carlton,Fremantle,Away,0.5,0.428
+Round 9,9,2,2,Brisbane v Carlton,Patrick Cripps,Carlton,Brisbane,Away,2.0,2.035
+Round 10,10,6,6,Carlton v Western Bulldogs,Patrick Cripps,Carlton,Western Bulldogs,Home,3.0,2.945
+Round 11,11,7,7,Port Adelaide v Carlton,Patrick Cripps,Carlton,Port Adelaide,Away,3.0,2.945
+Round 12,12,2,2,Carlton v Geelong,Patrick Cripps,Carlton,Geelong,Home,3.0,2.945
+Round 15,15,4,4,Greater Western Sydney v Carlton,Patrick Cripps,Carlton,Greater Western Sydney,Away,1.0,0.996
+Round 16,16,3,3,Carlton v West Coast,Patrick Cripps,Carlton,West Coast,Home,3.0,2.945
+Round 19,19,5,6,Collingwood v Carlton,Patrick Cripps,Carlton,Collingwood,Away,1.0,0.996
+Round 20,20,4,4,Carlton v Gold Coast,Patrick Cripps,Carlton,Gold Coast,Home,3.0,2.945
+Round 23,23,8,8,Western Bulldogs v Carlton,Patrick Cripps,Carlton,Western Bulldogs,Away,2.0,2.035
+Round 24,24,3,3,Carlton v Fremantle,Patrick Cripps,Carlton,Fremantle,Home,0.5,0.428
+Round 1,1,1,1,Carlton v Richmond,Jagga Smith,Carlton,Richmond,Home,2.0,1.881
+Round 10,10,6,6,Carlton v Western Bulldogs,Jagga Smith,Carlton,Western Bulldogs,Home,0.5,0.356
+Round 11,11,7,7,Port Adelaide v Carlton,Jagga Smith,Carlton,Port Adelaide,Away,0.5,0.356
+Round 12,12,2,2,Carlton v Geelong,Jagga Smith,Carlton,Geelong,Home,2.0,1.881
+Round 17,17,7,7,Richmond v Carlton,Jagga Smith,Carlton,Richmond,Away,1.0,0.895
+Round 20,20,4,4,Carlton v Gold Coast,Jagga Smith,Carlton,Gold Coast,Home,1.0,0.895
+Round 21,21,6,6,Carlton v Brisbane,Jagga Smith,Carlton,Brisbane,Home,2.0,1.881
+Round 24,24,3,3,Carlton v Fremantle,Jagga Smith,Carlton,Fremantle,Home,1.0,0.895
+Round 1,1,1,1,Carlton v Richmond,Jayden Short,Richmond,Carlton,Away,0.5,0.382
+Round 2,2,3,3,Richmond v Gold Coast,Jayden Short,Richmond,Gold Coast,Home,0.5,0.382
+Round 11,11,2,3,Richmond v Essendon,Jayden Short,Richmond,Essendon,Home,0.5,0.382
+Round 1,1,2,2,Essendon v Hawthorn,Nick Watson,Hawthorn,Essendon,Away,3.0,2.83
+Round 6,6,5,5,Hawthorn v Port Adelaide,Nick Watson,Hawthorn,Port Adelaide,Home,2.0,1.939
+Round 12,12,1,1,St Kilda v Hawthorn,Nick Watson,Hawthorn,St Kilda,Away,0.5,0.367
+Round 19,19,7,7,Richmond v Hawthorn,Nick Watson,Hawthorn,Richmond,Away,0.5,0.367
+Round 21,21,4,4,Hawthorn v North Melbourne,Nick Watson,Hawthorn,North Melbourne,Home,1.0,0.923
+Round 24,24,9,9,West Coast v Hawthorn,Nick Watson,Hawthorn,West Coast,Away,0.5,0.367
+Round 1,1,2,2,Essendon v Hawthorn,Connor Macdonald,Hawthorn,Essendon,Away,2.0,1.913
+Round 4,4,8,8,Hawthorn v Geelong,Connor Macdonald,Hawthorn,Geelong,Home,2.0,1.913
+Round 5,5,6,6,Hawthorn v Western Bulldogs,Connor Macdonald,Hawthorn,Western Bulldogs,Home,0.5,0.362
+Round 7,7,3,3,Hawthorn v Gold Coast,Connor Macdonald,Hawthorn,Gold Coast,Home,2.0,1.913
+Round 8,8,1,1,Collingwood v Hawthorn,Connor Macdonald,Hawthorn,Collingwood,Away,3.0,2.792
+Round 12,12,1,1,St Kilda v Hawthorn,Connor Macdonald,Hawthorn,St Kilda,Away,2.0,1.913
+Round 19,19,7,7,Richmond v Hawthorn,Connor Macdonald,Hawthorn,Richmond,Away,1.0,0.91
+Round 1,1,2,2,Essendon v Hawthorn,Jack Gunston,Hawthorn,Essendon,Away,1.0,0.897
+Round 2,2,1,1,Hawthorn v Sydney,Jack Gunston,Hawthorn,Sydney,Home,1.0,0.897
+Round 7,7,3,3,Hawthorn v Gold Coast,Jack Gunston,Hawthorn,Gold Coast,Home,0.5,0.357
+Round 9,9,1,1,Fremantle v Hawthorn,Jack Gunston,Hawthorn,Fremantle,Away,0.5,0.357
+Round 20,20,5,5,Hawthorn v Essendon,Jack Gunston,Hawthorn,Essendon,Home,2.0,1.887
+Round 24,24,9,9,West Coast v Hawthorn,Jack Gunston,Hawthorn,West Coast,Away,2.0,1.887
+Round 1,1,2,2,Essendon v Hawthorn,James Sicily,Hawthorn,Essendon,Away,0.5,0.375
+Round 12,12,1,1,St Kilda v Hawthorn,James Sicily,Hawthorn,St Kilda,Away,3.0,2.896
+Round 1,1,3,3,Western Bulldogs v Greater Western Sydney,Aaron Naughton,Western Bulldogs,Greater Western Sydney,Home,2.0,1.87
+Round 18,18,7,7,Western Bulldogs v West Coast,Aaron Naughton,Western Bulldogs,West Coast,Home,1.0,0.889
+Round 1,1,3,3,Western Bulldogs v Greater Western Sydney,Tom Liberatore,Western Bulldogs,Greater Western Sydney,Home,1.0,0.891
+Round 23,23,8,8,Western Bulldogs v Carlton,Tom Liberatore,Western Bulldogs,Carlton,Home,0.5,0.354
+Round 1,1,3,3,Western Bulldogs v Greater Western Sydney,Sam Darcy,Western Bulldogs,Greater Western Sydney,Home,0.5,0.382
+Round 1,1,4,4,Geelong v Fremantle,Max Holmes,Geelong,Fremantle,Home,3.0,2.888
+Round 3,3,1,1,Geelong v Adelaide,Max Holmes,Geelong,Adelaide,Home,2.0,1.997
+Round 5,5,7,7,Geelong v West Coast,Max Holmes,Geelong,West Coast,Home,2.0,1.997
+Round 8,8,6,6,Geelong v North Melbourne,Max Holmes,Geelong,North Melbourne,Home,3.0,2.888
+Round 9,9,7,7,Geelong v Collingwood,Max Holmes,Geelong,Collingwood,Home,2.0,1.997
+Round 11,11,5,5,Geelong v Sydney,Max Holmes,Geelong,Sydney,Home,2.0,1.997
+Round 14,14,2,2,Geelong v Gold Coast,Max Holmes,Geelong,Gold Coast,Home,3.0,2.888
+Round 1,1,4,4,Geelong v Fremantle,Luke Jackson,Fremantle,Geelong,Away,2.0,2.011
+Round 5,5,2,2,Collingwood v Fremantle,Luke Jackson,Fremantle,Collingwood,Away,3.0,2.865
+Round 6,6,9,8,West Coast v Fremantle,Luke Jackson,Fremantle,West Coast,Away,0.5,0.506
+Round 7,7,6,6,Fremantle v Carlton,Luke Jackson,Fremantle,Carlton,Home,2.0,2.011
+Round 8,8,2,2,Western Bulldogs v Fremantle,Luke Jackson,Fremantle,Western Bulldogs,Away,3.0,2.865
+Round 9,9,1,1,Fremantle v Hawthorn,Luke Jackson,Fremantle,Hawthorn,Home,3.0,2.865
+Round 13,13,3,3,North Melbourne v Fremantle,Luke Jackson,Fremantle,North Melbourne,Away,3.0,2.865
+Round 15,15,1,1,Fremantle v Geelong,Luke Jackson,Fremantle,Geelong,Home,3.0,2.865
+Round 16,16,7,6,Fremantle v Gold Coast,Luke Jackson,Fremantle,Gold Coast,Home,0.5,0.506
+Round 20,20,3,2,Fremantle v West Coast,Luke Jackson,Fremantle,West Coast,Home,0.5,0.506
+Round 21,21,2,2,Fremantle v Western Bulldogs,Luke Jackson,Fremantle,Western Bulldogs,Home,0.5,0.506
+Round 22,22,3,3,Melbourne v Fremantle,Luke Jackson,Fremantle,Melbourne,Away,1.0,1.038
+Round 23,23,1,1,Fremantle v Adelaide,Luke Jackson,Fremantle,Adelaide,Home,1.0,1.038
+Round 1,1,4,4,Geelong v Fremantle,Jeremy Cameron,Geelong,Fremantle,Home,1.0,0.914
+Round 6,6,2,2,Geelong v Western Bulldogs,Jeremy Cameron,Geelong,Western Bulldogs,Home,3.0,2.805
+Round 8,8,6,6,Geelong v North Melbourne,Jeremy Cameron,Geelong,North Melbourne,Home,0.5,0.364
+Round 11,11,5,5,Geelong v Sydney,Jeremy Cameron,Geelong,Sydney,Home,1.0,0.914
+Round 1,1,4,4,Geelong v Fremantle,Bailey Smith,Geelong,Fremantle,Home,0.5,0.399
+Round 3,3,1,1,Geelong v Adelaide,Bailey Smith,Geelong,Adelaide,Home,3.0,2.931
+Round 4,4,8,8,Hawthorn v Geelong,Bailey Smith,Geelong,Hawthorn,Away,1.0,0.97
+Round 5,5,7,7,Geelong v West Coast,Bailey Smith,Geelong,West Coast,Home,3.0,2.931
+Round 6,6,2,2,Geelong v Western Bulldogs,Bailey Smith,Geelong,Western Bulldogs,Home,2.0,2.015
+Round 9,9,7,7,Geelong v Collingwood,Bailey Smith,Geelong,Collingwood,Home,3.0,2.931
+Round 10,10,1,1,Brisbane v Geelong,Bailey Smith,Geelong,Brisbane,Away,2.0,2.015
+Round 11,11,5,5,Geelong v Sydney,Bailey Smith,Geelong,Sydney,Home,0.5,0.399
+Round 12,12,2,2,Carlton v Geelong,Bailey Smith,Geelong,Carlton,Away,0.5,0.399
+Round 14,14,2,2,Geelong v Gold Coast,Bailey Smith,Geelong,Gold Coast,Home,2.0,2.015
+Round 19,19,1,1,Geelong v St Kilda,Bailey Smith,Geelong,St Kilda,Home,3.0,2.931
+Round 20,20,2,3,Melbourne v Geelong,Bailey Smith,Geelong,Melbourne,Away,2.0,2.015
+Round 22,22,5,5,Geelong v Essendon,Bailey Smith,Geelong,Essendon,Home,3.0,2.931
+Round 23,23,3,3,North Melbourne v Geelong,Bailey Smith,Geelong,North Melbourne,Away,3.0,2.931
+Round 24,24,5,6,Geelong v Richmond,Bailey Smith,Geelong,Richmond,Home,3.0,2.931
+Round 1,1,5,5,Sydney v Brisbane,Riley Bice,Sydney,Brisbane,Home,3.0,2.889
+Round 1,1,5,5,Sydney v Brisbane,Tom McCartin,Sydney,Brisbane,Home,2.0,1.896
+Round 1,1,5,5,Sydney v Brisbane,Nick Blakey,Sydney,Brisbane,Home,1.0,0.908
+Round 6,6,3,3,Sydney v Greater Western Sydney,Nick Blakey,Sydney,Greater Western Sydney,Home,3.0,2.786
+Round 10,10,2,2,Sydney v Collingwood,Nick Blakey,Sydney,Collingwood,Home,2.0,1.909
+Round 21,21,3,3,St Kilda v Sydney,Nick Blakey,Sydney,St Kilda,Away,1.0,0.908
+Round 1,1,5,5,Sydney v Brisbane,Joel Amartey,Sydney,Brisbane,Home,0.5,0.382
+Round 1,1,6,6,Collingwood v Adelaide,Wayne Milera,Adelaide,Collingwood,Away,3.0,2.789
+Round 8,8,3,3,Adelaide v Port Adelaide,Wayne Milera,Adelaide,Port Adelaide,Home,2.0,1.911
+Round 9,9,9,9,Richmond v Adelaide,Wayne Milera,Adelaide,Richmond,Away,1.0,0.909
+Round 11,11,1,1,Hawthorn v Adelaide,Wayne Milera,Adelaide,Hawthorn,Away,0.5,0.361
+Round 15,15,3,3,Adelaide v Melbourne,Wayne Milera,Adelaide,Melbourne,Home,1.0,0.909
+Round 19,19,2,2,Sydney v Adelaide,Wayne Milera,Adelaide,Sydney,Away,2.0,1.911
+Round 1,1,6,6,Collingwood v Adelaide,Alex Neal-Bullen,Adelaide,Collingwood,Away,1.0,0.863
+Round 1,1,6,6,Collingwood v Adelaide,Josh Worrell,Adelaide,Collingwood,Away,0.5,0.382
+Round 1,1,7,7,North Melbourne v Port Adelaide,Dylan Stephens,North Melbourne,Port Adelaide,Home,3.0,2.839
+Round 4,4,2,2,North Melbourne v Carlton,Dylan Stephens,North Melbourne,Carlton,Home,2.0,1.946
+Round 1,1,7,7,North Melbourne v Port Adelaide,Harry Sheezel,North Melbourne,Port Adelaide,Home,2.0,1.882
+Round 2,2,7,7,West Coast v North Melbourne,Harry Sheezel,North Melbourne,West Coast,Away,1.0,0.866
+Round 3,3,5,5,Essendon v North Melbourne,Harry Sheezel,North Melbourne,Essendon,Away,1.0,0.866
+Round 4,4,2,2,North Melbourne v Carlton,Harry Sheezel,North Melbourne,Carlton,Home,1.0,0.866
+Round 6,6,7,7,North Melbourne v Richmond,Harry Sheezel,North Melbourne,Richmond,Home,3.0,2.773
+Round 7,7,9,9,Greater Western Sydney v North Melbourne,Harry Sheezel,North Melbourne,Greater Western Sydney,Away,1.0,0.866
+Round 9,9,4,4,North Melbourne v Sydney,Harry Sheezel,North Melbourne,Sydney,Home,1.0,0.866
+Round 11,11,4,4,North Melbourne v Gold Coast,Harry Sheezel,North Melbourne,Gold Coast,Home,0.5,0.311
+Round 14,14,4,4,North Melbourne v West Coast,Harry Sheezel,North Melbourne,West Coast,Home,3.0,2.773
+Round 15,15,6,6,Richmond v North Melbourne,Harry Sheezel,North Melbourne,Richmond,Away,1.0,0.866
+Round 16,16,6,7,North Melbourne v Essendon,Harry Sheezel,North Melbourne,Essendon,Home,3.0,2.773
+Round 17,17,9,9,Port Adelaide v North Melbourne,Harry Sheezel,North Melbourne,Port Adelaide,Away,2.0,1.882
+Round 19,19,4,4,North Melbourne v Melbourne,Harry Sheezel,North Melbourne,Melbourne,Home,1.0,0.866
+Round 20,20,9,9,North Melbourne v St Kilda,Harry Sheezel,North Melbourne,St Kilda,Home,0.5,0.311
+Round 22,22,1,1,Western Bulldogs v North Melbourne,Harry Sheezel,North Melbourne,Western Bulldogs,Away,0.5,0.311
+Round 1,1,7,7,North Melbourne v Port Adelaide,Luke Parker,North Melbourne,Port Adelaide,Home,1.0,0.931
+Round 3,3,5,5,Essendon v North Melbourne,Luke Parker,North Melbourne,Essendon,Away,3.0,2.856
+Round 9,9,4,4,North Melbourne v Sydney,Luke Parker,North Melbourne,Sydney,Home,0.5,0.37
+Round 15,15,6,6,Richmond v North Melbourne,Luke Parker,North Melbourne,Richmond,Away,0.5,0.37
+Round 16,16,6,7,North Melbourne v Essendon,Luke Parker,North Melbourne,Essendon,Home,0.5,0.37
+Round 1,1,7,7,North Melbourne v Port Adelaide,Luke Davies-Uniacke,North Melbourne,Port Adelaide,Home,0.5,0.378
+Round 3,3,5,5,Essendon v North Melbourne,Luke Davies-Uniacke,North Melbourne,Essendon,Away,0.5,0.378
+Round 5,5,3,3,North Melbourne v Brisbane,Luke Davies-Uniacke,North Melbourne,Brisbane,Home,2.0,2.0
+Round 6,6,7,7,North Melbourne v Richmond,Luke Davies-Uniacke,North Melbourne,Richmond,Home,1.0,0.951
+Round 9,9,4,4,North Melbourne v Sydney,Luke Davies-Uniacke,North Melbourne,Sydney,Home,2.0,2.0
+Round 11,11,4,4,North Melbourne v Gold Coast,Luke Davies-Uniacke,North Melbourne,Gold Coast,Home,3.0,2.919
+Round 16,16,6,7,North Melbourne v Essendon,Luke Davies-Uniacke,North Melbourne,Essendon,Home,2.0,2.0
+Round 17,17,9,9,Port Adelaide v North Melbourne,Luke Davies-Uniacke,North Melbourne,Port Adelaide,Away,1.0,0.951
+Round 21,21,4,4,Hawthorn v North Melbourne,Luke Davies-Uniacke,North Melbourne,Hawthorn,Away,0.5,0.378
+Round 22,22,1,1,Western Bulldogs v North Melbourne,Luke Davies-Uniacke,North Melbourne,Western Bulldogs,Away,3.0,2.919
+Round 1,1,8,8,Melbourne v St Kilda,Max Gawn,Melbourne,St Kilda,Home,3.0,2.945
+Round 3,3,7,7,Carlton v Melbourne,Max Gawn,Melbourne,Carlton,Away,2.0,2.039
+Round 4,4,6,6,Melbourne v Gold Coast,Max Gawn,Melbourne,Gold Coast,Home,3.0,2.945
+Round 5,5,4,4,Essendon v Melbourne,Max Gawn,Melbourne,Essendon,Away,0.5,0.439
+Round 10,10,5,5,Melbourne v Hawthorn,Max Gawn,Melbourne,Hawthorn,Home,2.0,2.039
+Round 13,13,8,8,Collingwood v Melbourne,Max Gawn,Melbourne,Collingwood,Away,0.5,0.439
+Round 14,14,3,3,Melbourne v Essendon,Max Gawn,Melbourne,Essendon,Home,2.0,2.039
+Round 15,15,3,3,Adelaide v Melbourne,Max Gawn,Melbourne,Adelaide,Away,2.0,2.039
+Round 17,17,4,4,Hawthorn v Melbourne,Max Gawn,Melbourne,Hawthorn,Away,2.0,2.039
+Round 18,18,8,8,Melbourne v Richmond,Max Gawn,Melbourne,Richmond,Home,0.5,0.439
+Round 21,21,8,8,Gold Coast v Melbourne,Max Gawn,Melbourne,Gold Coast,Away,3.0,2.945
+Round 23,23,6,6,Port Adelaide v Melbourne,Max Gawn,Melbourne,Port Adelaide,Away,2.0,2.039
+Round 24,24,4,4,Melbourne v Western Bulldogs,Max Gawn,Melbourne,Western Bulldogs,Home,2.0,2.039
+Round 1,1,8,8,Melbourne v St Kilda,Jacob van Rooyen,Melbourne,St Kilda,Home,2.0,1.946
+Round 9,9,8,8,Melbourne v West Coast,Jacob van Rooyen,Melbourne,West Coast,Home,2.0,1.946
+Round 17,17,4,4,Hawthorn v Melbourne,Jacob van Rooyen,Melbourne,Hawthorn,Away,3.0,2.84
+Round 18,18,8,8,Melbourne v Richmond,Jacob van Rooyen,Melbourne,Richmond,Home,3.0,2.84
+Round 1,1,8,8,Melbourne v St Kilda,Max Hall,St Kilda,Melbourne,Away,1.0,0.9
+Round 8,8,7,7,Carlton v St Kilda,Max Hall,St Kilda,Carlton,Away,1.0,0.9
+Round 10,10,8,8,St Kilda v Richmond,Max Hall,St Kilda,Richmond,Home,2.0,1.891
+Round 11,11,3,2,Fremantle v St Kilda,Max Hall,St Kilda,Fremantle,Away,0.5,0.358
+Round 17,17,8,8,Essendon v St Kilda,Max Hall,St Kilda,Essendon,Away,1.0,0.9
+Round 21,21,3,3,St Kilda v Sydney,Max Hall,St Kilda,Sydney,Home,0.5,0.358
+Round 22,22,9,9,St Kilda v Carlton,Max Hall,St Kilda,Carlton,Home,1.0,0.9
+Round 23,23,2,2,Richmond v St Kilda,Max Hall,St Kilda,Richmond,Away,3.0,2.76
+Round 24,24,1,1,St Kilda v Gold Coast,Max Hall,St Kilda,Gold Coast,Home,1.0,0.9
+Round 1,1,9,9,Gold Coast v West Coast,Noah Anderson,Gold Coast,West Coast,Home,2.0,1.897
+Round 9,9,6,6,Gold Coast v St Kilda,Noah Anderson,Gold Coast,St Kilda,Home,1.0,0.902
+Round 10,10,3,3,Gold Coast v Port Adelaide,Noah Anderson,Gold Coast,Port Adelaide,Home,3.0,2.769
+Round 14,14,2,2,Geelong v Gold Coast,Noah Anderson,Gold Coast,Geelong,Away,1.0,0.902
+Round 15,15,2,2,Gold Coast v Hawthorn,Noah Anderson,Gold Coast,Hawthorn,Home,2.0,1.897
+Round 22,22,7,7,Greater Western Sydney v Gold Coast,Noah Anderson,Gold Coast,Greater Western Sydney,Away,1.0,0.902
+Round 24,24,1,1,St Kilda v Gold Coast,Noah Anderson,Gold Coast,St Kilda,Away,2.0,1.897
+Round 1,1,9,9,Gold Coast v West Coast,Jarrod Witts,Gold Coast,West Coast,Home,1.0,0.863
+Round 1,1,9,9,Gold Coast v West Coast,Joel Jeffrey,Gold Coast,West Coast,Home,0.5,0.382
+Round 2,2,1,1,Hawthorn v Sydney,Dylan Moore,Hawthorn,Sydney,Home,3.0,2.84
+Round 15,15,2,2,Gold Coast v Hawthorn,Dylan Moore,Hawthorn,Gold Coast,Away,0.5,0.368
+Round 24,24,9,9,West Coast v Hawthorn,Dylan Moore,Hawthorn,West Coast,Away,1.0,0.926
+Round 2,2,1,1,Hawthorn v Sydney,Jai Newcombe,Hawthorn,Sydney,Home,2.0,2.068
+Round 5,5,6,6,Hawthorn v Western Bulldogs,Jai Newcombe,Hawthorn,Western Bulldogs,Home,3.0,2.975
+Round 7,7,3,3,Hawthorn v Gold Coast,Jai Newcombe,Hawthorn,Gold Coast,Home,3.0,2.975
+Round 8,8,1,1,Collingwood v Hawthorn,Jai Newcombe,Hawthorn,Collingwood,Away,2.0,2.068
+Round 13,13,2,2,Hawthorn v Western Bulldogs,Jai Newcombe,Hawthorn,Western Bulldogs,Home,2.0,2.068
+Round 15,15,2,2,Gold Coast v Hawthorn,Jai Newcombe,Hawthorn,Gold Coast,Away,3.0,2.975
+Round 16,16,2,2,Hawthorn v Greater Western Sydney,Jai Newcombe,Hawthorn,Greater Western Sydney,Home,3.0,2.975
+Round 21,21,4,4,Hawthorn v North Melbourne,Jai Newcombe,Hawthorn,North Melbourne,Home,3.0,2.975
+Round 23,23,5,5,Hawthorn v Collingwood,Jai Newcombe,Hawthorn,Collingwood,Home,0.5,0.468
+Round 2,2,1,1,Hawthorn v Sydney,Chad Warner,Sydney,Hawthorn,Away,0.5,0.372
+Round 7,7,1,1,Western Bulldogs v Sydney,Chad Warner,Sydney,Western Bulldogs,Away,0.5,0.372
+Round 12,12,3,3,Sydney v Richmond,Chad Warner,Sydney,Richmond,Home,1.0,0.934
+Round 13,13,6,6,Sydney v St Kilda,Chad Warner,Sydney,St Kilda,Home,2.0,1.964
+Round 14,14,5,5,Port Adelaide v Sydney,Chad Warner,Sydney,Port Adelaide,Away,2.0,1.964
+Round 16,16,1,1,Brisbane v Sydney,Chad Warner,Sydney,Brisbane,Away,2.0,1.964
+Round 20,20,6,6,Greater Western Sydney v Sydney,Chad Warner,Sydney,Greater Western Sydney,Away,2.0,1.964
+Round 21,21,3,3,St Kilda v Sydney,Chad Warner,Sydney,St Kilda,Away,2.0,1.964
+Round 22,22,4,4,Sydney v Port Adelaide,Chad Warner,Sydney,Port Adelaide,Home,2.0,1.964
+Round 23,23,9,9,Essendon v Sydney,Chad Warner,Sydney,Essendon,Away,1.0,0.934
+Round 2,2,2,2,Adelaide v Western Bulldogs,Joel Freijah,Western Bulldogs,Adelaide,Away,2.0,1.896
+Round 2,2,2,2,Adelaide v Western Bulldogs,Jordan Dawson,Adelaide,Western Bulldogs,Home,0.5,0.461
+Round 5,5,1,1,Adelaide v Carlton,Jordan Dawson,Adelaide,Carlton,Home,0.5,0.461
+Round 9,9,9,9,Richmond v Adelaide,Jordan Dawson,Adelaide,Richmond,Away,2.0,2.118
+Round 10,10,4,4,Adelaide v North Melbourne,Jordan Dawson,Adelaide,North Melbourne,Home,2.0,2.118
+Round 11,11,1,1,Hawthorn v Adelaide,Jordan Dawson,Adelaide,Hawthorn,Away,1.0,1.046
+Round 13,13,1,1,Adelaide v Geelong,Jordan Dawson,Adelaide,Geelong,Home,3.0,3.058
+Round 14,14,1,1,Western Bulldogs v Adelaide,Jordan Dawson,Adelaide,Western Bulldogs,Away,3.0,3.058
+Round 17,17,3,2,West Coast v Adelaide,Jordan Dawson,Adelaide,West Coast,Away,3.0,3.058
+Round 18,18,6,6,Adelaide v Gold Coast,Jordan Dawson,Adelaide,Gold Coast,Home,2.0,2.118
+Round 21,21,9,9,Essendon v Adelaide,Jordan Dawson,Adelaide,Essendon,Away,1.0,1.046
+Round 22,22,6,6,Adelaide v Richmond,Jordan Dawson,Adelaide,Richmond,Home,2.0,2.118
+Round 24,24,6,5,Adelaide v Greater Western Sydney,Jordan Dawson,Adelaide,Greater Western Sydney,Home,1.0,1.046
+Round 2,2,3,3,Richmond v Gold Coast,Ben King,Gold Coast,Richmond,Away,3.0,2.889
+Round 2,2,3,3,Richmond v Gold Coast,Bodhi Uwland,Gold Coast,Richmond,Away,1.0,0.89
+Round 9,9,6,6,Gold Coast v St Kilda,Bodhi Uwland,Gold Coast,St Kilda,Home,0.5,0.354
+Round 10,10,3,3,Gold Coast v Port Adelaide,Bodhi Uwland,Gold Coast,Port Adelaide,Home,1.0,0.89
+Round 17,17,6,6,Gold Coast v Collingwood,Bodhi Uwland,Gold Coast,Collingwood,Home,0.5,0.354
+Round 2,2,4,4,Greater Western Sydney v St Kilda,Lachie Ash,Greater Western Sydney,St Kilda,Home,3.0,2.869
+Round 5,5,8,8,Greater Western Sydney v Richmond,Lachie Ash,Greater Western Sydney,Richmond,Home,2.0,1.966
+Round 7,7,9,9,Greater Western Sydney v North Melbourne,Lachie Ash,Greater Western Sydney,North Melbourne,Home,0.5,0.372
+Round 12,12,6,6,Melbourne v Greater Western Sydney,Lachie Ash,Greater Western Sydney,Melbourne,Away,0.5,0.372
+Round 21,21,5,5,Port Adelaide v Greater Western Sydney,Lachie Ash,Greater Western Sydney,Port Adelaide,Away,0.5,0.372
+Round 23,23,7,7,Greater Western Sydney v West Coast,Lachie Ash,Greater Western Sydney,West Coast,Home,3.0,2.869
+Round 2,2,4,4,Greater Western Sydney v St Kilda,Nasiah Wanganeen-Milera,St Kilda,Greater Western Sydney,Away,1.0,1.07
+Round 3,3,3,3,St Kilda v Brisbane,Nasiah Wanganeen-Milera,St Kilda,Brisbane,Home,0.5,0.491
+Round 5,5,9,9,Port Adelaide v St Kilda,Nasiah Wanganeen-Milera,St Kilda,Port Adelaide,Away,3.0,3.056
+Round 7,7,7,7,St Kilda v West Coast,Nasiah Wanganeen-Milera,St Kilda,West Coast,Home,3.0,3.056
+Round 8,8,7,7,Carlton v St Kilda,Nasiah Wanganeen-Milera,St Kilda,Carlton,Away,3.0,3.056
+Round 14,14,7,7,St Kilda v Greater Western Sydney,Nasiah Wanganeen-Milera,St Kilda,Greater Western Sydney,Home,2.0,2.128
+Round 15,15,7,7,St Kilda v Western Bulldogs,Nasiah Wanganeen-Milera,St Kilda,Western Bulldogs,Home,2.0,2.128
+Round 17,17,8,8,Essendon v St Kilda,Nasiah Wanganeen-Milera,St Kilda,Essendon,Away,3.0,3.056
+Round 18,18,3,3,St Kilda v Port Adelaide,Nasiah Wanganeen-Milera,St Kilda,Port Adelaide,Home,0.5,0.491
+Round 20,20,9,9,North Melbourne v St Kilda,Nasiah Wanganeen-Milera,St Kilda,North Melbourne,Away,3.0,3.056
+Round 2,2,4,4,Greater Western Sydney v St Kilda,Callum Wilkie,St Kilda,Greater Western Sydney,Away,0.5,0.359
+Round 5,5,9,9,Port Adelaide v St Kilda,Callum Wilkie,St Kilda,Port Adelaide,Away,1.0,0.904
+Round 6,6,6,6,Adelaide v St Kilda,Callum Wilkie,St Kilda,Adelaide,Away,0.5,0.359
+Round 18,18,3,3,St Kilda v Port Adelaide,Callum Wilkie,St Kilda,Port Adelaide,Home,2.0,1.9
+Round 2,2,5,5,Fremantle v Melbourne,Andrew Brayshaw,Fremantle,Melbourne,Home,3.0,2.883
+Round 4,4,3,3,Adelaide v Fremantle,Andrew Brayshaw,Fremantle,Adelaide,Away,2.0,1.992
+Round 13,13,3,3,North Melbourne v Fremantle,Andrew Brayshaw,Fremantle,North Melbourne,Away,2.0,1.992
+Round 15,15,1,1,Fremantle v Geelong,Andrew Brayshaw,Fremantle,Geelong,Home,2.0,1.992
+Round 16,16,7,6,Fremantle v Gold Coast,Andrew Brayshaw,Fremantle,Gold Coast,Home,3.0,2.883
+Round 18,18,1,1,Fremantle v Sydney,Andrew Brayshaw,Fremantle,Sydney,Home,0.5,0.419
+Round 19,19,3,3,Port Adelaide v Fremantle,Andrew Brayshaw,Fremantle,Port Adelaide,Away,0.5,0.419
+Round 2,2,5,5,Fremantle v Melbourne,Shai Bolton,Fremantle,Melbourne,Home,2.0,1.913
+Round 3,3,4,4,Fremantle v Richmond,Shai Bolton,Fremantle,Richmond,Home,2.0,1.913
+Round 7,7,6,6,Fremantle v Carlton,Shai Bolton,Fremantle,Carlton,Home,3.0,2.792
+Round 8,8,2,2,Western Bulldogs v Fremantle,Shai Bolton,Fremantle,Western Bulldogs,Away,2.0,1.913
+Round 10,10,7,7,Essendon v Fremantle,Shai Bolton,Fremantle,Essendon,Away,2.0,1.913
+Round 11,11,3,2,Fremantle v St Kilda,Shai Bolton,Fremantle,St Kilda,Home,1.0,0.91
+Round 23,23,1,1,Fremantle v Adelaide,Shai Bolton,Fremantle,Adelaide,Home,0.5,0.362
+Round 2,2,5,5,Fremantle v Melbourne,Josh Treacy,Fremantle,Melbourne,Home,1.0,0.906
+Round 3,3,4,4,Fremantle v Richmond,Josh Treacy,Fremantle,Richmond,Home,1.0,0.906
+Round 11,11,3,2,Fremantle v St Kilda,Josh Treacy,Fremantle,St Kilda,Home,2.0,1.904
+Round 12,12,4,4,Brisbane v Fremantle,Josh Treacy,Fremantle,Brisbane,Away,3.0,2.779
+Round 18,18,1,1,Fremantle v Sydney,Josh Treacy,Fremantle,Sydney,Home,2.0,1.904
+Round 21,21,2,2,Fremantle v Western Bulldogs,Josh Treacy,Fremantle,Western Bulldogs,Home,2.0,1.904
+Round 2,2,5,5,Fremantle v Melbourne,Murphy Reid,Fremantle,Melbourne,Home,0.5,0.447
+Round 4,4,3,3,Adelaide v Fremantle,Murphy Reid,Fremantle,Adelaide,Away,0.5,0.447
+Round 6,6,9,8,West Coast v Fremantle,Murphy Reid,Fremantle,West Coast,Away,2.0,2.017
+Round 10,10,7,7,Essendon v Fremantle,Murphy Reid,Fremantle,Essendon,Away,3.0,2.906
+Round 11,11,3,2,Fremantle v St Kilda,Murphy Reid,Fremantle,St Kilda,Home,3.0,2.906
+Round 15,15,1,1,Fremantle v Geelong,Murphy Reid,Fremantle,Geelong,Home,1.0,1.002
+Round 16,16,7,6,Fremantle v Gold Coast,Murphy Reid,Fremantle,Gold Coast,Home,1.0,1.002
+Round 18,18,1,1,Fremantle v Sydney,Murphy Reid,Fremantle,Sydney,Home,3.0,2.906
+Round 20,20,3,2,Fremantle v West Coast,Murphy Reid,Fremantle,West Coast,Home,2.0,2.017
+Round 2,2,6,6,Port Adelaide v Essendon,Zak Butters,Port Adelaide,Essendon,Home,3.0,2.997
+Round 3,3,6,6,Port Adelaide v West Coast,Zak Butters,Port Adelaide,West Coast,Home,1.0,1.01
+Round 4,4,4,4,Richmond v Port Adelaide,Zak Butters,Port Adelaide,Richmond,Away,2.0,2.069
+Round 5,5,9,9,Port Adelaide v St Kilda,Zak Butters,Port Adelaide,St Kilda,Home,2.0,2.069
+Round 6,6,5,5,Hawthorn v Port Adelaide,Zak Butters,Port Adelaide,Hawthorn,Away,3.0,2.997
+Round 8,8,3,3,Adelaide v Port Adelaide,Zak Butters,Port Adelaide,Adelaide,Away,0.5,0.432
+Round 9,9,3,3,Port Adelaide v Western Bulldogs,Zak Butters,Port Adelaide,Western Bulldogs,Home,1.0,1.01
+Round 10,10,3,3,Gold Coast v Port Adelaide,Zak Butters,Port Adelaide,Gold Coast,Away,0.5,0.432
+Round 14,14,5,5,Port Adelaide v Sydney,Zak Butters,Port Adelaide,Sydney,Home,0.5,0.432
+Round 16,16,5,5,Port Adelaide v Adelaide,Zak Butters,Port Adelaide,Adelaide,Home,3.0,2.997
+Round 17,17,9,9,Port Adelaide v North Melbourne,Zak Butters,Port Adelaide,North Melbourne,Home,0.5,0.432
+Round 2,2,6,6,Port Adelaide v Essendon,Jason Horne-Francis,Port Adelaide,Essendon,Home,2.0,1.978
+Round 4,4,4,4,Richmond v Port Adelaide,Jason Horne-Francis,Port Adelaide,Richmond,Away,1.0,0.961
+Round 6,6,5,5,Hawthorn v Port Adelaide,Jason Horne-Francis,Port Adelaide,Hawthorn,Away,1.0,0.961
+Round 7,7,5,5,Port Adelaide v Geelong,Jason Horne-Francis,Port Adelaide,Geelong,Home,3.0,2.869
+Round 11,11,7,7,Port Adelaide v Carlton,Jason Horne-Francis,Port Adelaide,Carlton,Home,1.0,0.961
+Round 13,13,5,5,West Coast v Port Adelaide,Jason Horne-Francis,Port Adelaide,West Coast,Away,3.0,2.869
+Round 15,15,5,5,Collingwood v Port Adelaide,Jason Horne-Francis,Port Adelaide,Collingwood,Away,1.0,0.961
+Round 16,16,5,5,Port Adelaide v Adelaide,Jason Horne-Francis,Port Adelaide,Adelaide,Home,2.0,1.978
+Round 17,17,9,9,Port Adelaide v North Melbourne,Jason Horne-Francis,Port Adelaide,North Melbourne,Home,3.0,2.869
+Round 20,20,8,8,Brisbane v Port Adelaide,Jason Horne-Francis,Port Adelaide,Brisbane,Away,0.5,0.405
+Round 21,21,5,5,Port Adelaide v Greater Western Sydney,Jason Horne-Francis,Port Adelaide,Greater Western Sydney,Home,2.0,1.978
+Round 2,2,6,6,Port Adelaide v Essendon,Aliir Aliir,Port Adelaide,Essendon,Home,1.0,0.911
+Round 4,4,4,4,Richmond v Port Adelaide,Aliir Aliir,Port Adelaide,Richmond,Away,3.0,2.794
+Round 8,8,3,3,Adelaide v Port Adelaide,Aliir Aliir,Port Adelaide,Adelaide,Away,1.0,0.911
+Round 2,2,6,6,Port Adelaide v Essendon,Joe Richards,Port Adelaide,Essendon,Home,0.5,0.35
+Round 14,14,5,5,Port Adelaide v Sydney,Joe Richards,Port Adelaide,Sydney,Home,1.0,0.879
+Round 19,19,3,3,Port Adelaide v Fremantle,Joe Richards,Port Adelaide,Fremantle,Home,1.0,0.879
+Round 2,2,7,7,West Coast v North Melbourne,Harley Reid,West Coast,North Melbourne,Home,3.0,2.831
+Round 3,3,6,6,Port Adelaide v West Coast,Harley Reid,West Coast,Port Adelaide,Away,3.0,2.831
+Round 8,8,5,5,West Coast v Richmond,Harley Reid,West Coast,Richmond,Home,2.0,1.94
+Round 10,10,9,9,West Coast v Greater Western Sydney,Harley Reid,West Coast,Greater Western Sydney,Home,3.0,2.831
+Round 12,12,7,7,West Coast v Essendon,Harley Reid,West Coast,Essendon,Home,2.0,1.94
+Round 18,18,7,7,Western Bulldogs v West Coast,Harley Reid,West Coast,Western Bulldogs,Away,0.5,0.367
+Round 21,21,7,7,Richmond v West Coast,Harley Reid,West Coast,Richmond,Away,2.0,1.94
+Round 22,22,8,8,West Coast v Collingwood,Harley Reid,West Coast,Collingwood,Home,1.0,0.923
+Round 2,2,7,7,West Coast v North Melbourne,Elliot Yeo,West Coast,North Melbourne,Home,2.0,1.896
+Round 2,2,7,7,West Coast v North Melbourne,Tristan Xerri,North Melbourne,West Coast,Away,0.5,0.362
+Round 7,7,9,9,Greater Western Sydney v North Melbourne,Tristan Xerri,North Melbourne,Greater Western Sydney,Away,2.0,1.915
+Round 8,8,6,6,Geelong v North Melbourne,Tristan Xerri,North Melbourne,Geelong,Away,2.0,1.915
+Round 18,18,2,2,Collingwood v North Melbourne,Tristan Xerri,North Melbourne,Collingwood,Away,0.5,0.362
+Round 3,3,1,1,Geelong v Adelaide,Gryan Miers,Geelong,Adelaide,Home,1.0,0.863
+Round 19,19,1,1,Geelong v St Kilda,Gryan Miers,Geelong,St Kilda,Home,1.0,0.863
+Round 3,3,1,1,Geelong v Adelaide,Josh Rachele,Adelaide,Geelong,Away,0.5,0.377
+Round 5,5,1,1,Adelaide v Carlton,Josh Rachele,Adelaide,Carlton,Home,3.0,2.904
+Round 10,10,4,4,Adelaide v North Melbourne,Josh Rachele,Adelaide,North Melbourne,Home,0.5,0.377
+Round 14,14,1,1,Western Bulldogs v Adelaide,Josh Rachele,Adelaide,Western Bulldogs,Away,0.5,0.377
+Round 3,3,2,2,Collingwood v Greater Western Sydney,Tim Membrey,Collingwood,Greater Western Sydney,Home,0.5,0.354
+Round 17,17,6,6,Gold Coast v Collingwood,Tim Membrey,Collingwood,Gold Coast,Away,1.0,0.891
+Round 3,3,3,3,St Kilda v Brisbane,Jarrod Berry,Brisbane,St Kilda,Away,3.0,2.889
+Round 3,3,3,3,St Kilda v Brisbane,Will Ashcroft,Brisbane,St Kilda,Away,2.0,1.961
+Round 4,4,1,1,Brisbane v Collingwood,Will Ashcroft,Brisbane,Collingwood,Home,3.0,2.843
+Round 6,6,8,9,Melbourne v Brisbane,Will Ashcroft,Brisbane,Melbourne,Away,1.0,0.956
+Round 7,7,8,8,Brisbane v Adelaide,Will Ashcroft,Brisbane,Adelaide,Home,1.0,0.956
+Round 14,14,6,6,Richmond v Brisbane,Will Ashcroft,Brisbane,Richmond,Away,3.0,2.843
+Round 16,16,1,1,Brisbane v Sydney,Will Ashcroft,Brisbane,Sydney,Home,3.0,2.843
+Round 17,17,1,1,Geelong v Brisbane,Will Ashcroft,Brisbane,Geelong,Away,3.0,2.843
+Round 18,18,9,9,Brisbane v Essendon,Will Ashcroft,Brisbane,Essendon,Home,3.0,2.843
+Round 20,20,8,8,Brisbane v Port Adelaide,Will Ashcroft,Brisbane,Port Adelaide,Home,2.0,1.961
+Round 22,22,2,2,Brisbane v Hawthorn,Will Ashcroft,Brisbane,Hawthorn,Home,2.0,1.961
+Round 23,23,4,4,Brisbane v Gold Coast,Will Ashcroft,Brisbane,Gold Coast,Home,3.0,2.843
+Round 24,24,2,2,Collingwood v Brisbane,Will Ashcroft,Brisbane,Collingwood,Away,1.0,0.956
+Round 3,3,3,3,St Kilda v Brisbane,Levi Ashcroft,Brisbane,St Kilda,Away,1.0,0.879
+Round 9,9,2,2,Brisbane v Carlton,Levi Ashcroft,Brisbane,Carlton,Home,1.0,0.879
+Round 23,23,4,4,Brisbane v Gold Coast,Levi Ashcroft,Brisbane,Gold Coast,Home,0.5,0.35
+Round 3,3,4,4,Fremantle v Richmond,Caleb Serong,Fremantle,Richmond,Home,3.0,2.906
+Round 4,4,3,3,Adelaide v Fremantle,Caleb Serong,Fremantle,Adelaide,Away,3.0,2.906
+Round 9,9,1,1,Fremantle v Hawthorn,Caleb Serong,Fremantle,Hawthorn,Home,2.0,2.002
+Round 10,10,7,7,Essendon v Fremantle,Caleb Serong,Fremantle,Essendon,Away,0.5,0.408
+Round 19,19,3,3,Port Adelaide v Fremantle,Caleb Serong,Fremantle,Port Adelaide,Away,3.0,2.906
+Round 23,23,1,1,Fremantle v Adelaide,Caleb Serong,Fremantle,Adelaide,Home,3.0,2.906
+Round 3,3,4,4,Fremantle v Richmond,Tim Taranto,Richmond,Fremantle,Away,0.5,0.369
+Round 11,11,2,3,Richmond v Essendon,Tim Taranto,Richmond,Essendon,Home,3.0,2.848
+Round 14,14,6,6,Richmond v Brisbane,Tim Taranto,Richmond,Brisbane,Home,2.0,1.951
+Round 16,16,4,4,Collingwood v Richmond,Tim Taranto,Richmond,Collingwood,Away,1.0,0.928
+Round 17,17,7,7,Richmond v Carlton,Tim Taranto,Richmond,Carlton,Home,0.5,0.369
+Round 21,21,7,7,Richmond v West Coast,Tim Taranto,Richmond,West Coast,Home,3.0,2.848
+Round 24,24,5,6,Geelong v Richmond,Tim Taranto,Richmond,Geelong,Away,0.5,0.369
+Round 3,3,5,5,Essendon v North Melbourne,Colby McKercher,North Melbourne,Essendon,Away,2.0,1.916
+Round 6,6,7,7,North Melbourne v Richmond,Colby McKercher,North Melbourne,Richmond,Home,0.5,0.362
+Round 3,3,6,6,Port Adelaide v West Coast,Tim Kelly,West Coast,Port Adelaide,Away,2.0,1.887
+Round 10,10,9,9,West Coast v Greater Western Sydney,Tim Kelly,West Coast,Greater Western Sydney,Home,1.0,0.897
+Round 14,14,4,4,North Melbourne v West Coast,Tim Kelly,West Coast,North Melbourne,Away,0.5,0.357
+Round 3,3,6,6,Port Adelaide v West Coast,Jake Waterman,West Coast,Port Adelaide,Away,0.5,0.382
+Round 3,3,7,7,Carlton v Melbourne,Kysaiah Pickett,Melbourne,Carlton,Away,3.0,3.12
+Round 4,4,6,6,Melbourne v Gold Coast,Kysaiah Pickett,Melbourne,Gold Coast,Home,1.0,1.102
+Round 7,7,2,2,Richmond v Melbourne,Kysaiah Pickett,Melbourne,Richmond,Away,3.0,3.12
+Round 13,13,8,8,Collingwood v Melbourne,Kysaiah Pickett,Melbourne,Collingwood,Away,3.0,3.12
+Round 14,14,3,3,Melbourne v Essendon,Kysaiah Pickett,Melbourne,Essendon,Home,3.0,3.12
+Round 19,19,4,4,North Melbourne v Melbourne,Kysaiah Pickett,Melbourne,North Melbourne,Away,2.0,2.178
+Round 22,22,3,3,Melbourne v Fremantle,Kysaiah Pickett,Melbourne,Fremantle,Home,3.0,3.12
+Round 3,3,7,7,Carlton v Melbourne,Jack Steele,Melbourne,Carlton,Away,1.0,0.89
+Round 4,4,6,6,Melbourne v Gold Coast,Jack Steele,Melbourne,Gold Coast,Home,2.0,1.871
+Round 7,7,2,2,Richmond v Melbourne,Jack Steele,Melbourne,Richmond,Away,0.5,0.354
+Round 23,23,6,6,Port Adelaide v Melbourne,Jack Steele,Melbourne,Port Adelaide,Away,1.0,0.89
+Round 3,3,7,7,Carlton v Melbourne,Tom Sparrow,Melbourne,Carlton,Away,0.5,0.365
+Round 4,4,6,6,Melbourne v Gold Coast,Tom Sparrow,Melbourne,Gold Coast,Home,0.5,0.365
+Round 7,7,2,2,Richmond v Melbourne,Tom Sparrow,Melbourne,Richmond,Away,2.0,1.93
+Round 9,9,8,8,Melbourne v West Coast,Tom Sparrow,Melbourne,West Coast,Home,1.0,0.918
+Round 10,10,5,5,Melbourne v Hawthorn,Tom Sparrow,Melbourne,Hawthorn,Home,3.0,2.817
+Round 17,17,4,4,Hawthorn v Melbourne,Tom Sparrow,Melbourne,Hawthorn,Away,0.5,0.365
+Round 18,18,8,8,Melbourne v Richmond,Tom Sparrow,Melbourne,Richmond,Home,1.0,0.918
+Round 19,19,4,4,North Melbourne v Melbourne,Tom Sparrow,Melbourne,North Melbourne,Away,3.0,2.817
+Round 20,20,2,3,Melbourne v Geelong,Tom Sparrow,Melbourne,Geelong,Home,0.5,0.365
+Round 21,21,8,8,Gold Coast v Melbourne,Tom Sparrow,Melbourne,Gold Coast,Away,2.0,1.93
+Round 22,22,3,3,Melbourne v Fremantle,Tom Sparrow,Melbourne,Fremantle,Home,2.0,1.93
+Round 4,4,1,1,Brisbane v Collingwood,Zac Bailey,Brisbane,Collingwood,Home,2.0,1.932
+Round 5,5,3,3,North Melbourne v Brisbane,Zac Bailey,Brisbane,North Melbourne,Away,1.0,0.934
+Round 7,7,8,8,Brisbane v Adelaide,Zac Bailey,Brisbane,Adelaide,Home,3.0,2.806
+Round 8,8,4,4,Essendon v Brisbane,Zac Bailey,Brisbane,Essendon,Away,2.0,1.932
+Round 12,12,4,4,Brisbane v Fremantle,Zac Bailey,Brisbane,Fremantle,Home,1.0,0.934
+Round 14,14,6,6,Richmond v Brisbane,Zac Bailey,Brisbane,Richmond,Away,1.0,0.934
+Round 16,16,1,1,Brisbane v Sydney,Zac Bailey,Brisbane,Sydney,Home,0.5,0.388
+Round 17,17,1,1,Geelong v Brisbane,Zac Bailey,Brisbane,Geelong,Away,1.0,0.934
+Round 18,18,9,9,Brisbane v Essendon,Zac Bailey,Brisbane,Essendon,Home,1.0,0.934
+Round 20,20,8,8,Brisbane v Port Adelaide,Zac Bailey,Brisbane,Port Adelaide,Home,3.0,2.806
+Round 23,23,4,4,Brisbane v Gold Coast,Zac Bailey,Brisbane,Gold Coast,Home,2.0,1.932
+Round 4,4,1,1,Brisbane v Collingwood,Logan Morris,Brisbane,Collingwood,Home,1.0,0.932
+Round 13,13,4,4,Gold Coast v Brisbane,Logan Morris,Brisbane,Gold Coast,Away,3.0,2.86
+Round 22,22,2,2,Brisbane v Hawthorn,Logan Morris,Brisbane,Hawthorn,Home,0.5,0.371
+Round 24,24,2,2,Collingwood v Brisbane,Logan Morris,Brisbane,Collingwood,Away,3.0,2.86
+Round 4,4,2,2,North Melbourne v Carlton,Caleb Daniel,North Melbourne,Carlton,Home,3.0,2.856
+Round 15,15,6,6,Richmond v North Melbourne,Caleb Daniel,North Melbourne,Richmond,Away,3.0,2.856
+Round 16,16,6,7,North Melbourne v Essendon,Caleb Daniel,North Melbourne,Essendon,Home,1.0,0.931
+Round 4,4,2,2,North Melbourne v Carlton,Cooper Trembath,North Melbourne,Carlton,Home,0.5,0.362
+Round 15,15,6,6,Richmond v North Melbourne,Cooper Trembath,North Melbourne,Richmond,Away,2.0,1.916
+Round 4,4,3,3,Adelaide v Fremantle,James Peatling,Adelaide,Fremantle,Home,1.0,0.863
+Round 6,6,6,6,Adelaide v St Kilda,James Peatling,Adelaide,St Kilda,Home,1.0,0.863
+Round 10,10,4,4,Adelaide v North Melbourne,James Peatling,Adelaide,North Melbourne,Home,1.0,0.863
+Round 4,4,4,4,Richmond v Port Adelaide,Darcy Byrne-Jones,Port Adelaide,Richmond,Away,0.5,0.382
+Round 15,15,5,5,Collingwood v Port Adelaide,Darcy Byrne-Jones,Port Adelaide,Collingwood,Away,0.5,0.382
+Round 4,4,5,5,West Coast v Sydney,Brodie Grundy,Sydney,West Coast,Away,2.0,1.861
+Round 5,5,5,5,Sydney v Gold Coast,Brodie Grundy,Sydney,Gold Coast,Home,1.0,0.855
+Round 6,6,3,3,Sydney v Greater Western Sydney,Brodie Grundy,Sydney,Greater Western Sydney,Home,0.5,0.305
+Round 7,7,1,1,Western Bulldogs v Sydney,Brodie Grundy,Sydney,Western Bulldogs,Away,1.0,0.855
+Round 8,8,8,8,Sydney v Melbourne,Brodie Grundy,Sydney,Melbourne,Home,3.0,2.742
+Round 10,10,2,2,Sydney v Collingwood,Brodie Grundy,Sydney,Collingwood,Home,3.0,2.742
+Round 17,17,2,3,Sydney v Western Bulldogs,Brodie Grundy,Sydney,Western Bulldogs,Home,2.0,1.861
+Round 20,20,6,6,Greater Western Sydney v Sydney,Brodie Grundy,Sydney,Greater Western Sydney,Away,1.0,0.855
+Round 24,24,8,8,Sydney v North Melbourne,Brodie Grundy,Sydney,North Melbourne,Home,2.0,1.861
+Round 4,4,5,5,West Coast v Sydney,Tom Papley,Sydney,West Coast,Away,1.0,0.879
+Round 5,5,5,5,Sydney v Gold Coast,Tom Papley,Sydney,Gold Coast,Home,0.5,0.35
+Round 19,19,2,2,Sydney v Adelaide,Tom Papley,Sydney,Adelaide,Home,1.0,0.879
+Round 4,4,5,5,West Coast v Sydney,Jai Serong,Sydney,West Coast,Away,0.5,0.36
+Round 13,13,6,6,Sydney v St Kilda,Jai Serong,Sydney,St Kilda,Home,0.5,0.36
+Round 22,22,4,4,Sydney v Port Adelaide,Jai Serong,Sydney,Port Adelaide,Home,1.0,0.906
+Round 4,4,7,7,Western Bulldogs v Essendon,Matthew Kennedy,Western Bulldogs,Essendon,Home,2.0,1.929
+Round 15,15,7,7,St Kilda v Western Bulldogs,Matthew Kennedy,Western Bulldogs,St Kilda,Away,0.5,0.365
+Round 24,24,4,4,Melbourne v Western Bulldogs,Matthew Kennedy,Western Bulldogs,Melbourne,Away,0.5,0.365
+Round 4,4,7,7,Western Bulldogs v Essendon,Ryley Sanders,Western Bulldogs,Essendon,Home,1.0,0.89
+Round 9,9,3,3,Port Adelaide v Western Bulldogs,Ryley Sanders,Western Bulldogs,Port Adelaide,Away,2.0,1.871
+Round 11,11,9,9,Western Bulldogs v Melbourne,Ryley Sanders,Western Bulldogs,Melbourne,Home,1.0,0.89
+Round 12,12,5,5,Western Bulldogs v Collingwood,Ryley Sanders,Western Bulldogs,Collingwood,Home,0.5,0.354
+Round 4,4,7,7,Western Bulldogs v Essendon,Archie Roberts,Essendon,Western Bulldogs,Away,0.5,0.369
+Round 5,5,4,4,Essendon v Melbourne,Archie Roberts,Essendon,Melbourne,Home,3.0,2.847
+Round 9,9,5,5,Greater Western Sydney v Essendon,Archie Roberts,Essendon,Greater Western Sydney,Away,2.0,1.951
+Round 4,4,8,8,Hawthorn v Geelong,Josh Ward,Hawthorn,Geelong,Home,3.0,2.896
+Round 20,20,5,5,Hawthorn v Essendon,Josh Ward,Hawthorn,Essendon,Home,0.5,0.375
+Round 4,4,8,8,Hawthorn v Geelong,Jack Ginnivan,Hawthorn,Geelong,Home,0.5,0.365
+Round 5,5,6,6,Hawthorn v Western Bulldogs,Jack Ginnivan,Hawthorn,Western Bulldogs,Home,2.0,1.93
+Round 16,16,2,2,Hawthorn v Greater Western Sydney,Jack Ginnivan,Hawthorn,Greater Western Sydney,Home,1.0,0.918
+Round 18,18,5,5,Carlton v Hawthorn,Jack Ginnivan,Hawthorn,Carlton,Away,3.0,2.817
+Round 5,5,1,1,Adelaide v Carlton,Izak Rankine,Adelaide,Carlton,Home,2.0,2.078
+Round 9,9,9,9,Richmond v Adelaide,Izak Rankine,Adelaide,Richmond,Away,3.0,2.984
+Round 10,10,4,4,Adelaide v North Melbourne,Izak Rankine,Adelaide,North Melbourne,Home,3.0,2.984
+Round 17,17,3,2,West Coast v Adelaide,Izak Rankine,Adelaide,West Coast,Away,2.0,2.078
+Round 18,18,6,6,Adelaide v Gold Coast,Izak Rankine,Adelaide,Gold Coast,Home,3.0,2.984
+Round 19,19,2,2,Sydney v Adelaide,Izak Rankine,Adelaide,Sydney,Away,0.5,0.48
+Round 21,21,9,9,Essendon v Adelaide,Izak Rankine,Adelaide,Essendon,Away,2.0,2.078
+Round 22,22,6,6,Adelaide v Richmond,Izak Rankine,Adelaide,Richmond,Home,3.0,2.984
+Round 23,23,1,1,Fremantle v Adelaide,Izak Rankine,Adelaide,Fremantle,Away,2.0,2.078
+Round 24,24,6,5,Adelaide v Greater Western Sydney,Izak Rankine,Adelaide,Greater Western Sydney,Home,3.0,2.984
+Round 5,5,1,1,Adelaide v Carlton,Sam Berry,Adelaide,Carlton,Home,1.0,0.905
+Round 8,8,3,3,Adelaide v Port Adelaide,Sam Berry,Adelaide,Port Adelaide,Home,3.0,2.777
+Round 14,14,1,1,Western Bulldogs v Adelaide,Sam Berry,Adelaide,Western Bulldogs,Away,2.0,1.903
+Round 18,18,6,6,Adelaide v Gold Coast,Sam Berry,Adelaide,Gold Coast,Home,1.0,0.905
+Round 20,20,1,1,Adelaide v Collingwood,Sam Berry,Adelaide,Collingwood,Home,0.5,0.36
+Round 22,22,6,6,Adelaide v Richmond,Sam Berry,Adelaide,Richmond,Home,1.0,0.905
+Round 5,5,2,2,Collingwood v Fremantle,Luke Ryan,Fremantle,Collingwood,Away,2.0,1.896
+Round 5,5,2,2,Collingwood v Fremantle,Jack Crisp,Collingwood,Fremantle,Home,0.5,0.382
+Round 7,7,4,4,Essendon v Collingwood,Jack Crisp,Collingwood,Essendon,Away,0.5,0.382
+Round 5,5,3,3,North Melbourne v Brisbane,Jy Simpkin,North Melbourne,Brisbane,Home,0.5,0.365
+Round 11,11,4,4,North Melbourne v Gold Coast,Jy Simpkin,North Melbourne,Gold Coast,Home,2.0,1.929
+Round 24,24,8,8,Sydney v North Melbourne,Jy Simpkin,North Melbourne,Sydney,Away,0.5,0.365
+Round 5,5,4,4,Essendon v Melbourne,Zach Merrett,Essendon,Melbourne,Home,2.0,1.93
+Round 6,6,4,4,Gold Coast v Essendon,Zach Merrett,Essendon,Gold Coast,Away,1.0,0.918
+Round 19,19,9,9,Essendon v Greater Western Sydney,Zach Merrett,Essendon,Greater Western Sydney,Home,3.0,2.817
+Round 24,24,7,7,Essendon v Port Adelaide,Zach Merrett,Essendon,Port Adelaide,Home,0.5,0.365
+Round 5,5,4,4,Essendon v Melbourne,Darcy Parish,Essendon,Melbourne,Home,1.0,0.889
+Round 11,11,2,3,Richmond v Essendon,Darcy Parish,Essendon,Richmond,Away,2.0,1.87
+Round 5,5,6,6,Hawthorn v Western Bulldogs,Blake Hardwick,Hawthorn,Western Bulldogs,Home,1.0,0.911
+Round 11,11,1,1,Hawthorn v Adelaide,Blake Hardwick,Hawthorn,Adelaide,Home,3.0,2.794
+Round 18,18,5,5,Carlton v Hawthorn,Blake Hardwick,Hawthorn,Carlton,Away,1.0,0.911
+Round 5,5,7,7,Geelong v West Coast,Tanner Bruhn,Geelong,West Coast,Home,1.0,0.863
+Round 5,5,7,7,Geelong v West Coast,Tom Atkins,Geelong,West Coast,Home,0.5,0.382
+Round 5,5,8,8,Greater Western Sydney v Richmond,Toby Greene,Greater Western Sydney,Richmond,Home,1.0,0.91
+Round 7,7,9,9,Greater Western Sydney v North Melbourne,Toby Greene,Greater Western Sydney,North Melbourne,Home,3.0,2.791
+Round 9,9,5,5,Greater Western Sydney v Essendon,Toby Greene,Greater Western Sydney,Essendon,Home,1.0,0.91
+Round 11,11,8,8,Greater Western Sydney v Brisbane,Toby Greene,Greater Western Sydney,Brisbane,Home,2.0,1.912
+Round 12,12,6,6,Melbourne v Greater Western Sydney,Toby Greene,Greater Western Sydney,Melbourne,Away,2.0,1.912
+Round 15,15,4,4,Greater Western Sydney v Carlton,Toby Greene,Greater Western Sydney,Carlton,Home,0.5,0.362
+Round 17,17,5,5,Greater Western Sydney v Fremantle,Toby Greene,Greater Western Sydney,Fremantle,Home,3.0,2.791
+Round 18,18,4,4,Greater Western Sydney v Geelong,Toby Greene,Greater Western Sydney,Geelong,Home,1.0,0.91
+Round 23,23,7,7,Greater Western Sydney v West Coast,Toby Greene,Greater Western Sydney,West Coast,Home,1.0,0.91
+Round 5,5,9,9,Port Adelaide v St Kilda,Hugo Garcia,St Kilda,Port Adelaide,Away,0.5,0.366
+Round 7,7,7,7,St Kilda v West Coast,Hugo Garcia,St Kilda,West Coast,Home,2.0,1.935
+Round 10,10,8,8,St Kilda v Richmond,Hugo Garcia,St Kilda,Richmond,Home,3.0,2.824
+Round 15,15,7,7,St Kilda v Western Bulldogs,Hugo Garcia,St Kilda,Western Bulldogs,Home,1.0,0.92
+Round 23,23,2,2,Richmond v St Kilda,Hugo Garcia,St Kilda,Richmond,Away,0.5,0.366
+Round 6,6,1,1,Carlton v Collingwood,Patrick Lipinski,Collingwood,Carlton,Away,2.0,1.896
+Round 6,6,1,1,Carlton v Collingwood,Harry Perryman,Collingwood,Carlton,Away,1.0,0.863
+Round 6,6,2,2,Geelong v Western Bulldogs,Oliver Dempsey,Geelong,Western Bulldogs,Home,1.0,0.908
+Round 21,21,1,1,Collingwood v Geelong,Oliver Dempsey,Geelong,Collingwood,Away,3.0,2.786
+Round 22,22,5,5,Geelong v Essendon,Oliver Dempsey,Geelong,Essendon,Home,2.0,1.909
+Round 24,24,5,6,Geelong v Richmond,Oliver Dempsey,Geelong,Richmond,Home,1.0,0.908
+Round 6,6,2,2,Geelong v Western Bulldogs,Lawson Humphries,Geelong,Western Bulldogs,Home,0.5,0.375
+Round 11,11,5,5,Geelong v Sydney,Lawson Humphries,Geelong,Sydney,Home,3.0,2.896
+Round 6,6,4,4,Gold Coast v Essendon,Matt Rowell,Gold Coast,Essendon,Home,2.0,2.002
+Round 11,11,4,4,North Melbourne v Gold Coast,Matt Rowell,Gold Coast,North Melbourne,Away,1.0,0.997
+Round 14,14,2,2,Geelong v Gold Coast,Matt Rowell,Gold Coast,Geelong,Away,0.5,0.449
+Round 19,19,8,8,Gold Coast v Western Bulldogs,Matt Rowell,Gold Coast,Western Bulldogs,Home,0.5,0.449
+Round 21,21,8,8,Gold Coast v Melbourne,Matt Rowell,Gold Coast,Melbourne,Home,1.0,0.997
+Round 22,22,7,7,Greater Western Sydney v Gold Coast,Matt Rowell,Gold Coast,Greater Western Sydney,Away,3.0,2.882
+Round 6,6,5,5,Hawthorn v Port Adelaide,Jarman Impey,Hawthorn,Port Adelaide,Home,0.5,0.366
+Round 7,7,3,3,Hawthorn v Gold Coast,Jarman Impey,Hawthorn,Gold Coast,Home,1.0,0.921
+Round 11,11,1,1,Hawthorn v Adelaide,Jarman Impey,Hawthorn,Adelaide,Home,2.0,1.937
+Round 19,19,7,7,Richmond v Hawthorn,Jarman Impey,Hawthorn,Richmond,Away,3.0,2.827
+Round 20,20,5,5,Hawthorn v Essendon,Jarman Impey,Hawthorn,Essendon,Home,3.0,2.827
+Round 21,21,4,4,Hawthorn v North Melbourne,Jarman Impey,Hawthorn,North Melbourne,Home,2.0,1.937
+Round 6,6,6,6,Adelaide v St Kilda,Taylor Walker,Adelaide,St Kilda,Home,3.0,2.896
+Round 18,18,6,6,Adelaide v Gold Coast,Taylor Walker,Adelaide,Gold Coast,Home,0.5,0.375
+Round 6,6,7,7,North Melbourne v Richmond,Paul Curtis,North Melbourne,Richmond,Home,2.0,1.896
+Round 22,22,1,1,Western Bulldogs v North Melbourne,Paul Curtis,North Melbourne,Western Bulldogs,Away,2.0,1.896
+Round 6,6,8,9,Melbourne v Brisbane,Harvey Langford,Melbourne,Brisbane,Home,3.0,2.83
+Round 13,13,8,8,Collingwood v Melbourne,Harvey Langford,Melbourne,Collingwood,Away,1.0,0.922
+Round 6,6,8,9,Melbourne v Brisbane,Kade Chandler,Melbourne,Brisbane,Home,0.5,0.377
+Round 9,9,8,8,Melbourne v West Coast,Kade Chandler,Melbourne,West Coast,Home,0.5,0.377
+Round 10,10,5,5,Melbourne v Hawthorn,Kade Chandler,Melbourne,Hawthorn,Home,0.5,0.377
+Round 15,15,3,3,Adelaide v Melbourne,Kade Chandler,Melbourne,Adelaide,Away,0.5,0.377
+Round 23,23,6,6,Port Adelaide v Melbourne,Kade Chandler,Melbourne,Port Adelaide,Away,3.0,2.907
+Round 6,6,9,8,West Coast v Fremantle,Jordan Clark,Fremantle,West Coast,Away,3.0,2.889
+Round 6,6,9,8,West Coast v Fremantle,Jye Amiss,Fremantle,West Coast,Away,1.0,0.914
+Round 12,12,4,4,Brisbane v Fremantle,Jye Amiss,Fremantle,Brisbane,Away,2.0,1.922
+Round 19,19,3,3,Port Adelaide v Fremantle,Jye Amiss,Fremantle,Port Adelaide,Away,2.0,1.922
+Round 20,20,3,2,Fremantle v West Coast,Jye Amiss,Fremantle,West Coast,Home,3.0,2.805
+Round 22,22,3,3,Melbourne v Fremantle,Jye Amiss,Fremantle,Melbourne,Away,0.5,0.364
+Round 7,7,1,1,Western Bulldogs v Sydney,Charlie Curnow,Sydney,Western Bulldogs,Away,3.0,2.817
+Round 12,12,3,3,Sydney v Richmond,Charlie Curnow,Sydney,Richmond,Home,2.0,1.93
+Round 17,17,2,3,Sydney v Western Bulldogs,Charlie Curnow,Sydney,Western Bulldogs,Home,3.0,2.817
+Round 18,18,1,1,Fremantle v Sydney,Charlie Curnow,Sydney,Fremantle,Away,1.0,0.918
+Round 24,24,8,8,Sydney v North Melbourne,Charlie Curnow,Sydney,North Melbourne,Home,1.0,0.918
+Round 7,7,2,2,Richmond v Melbourne,Caleb Windsor,Melbourne,Richmond,Away,1.0,0.863
+Round 7,7,4,4,Essendon v Collingwood,Scott Pendlebury,Collingwood,Essendon,Away,3.0,2.83
+Round 20,20,1,1,Adelaide v Collingwood,Scott Pendlebury,Collingwood,Adelaide,Away,1.0,0.922
+Round 7,7,5,5,Port Adelaide v Geelong,Mitch Georgiades,Port Adelaide,Geelong,Home,2.0,1.887
+Round 16,16,5,5,Port Adelaide v Adelaide,Mitch Georgiades,Port Adelaide,Adelaide,Home,0.5,0.357
+Round 24,24,7,7,Essendon v Port Adelaide,Mitch Georgiades,Port Adelaide,Essendon,Away,1.0,0.897
+Round 7,7,5,5,Port Adelaide v Geelong,Ollie Wines,Port Adelaide,Geelong,Home,1.0,0.863
+Round 7,7,5,5,Port Adelaide v Geelong,Jordon Sweet,Port Adelaide,Geelong,Home,0.5,0.382
+Round 13,13,5,5,West Coast v Port Adelaide,Jordon Sweet,Port Adelaide,West Coast,Away,0.5,0.382
+Round 7,7,7,7,St Kilda v West Coast,Jack Higgins,St Kilda,West Coast,Home,1.0,0.863
+Round 7,7,7,7,St Kilda v West Coast,Marcus Windhager,St Kilda,West Coast,Home,0.5,0.382
+Round 7,7,8,8,Brisbane v Adelaide,Charlie Cameron,Brisbane,Adelaide,Home,0.5,0.382
+Round 8,8,1,1,Collingwood v Hawthorn,Dan Houston,Collingwood,Hawthorn,Home,0.5,0.362
+Round 19,19,5,6,Collingwood v Carlton,Dan Houston,Collingwood,Carlton,Home,2.0,1.916
+Round 8,8,2,2,Western Bulldogs v Fremantle,Hayden Young,Fremantle,Western Bulldogs,Away,1.0,0.891
+Round 13,13,3,3,North Melbourne v Fremantle,Hayden Young,Fremantle,North Melbourne,Away,0.5,0.354
+Round 8,8,4,4,Essendon v Brisbane,Darcy Wilmot,Brisbane,Essendon,Away,3.0,2.808
+Round 13,13,4,4,Gold Coast v Brisbane,Darcy Wilmot,Brisbane,Gold Coast,Away,1.0,0.915
+Round 20,20,9,8,Brisbane v Port Adelaide,Darcy Wilmot,Brisbane,Port Adelaide,Home,2.0,1.924
+Round 8,8,4,4,Essendon v Brisbane,Hugh McCluggage,Brisbane,Essendon,Away,1.0,0.879
+Round 9,9,2,2,Brisbane v Carlton,Hugh McCluggage,Brisbane,Carlton,Home,0.5,0.35
+Round 20,20,8,8,Brisbane v Port Adelaide,Hugh McCluggage,Brisbane,Port Adelaide,Home,1.0,0.879
+Round 8,8,5,5,West Coast v Richmond,Noah Balta,Richmond,West Coast,Away,3.0,2.889
+Round 8,8,5,5,West Coast v Richmond,Jack Ross,Richmond,West Coast,Away,1.0,0.879
+Round 21,21,7,7,Richmond v West Coast,Jack Ross,Richmond,West Coast,Home,1.0,0.879
+Round 22,22,6,6,Adelaide v Richmond,Jack Ross,Richmond,Adelaide,Away,0.5,0.35
+Round 8,8,5,5,West Coast v Richmond,Kane McAuliffe,Richmond,West Coast,Away,0.5,0.382
+Round 8,8,6,6,Geelong v North Melbourne,Shaun Mannagh,Geelong,North Melbourne,Home,1.0,0.91
+Round 10,10,1,1,Brisbane v Geelong,Shaun Mannagh,Geelong,Brisbane,Away,3.0,2.792
+Round 18,18,4,4,Greater Western Sydney v Geelong,Shaun Mannagh,Geelong,Greater Western Sydney,Away,2.0,1.913
+Round 23,23,3,3,North Melbourne v Geelong,Shaun Mannagh,Geelong,North Melbourne,Away,2.0,1.913
+Round 24,24,5,6,Geelong v Richmond,Shaun Mannagh,Geelong,Richmond,Home,2.0,1.913
+Round 8,8,7,7,Carlton v St Kilda,Rowan Marshall,St Kilda,Carlton,Away,2.0,1.89
+Round 17,17,8,8,Essendon v St Kilda,Rowan Marshall,St Kilda,Essendon,Away,0.5,0.358
+Round 18,18,3,3,St Kilda v Port Adelaide,Rowan Marshall,St Kilda,Port Adelaide,Home,1.0,0.899
+Round 19,19,1,1,Geelong v St Kilda,Rowan Marshall,St Kilda,Geelong,Away,2.0,1.89
+Round 8,8,7,7,Carlton v St Kilda,Mitch Owens,St Kilda,Carlton,Away,0.5,0.362
+Round 23,23,2,2,Richmond v St Kilda,Mitch Owens,St Kilda,Richmond,Away,2.0,1.916
+Round 8,8,8,8,Sydney v Melbourne,Malcolm Rosas,Sydney,Melbourne,Home,2.0,1.896
+Round 8,8,9,9,Gold Coast v Greater Western Sydney,Mac Andrew,Gold Coast,Greater Western Sydney,Home,0.5,0.382
+Round 9,9,1,1,Fremantle v Hawthorn,Michael Frederick,Fremantle,Hawthorn,Home,1.0,0.889
+Round 16,16,7,6,Fremantle v Gold Coast,Michael Frederick,Fremantle,Gold Coast,Home,2.0,1.87
+Round 9,9,5,5,Greater Western Sydney v Essendon,Lachie Whitfield,Greater Western Sydney,Essendon,Home,3.0,2.858
+Round 21,21,5,5,Port Adelaide v Greater Western Sydney,Lachie Whitfield,Greater Western Sydney,Port Adelaide,Away,3.0,2.858
+Round 23,23,7,7,Greater Western Sydney v West Coast,Lachie Whitfield,Greater Western Sydney,West Coast,Home,2.0,1.958
+Round 9,9,6,6,Gold Coast v St Kilda,Daniel Rioli,Gold Coast,St Kilda,Home,2.0,1.896
+Round 9,9,7,7,Geelong v Collingwood,Oisin Mullin,Geelong,Collingwood,Home,1.0,0.891
+Round 10,10,1,1,Brisbane v Geelong,Oisin Mullin,Geelong,Brisbane,Away,0.5,0.354
+Round 9,9,8,8,Melbourne v West Coast,Ed Langdon,Melbourne,West Coast,Home,3.0,2.83
+Round 14,14,3,3,Melbourne v Essendon,Ed Langdon,Melbourne,Essendon,Home,1.0,0.922
+Round 9,9,9,9,Richmond v Adelaide,Rory Laird,Adelaide,Richmond,Away,0.5,0.36
+Round 14,14,1,1,Western Bulldogs v Adelaide,Rory Laird,Adelaide,Western Bulldogs,Away,1.0,0.906
+Round 17,17,3,2,West Coast v Adelaide,Rory Laird,Adelaide,West Coast,Away,0.5,0.36
+Round 10,10,1,1,Brisbane v Geelong,Tom Stewart,Geelong,Brisbane,Away,1.0,0.863
+Round 10,10,5,5,Melbourne v Hawthorn,Daniel Turner,Melbourne,Hawthorn,Home,1.0,0.863
+Round 10,10,6,6,Carlton v Western Bulldogs,Oliver Florent,Carlton,Western Bulldogs,Home,2.0,1.896
+Round 10,10,6,6,Carlton v Western Bulldogs,Matthew Carroll,Carlton,Western Bulldogs,Home,1.0,0.863
+Round 10,10,7,7,Essendon v Fremantle,Patrick Voss,Fremantle,Essendon,Away,1.0,0.879
+Round 12,12,4,4,Brisbane v Fremantle,Patrick Voss,Fremantle,Brisbane,Away,0.5,0.35
+Round 13,13,3,3,North Melbourne v Fremantle,Patrick Voss,Fremantle,North Melbourne,Away,1.0,0.879
+Round 10,10,8,8,St Kilda v Richmond,Sam Flanders,St Kilda,Richmond,Home,1.0,0.863
+Round 10,10,9,9,West Coast v Greater Western Sydney,Bailey J. Williams,West Coast,Greater Western Sydney,Home,2.0,1.87
+Round 11,11,6,6,Collingwood v West Coast,Bailey J. Williams,West Coast,Collingwood,Away,1.0,0.889
+Round 11,11,2,3,Richmond v Essendon,Patrick Retschko,Richmond,Essendon,Home,1.0,0.863
+Round 11,11,6,6,Collingwood v West Coast,Darcy Cameron,Collingwood,West Coast,Home,2.0,1.903
+Round 18,18,2,2,Collingwood v North Melbourne,Darcy Cameron,Collingwood,North Melbourne,Home,2.0,1.903
+Round 19,19,5,6,Collingwood v Carlton,Darcy Cameron,Collingwood,Carlton,Home,0.5,0.36
+Round 20,20,1,1,Adelaide v Collingwood,Darcy Cameron,Collingwood,Adelaide,Away,2.0,1.903
+Round 11,11,7,7,Port Adelaide v Carlton,Will Hayward,Carlton,Port Adelaide,Away,2.0,1.896
+Round 11,11,8,8,Greater Western Sydney v Brisbane,Phoenix Gothard,Greater Western Sydney,Brisbane,Home,1.0,0.863
+Round 11,11,8,8,Greater Western Sydney v Brisbane,Brent Daniels,Greater Western Sydney,Brisbane,Home,0.5,0.354
+Round 14,14,7,7,St Kilda v Greater Western Sydney,Brent Daniels,Greater Western Sydney,St Kilda,Away,1.0,0.891
+Round 11,11,9,9,Western Bulldogs v Melbourne,Bailey Dale,Western Bulldogs,Melbourne,Home,0.5,0.36
+Round 13,13,2,2,Hawthorn v Western Bulldogs,Bailey Dale,Western Bulldogs,Hawthorn,Away,1.0,0.906
+Round 17,17,2,3,Sydney v Western Bulldogs,Bailey Dale,Western Bulldogs,Sydney,Away,0.5,0.36
+Round 12,12,1,1,St Kilda v Hawthorn,Cam Mackenzie,Hawthorn,St Kilda,Away,1.0,0.889
+Round 16,16,2,2,Hawthorn v Greater Western Sydney,Cam Mackenzie,Hawthorn,Greater Western Sydney,Home,2.0,1.87
+Round 12,12,3,3,Sydney v Richmond,Peter Ladhams,Sydney,Richmond,Home,0.5,0.382
+Round 12,12,6,6,Melbourne v Greater Western Sydney,Harvey Thomas,Greater Western Sydney,Melbourne,Away,1.0,0.891
+Round 23,23,7,7,Greater Western Sydney v West Coast,Harvey Thomas,Greater Western Sydney,West Coast,Home,0.5,0.354
+Round 12,12,7,7,West Coast v Essendon,Reuben Ginbey,West Coast,Essendon,Home,3.0,2.889
+Round 12,12,7,7,West Coast v Essendon,Willem Duursma,West Coast,Essendon,Home,1.0,0.863
+Round 12,12,7,7,West Coast v Essendon,Milan Murdock,West Coast,Essendon,Home,0.5,0.382
+Round 13,13,1,1,Adelaide v Geelong,Patrick Dangerfield,Geelong,Adelaide,Away,2.0,1.896
+Round 17,17,1,1,Geelong v Brisbane,Patrick Dangerfield,Geelong,Brisbane,Home,2.0,1.896
+Round 13,13,1,1,Adelaide v Geelong,Daniel Curtin,Adelaide,Geelong,Home,1.0,0.863
+Round 13,13,1,1,Adelaide v Geelong,Sam De Koning,Geelong,Adelaide,Away,0.5,0.382
+Round 13,13,2,2,Hawthorn v Western Bulldogs,Will Day,Hawthorn,Western Bulldogs,Home,0.5,0.376
+Round 18,18,5,5,Carlton v Hawthorn,Will Day,Hawthorn,Carlton,Away,0.5,0.376
+Round 24,24,9,9,West Coast v Hawthorn,Will Day,Hawthorn,West Coast,Away,3.0,2.9
+Round 13,13,4,4,Gold Coast v Brisbane,Josh Dunkley,Brisbane,Gold Coast,Away,0.5,0.358
+Round 16,16,1,1,Brisbane v Sydney,Josh Dunkley,Brisbane,Sydney,Home,1.0,0.9
+Round 17,17,1,1,Geelong v Brisbane,Josh Dunkley,Brisbane,Geelong,Away,0.5,0.358
+Round 19,19,6,5,West Coast v Brisbane,Josh Dunkley,Brisbane,West Coast,Away,2.0,1.892
+Round 19,19,6,5,West Coast v Brisbane,Josh Dunkley,Brisbane,West Coast,Away,0.5,0.358
+Round 23,23,4,4,Brisbane v Gold Coast,Josh Dunkley,Brisbane,Gold Coast,Home,1.0,0.9
+Round 13,13,5,5,West Coast v Port Adelaide,Tom McCarthy,West Coast,Port Adelaide,Home,2.0,1.896
+Round 13,13,5,5,West Coast v Port Adelaide,Esava Ratugolea,Port Adelaide,West Coast,Away,1.0,0.863
+Round 13,13,6,6,Sydney v St Kilda,Liam Ryan,St Kilda,Sydney,Away,1.0,0.922
+Round 14,14,7,7,St Kilda v Greater Western Sydney,Liam Ryan,St Kilda,Greater Western Sydney,Home,3.0,2.83
+Round 13,13,7,7,Essendon v Carlton,Sam Durham,Essendon,Carlton,Home,3.0,2.896
+Round 19,19,9,9,Essendon v Greater Western Sydney,Sam Durham,Essendon,Greater Western Sydney,Home,0.5,0.375
+Round 13,13,7,7,Essendon v Carlton,Harry McKay,Carlton,Essendon,Away,2.0,1.916
+Round 21,21,6,6,Carlton v Brisbane,Harry McKay,Carlton,Brisbane,Home,0.5,0.362
+Round 13,13,7,7,Essendon v Carlton,George Hewett,Carlton,Essendon,Away,1.0,0.92
+Round 15,15,4,4,Greater Western Sydney v Carlton,George Hewett,Carlton,Greater Western Sydney,Away,2.0,1.933
+Round 16,16,3,3,Carlton v West Coast,George Hewett,Carlton,West Coast,Home,1.0,0.92
+Round 17,17,7,7,Richmond v Carlton,George Hewett,Carlton,Richmond,Away,3.0,2.822
+Round 21,21,6,6,Carlton v Brisbane,George Hewett,Carlton,Brisbane,Home,3.0,2.822
+Round 22,22,9,9,St Kilda v Carlton,George Hewett,Carlton,St Kilda,Away,0.5,0.366
+Round 13,13,7,7,Essendon v Carlton,Zach Reid,Essendon,Carlton,Home,0.5,0.382
+Round 14,14,3,3,Melbourne v Essendon,Will Setterfield,Essendon,Melbourne,Away,0.5,0.382
+Round 23,23,9,9,Essendon v Sydney,Will Setterfield,Essendon,Sydney,Home,0.5,0.382
+Round 14,14,4,4,North Melbourne v West Coast,Jack Darling,North Melbourne,West Coast,Home,2.0,1.896
+Round 14,14,4,4,North Melbourne v West Coast,Nick Larkey,North Melbourne,West Coast,Home,1.0,0.891
+Round 23,23,3,3,North Melbourne v Geelong,Nick Larkey,North Melbourne,Geelong,Home,0.5,0.354
+Round 15,15,1,1,Fremantle v Geelong,Neil Erasmus,Fremantle,Geelong,Home,0.5,0.382
+Round 15,15,2,2,Gold Coast v Hawthorn,Ben Long,Gold Coast,Hawthorn,Home,1.0,0.863
+Round 15,15,3,3,Adelaide v Melbourne,Mark Keane,Adelaide,Melbourne,Home,3.0,2.889
+Round 16,16,3,3,Carlton v West Coast,Ben Ainsworth,Carlton,West Coast,Home,2.0,1.946
+Round 24,24,3,3,Carlton v Fremantle,Ben Ainsworth,Carlton,Fremantle,Home,3.0,2.839
+Round 16,16,5,5,Port Adelaide v Adelaide,Josh Lai,Port Adelaide,Adelaide,Home,1.0,0.863
+Round 17,17,3,2,West Coast v Adelaide,Lachlan McAndrew,Adelaide,West Coast,Away,1.0,0.863
+Round 17,17,4,4,Hawthorn v Melbourne,Bayley Fritsch,Melbourne,Hawthorn,Away,1.0,0.891
+Round 23,23,6,6,Port Adelaide v Melbourne,Bayley Fritsch,Melbourne,Port Adelaide,Away,0.5,0.354
+Round 17,17,5,5,Greater Western Sydney v Fremantle,Connor Idun,Greater Western Sydney,Fremantle,Home,0.5,0.382
+Round 17,17,6,6,Gold Coast v Collingwood,Zeke Uwland,Gold Coast,Collingwood,Home,2.0,1.896
+Round 17,17,7,7,Richmond v Carlton,Toby Nankervis,Richmond,Carlton,Home,2.0,1.896
+Round 17,17,8,8,Essendon v St Kilda,Bradley Hill,St Kilda,Essendon,Away,2.0,1.909
+Round 18,18,3,3,St Kilda v Port Adelaide,Bradley Hill,St Kilda,Port Adelaide,Home,3.0,2.786
+Round 20,20,9,9,North Melbourne v St Kilda,Bradley Hill,St Kilda,North Melbourne,Away,1.0,0.908
+Round 23,23,2,2,Richmond v St Kilda,Bradley Hill,St Kilda,Richmond,Away,1.0,0.908
+Round 18,18,4,4,Greater Western Sydney v Geelong,Sam Taylor,Greater Western Sydney,Geelong,Home,0.5,0.382
+Round 18,18,5,5,Carlton v Hawthorn,Lloyd Meek,Hawthorn,Carlton,Away,2.0,1.896
+Round 18,18,8,8,Melbourne v Richmond,Jake Bowey,Melbourne,Richmond,Home,2.0,1.916
+Round 19,19,4,4,North Melbourne v Melbourne,Jake Bowey,Melbourne,North Melbourne,Away,0.5,0.362
+Round 18,18,9,9,Brisbane v Essendon,Kai Lohmann,Brisbane,Essendon,Home,0.5,0.368
+Round 19,19,6,5,West Coast v Brisbane,Kai Lohmann,Brisbane,West Coast,Away,3.0,2.84
+Round 22,22,2,2,Brisbane v Hawthorn,Kai Lohmann,Brisbane,Hawthorn,Home,1.0,0.926
+Round 19,19,1,1,Geelong v St Kilda,James Worpel,Geelong,St Kilda,Home,0.5,0.382
+Round 21,21,1,1,Collingwood v Geelong,James Worpel,Geelong,Collingwood,Away,0.5,0.382
+Round 19,19,2,2,Sydney v Adelaide,Darcy Fogarty,Adelaide,Sydney,Away,3.0,2.889
+Round 19,19,6,5,West Coast v Brisbane,Harris Andrews,Brisbane,West Coast,Away,1.0,0.863
+Round 19,19,7,7,Richmond v Hawthorn,Mitch Lewis,Hawthorn,Richmond,Away,2.0,1.896
+Round 19,19,9,9,Essendon v Greater Western Sydney,Dyson Sharp,Essendon,Greater Western Sydney,Home,2.0,1.916
+Round 22,22,5,5,Geelong v Essendon,Dyson Sharp,Essendon,Geelong,Away,0.5,0.362
+Round 19,19,9,9,Essendon v Greater Western Sydney,Nick Bryan,Essendon,Greater Western Sydney,Home,1.0,0.863
+Round 20,20,2,3,Melbourne v Geelong,Shannon Neale,Geelong,Melbourne,Away,3.0,2.889
+Round 20,20,2,3,Melbourne v Geelong,Connor O'Sullivan,Geelong,Melbourne,Away,1.0,0.863
+Round 20,20,3,2,Fremantle v West Coast,Matthew Johnson,Fremantle,West Coast,Home,1.0,0.863
+Round 20,20,4,4,Carlton v Gold Coast,Talor Byrne,Carlton,Gold Coast,Home,2.0,1.896
+Round 20,20,5,5,Hawthorn v Essendon,Harry Morrison,Hawthorn,Essendon,Home,1.0,0.863
+Round 20,20,6,6,Greater Western Sydney v Sydney,James Rowbottom,Sydney,Greater Western Sydney,Away,0.5,0.382
+Round 20,20,7,7,Western Bulldogs v Richmond,Tim English,Western Bulldogs,Richmond,Home,1.0,0.863
+Round 20,20,7,7,Western Bulldogs v Richmond,Lachlan Bramble,Western Bulldogs,Richmond,Home,0.5,0.382
+Round 21,21,1,1,Collingwood v Geelong,Daniel McStay,Collingwood,Geelong,Home,1.0,0.891
+Round 22,22,8,8,West Coast v Collingwood,Daniel McStay,Collingwood,West Coast,Away,0.5,0.354
+Round 21,21,2,2,Fremantle v Western Bulldogs,Karl Worner,Fremantle,Western Bulldogs,Home,3.0,2.889
+Round 21,21,6,6,Carlton v Brisbane,Brodie Kemp,Carlton,Brisbane,Home,1.0,0.863
+Round 21,21,7,7,Richmond v West Coast,Marcus Herbert,West Coast,Richmond,Away,0.5,0.382
+Round 21,21,8,8,Gold Coast v Melbourne,Joel Fitzgerald,Melbourne,Gold Coast,Away,0.5,0.382
+Round 21,21,9,9,Essendon v Adelaide,Riley Thilthorpe,Adelaide,Essendon,Away,3.0,2.839
+Round 24,24,6,5,Adelaide v Greater Western Sydney,Riley Thilthorpe,Adelaide,Greater Western Sydney,Home,2.0,1.946
+Round 21,21,9,9,Essendon v Adelaide,Peter Wright,Essendon,Adelaide,Home,0.5,0.382
+Round 22,22,1,1,Western Bulldogs v North Melbourne,George Wardlaw,North Melbourne,Western Bulldogs,Away,1.0,0.863
+Round 22,22,4,4,Sydney v Port Adelaide,Jesse Dattoli,Sydney,Port Adelaide,Home,0.5,0.382
+Round 22,22,5,5,Geelong v Essendon,Oliver Henry,Geelong,Essendon,Home,1.0,0.863
+Round 22,22,7,7,Greater Western Sydney v Gold Coast,Ned Moyle,Gold Coast,Greater Western Sydney,Away,0.5,0.382
+Round 22,22,9,9,St Kilda v Carlton,Francis Evans,Carlton,St Kilda,Away,2.0,1.896
+Round 23,23,3,3,North Melbourne v Geelong,Mark Blicavs,Geelong,North Melbourne,Away,1.0,0.863
+Round 23,23,5,5,Hawthorn v Collingwood,Beau McCreery,Collingwood,Hawthorn,Away,2.0,1.896
+Round 23,23,8,8,Western Bulldogs v Carlton,Blake Acres,Carlton,Western Bulldogs,Away,1.0,0.863
+Round 24,24,2,2,Collingwood v Brisbane,Eric Hipwood,Brisbane,Collingwood,Away,0.5,0.382
+Round 24,24,6,5,Adelaide v Greater Western Sydney,Ben Keays,Adelaide,Greater Western Sydney,Home,0.5,0.382
+Round 24,24,7,7,Essendon v Port Adelaide,Jase Burgoyne,Port Adelaide,Essendon,Away,3.0,2.889
+Round 24,24,7,7,Essendon v Port Adelaide,Nate Caddy,Essendon,Port Adelaide,Home,2.0,1.896
