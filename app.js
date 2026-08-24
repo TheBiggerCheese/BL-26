@@ -18,7 +18,11 @@ const scoreFmt=(n,metric)=>metric==='model'?Number(n).toFixed(1):fmt(n);
 
 /* =========================================================
    TEAM LOGOS
-   ========================================================= */
+   =========================================================
+   
+   These names MUST match the team names in brownlow-data.json.
+   The files are located inside the /logos/ folder.
+*/
 
 const TEAM_CODES={
   'Adelaide':'ADL',
@@ -76,7 +80,6 @@ const INELIGIBLE_PLAYERS = new Set([
   'Jed Walter',
   'Mykelti Lefau'
 ]);
-
 
 function clubLogo(team){
 
@@ -467,10 +470,16 @@ function renderSnapshot(ps){
 
 
 /* =========================================================
-   NORMAL LEADERBOARD TABLE
+   TABLE
    ========================================================= */
 
 function tableHtml(ps,title,team){
+
+  const st=
+    team
+      ?clubStyle(team)
+      :null;
+
 
   const heading=
     team
@@ -501,6 +510,9 @@ function tableHtml(ps,title,team){
   const rows=
     ps.map((p,i)=>{
 
+      const c=clubStyle(p.team);
+
+
       return `
 
         <tr data-player="${encodeURIComponent(p.name)}">
@@ -514,22 +526,21 @@ function tableHtml(ps,title,team){
 
             <div class="player-cell">
 
-              ${clubLogoHtml(p.team,'30px')}
+  ${clubLogoHtml(p.team,'30px')}
 
-              <div class="player-name-wrap">
+  <div class="player-name-wrap">
 
-                <span>${p.name}</span>
+    <span>${p.name}</span>
 
-                ${
-                  INELIGIBLE_PLAYERS.has(p.name)
-                    ? '<span class="ineligible-label">Ineligible</span>'
-                    : ''
-                }
+    ${
+      INELIGIBLE_PLAYERS.has(p.name)
+        ? '<span class="ineligible-label">Ineligible</span>'
+        : ''
+    }
 
-              </div>
+  </div>
 
-            </div>
-
+</div>
           </td>
 
 
@@ -620,9 +631,13 @@ function tableHtml(ps,title,team){
 
             <tr>
 
-              <th>Rank</th>
+              <th>
+                Rank
+              </th>
 
-              <th>Player</th>
+              <th>
+                Player
+              </th>
 
               <th class="hide-mobile">
                 Club
@@ -632,13 +647,21 @@ function tableHtml(ps,title,team){
                 ${S.metric==='human'?'Votes':'EV'}
               </th>
 
-              <th class="num hide-mobile">3s</th>
+              <th class="num hide-mobile">
+                3s
+              </th>
 
-              <th class="num hide-mobile">2s</th>
+              <th class="num hide-mobile">
+                2s
+              </th>
 
-              <th class="num hide-mobile">1s</th>
+              <th class="num hide-mobile">
+                1s
+              </th>
 
-              <th class="num hide-mobile">0.5s</th>
+              <th class="num hide-mobile">
+                0.5s
+              </th>
 
               <th class="num hide-mobile">
                 Final range
@@ -686,330 +709,10 @@ function tableHtml(ps,title,team){
 
 
 /* =========================================================
-   BY ROUND
-   ========================================================= */
-
-function renderRounds(){
-
-  const round=S.round;
-
-  const allocations=
-    S.data.allocations.filter(
-      a=>
-        a.roundNumber===round &&
-        (
-          S.includeHalf ||
-          Number(a.human_vote)!==0.5
-        ) &&
-        (!S.search ||
-          a.player
-            .toLowerCase()
-            .includes(
-              S.search.toLowerCase()
-            )
-        )
-    );
-
-
-  if(!allocations.length){
-
-    $('#leaderboard').innerHTML=`
-
-      <section class="table-card">
-
-        <div class="empty">
-          No vote signals found for this round.
-        </div>
-
-      </section>
-
-    `;
-
-    return;
-
-  }
-
-
-  /*
-    Group the vote allocations into games.
-
-    We use the game field as the game identifier,
-    while also keeping the home/away/opponent
-    information from the allocation.
-  */
-
-  const games={};
-
-
-  allocations.forEach(a=>{
-
-    const key=String(a.game);
-
-    if(!games[key]){
-      games[key]=[];
-    }
-
-    games[key].push(a);
-
-  });
-
-
-  const gameKeys=
-    Object.keys(games)
-      .sort(
-        (a,b)=>
-          Number(a)-Number(b)
-      );
-
-
-  $('#leaderboard').innerHTML=
-    gameKeys.map((key,index)=>{
-
-      const gameAllocations=
-        games[key];
-
-
-      /*
-        Sort highest vote first.
-      */
-
-      gameAllocations.sort(
-        (a,b)=>
-          Number(b.human_vote)-
-          Number(a.human_vote)
-      );
-
-
-      /*
-        Try to identify the two teams
-        involved in the game.
-      */
-
-      const teams=
-        [...new Set(
-          gameAllocations
-            .map(a=>a.team)
-            .filter(Boolean)
-        )];
-
-
-      const opponentTeams=
-        [...new Set(
-          gameAllocations
-            .map(a=>a.opponent)
-            .filter(Boolean)
-        )];
-
-
-      const titleTeams=
-        teams.length
-          ?teams
-          :opponentTeams;
-
-
-      const title=
-        titleTeams.length
-          ?titleTeams.join(' vs ')
-          :`Game ${index+1}`;
-
-
-      const rows=
-        gameAllocations
-          .map(a=>{
-
-            const p=
-              S.data.players.find(
-                x=>x.name===a.player
-              );
-
-
-            const team=
-              p
-                ?p.team
-                :(a.team||'');
-
-
-            return `
-
-              <tr
-                data-player="${encodeURIComponent(a.player)}"
-              >
-
-                <td>
-
-                  <div class="player-cell">
-
-                    ${clubLogoHtml(team,'30px')}
-
-                    <div class="player-name-wrap">
-
-                      <span>
-                        ${a.player}
-                      </span>
-
-                      ${
-                        INELIGIBLE_PLAYERS.has(a.player)
-                          ?'<span class="ineligible-label">Ineligible</span>'
-                          :''
-                      }
-
-                    </div>
-
-                  </div>
-
-                </td>
-
-
-                <td>
-
-                  <div class="team-name-cell">
-
-                    ${clubLogoHtml(team,'26px')}
-
-                    <span>
-                      ${team}
-                    </span>
-
-                  </div>
-
-                </td>
-
-
-                <td>
-                  ${
-                    a.homeAway==='Home'
-                      ?'vs'
-                      :'@'
-                  }
-                  ${a.opponent}
-                </td>
-
-
-                <td class="num score">
-
-                  ${fmt(a.human_vote)}
-
-                </td>
-
-
-                <td class="num hide-mobile">
-
-                  ${Number(a.modelEV).toFixed(2)}
-
-                </td>
-
-              </tr>
-
-            `;
-
-          })
-          .join('');
-
-
-      return `
-
-        <section class="table-card">
-
-          <div class="table-title">
-
-            <div class="club-heading">
-
-              <h2>
-                ${title}
-              </h2>
-
-            </div>
-
-            <span class="badge">
-              Game ${index+1}
-            </span>
-
-          </div>
-
-
-          <div style="overflow:auto">
-
-            <table>
-
-              <thead>
-
-                <tr>
-
-                  <th>
-                    Player
-                  </th>
-
-                  <th>
-                    Club
-                  </th>
-
-                  <th>
-                    Opponent
-                  </th>
-
-                  <th class="num">
-                    Vote
-                  </th>
-
-                  <th class="num hide-mobile">
-                    Model EV
-                  </th>
-
-                </tr>
-
-              </thead>
-
-
-              <tbody>
-
-                ${rows}
-
-              </tbody>
-
-            </table>
-
-          </div>
-
-        </section>
-
-      `;
-
-    })
-    .join('');
-
-
-  $$('#leaderboard tr[data-player]')
-    .forEach(tr=>{
-
-      tr.onclick=()=>{
-
-        openProfile(
-          decodeURIComponent(
-            tr.dataset.player
-          )
-        );
-
-      };
-
-    });
-
-}
-
-
-/* =========================================================
    RENDER
    ========================================================= */
 
 function render(){
-
-  if(S.view==='rounds'){
-
-    renderRounds();
-
-    return;
-
-  }
-
 
   const all=sortedPlayers();
 
@@ -1268,4 +971,184 @@ function openProfile(name){
 
       <div class="profile-team">
 
-        ${clubLogoHtml(p.te
+        ${clubLogoHtml(p.team,'56px')}
+
+        <span
+          style="
+            color:${c.secondary};
+            font-weight:700;
+          "
+        >
+          ${p.team}
+        </span>
+
+      </div>
+
+
+      <h2 id="profileName">
+        ${p.name}
+      </h2>
+
+
+      <div class="badge">
+        ${p.confidence}
+        confidence
+        · final range
+        ${p.low}–${p.high}
+      </div>
+
+
+      ${
+        p.note
+          ?`<div class="note">${p.note}</div>`
+          :''
+      }
+
+    </div>
+
+
+    <div class="profile-grid">
+
+      <div class="mini">
+
+        <b>
+          ${scoreFmt(
+            curr,
+            S.metric
+          )}
+        </b>
+
+        <span>
+          ${
+            S.metric==='human'
+              ?'Current tracker'
+              :'Current EV'
+          }
+        </span>
+
+      </div>
+
+
+      <div class="mini">
+
+        <b>
+          ${p.humanTotal}
+        </b>
+
+        <span>
+          Final human
+        </span>
+
+      </div>
+
+
+      <div class="mini">
+
+        <b>
+          ${p.modelEV.toFixed(1)}
+        </b>
+
+        <span>
+          Final model EV
+        </span>
+
+      </div>
+
+
+      <div class="mini">
+
+        <b>
+          ${p.lockedVote}
+        </b>
+
+        <span>
+          Locked vote
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <div class="profile-section">
+
+      <h3>
+        Leaderboard progression
+      </h3>
+
+      ${sparkline(name)}
+
+    </div>
+
+
+    <div class="profile-section">
+
+      <h3>
+        Where the votes came from
+      </h3>
+
+      <div class="vote-list">
+        ${voteRows}
+      </div>
+
+    </div>
+
+  `;
+
+
+  $('#modalBackdrop').hidden=false;
+
+  document.body.style.overflow='hidden';
+
+}
+
+
+/* =========================================================
+   CLOSE PROFILE
+   ========================================================= */
+
+function closeProfile(){
+
+  $('#modalBackdrop').hidden=true;
+
+  document.body.style.overflow='';
+
+}
+
+
+/* =========================================================
+   LOAD DATA
+   ========================================================= */
+
+fetch('brownlow-data.json')
+
+  .then(r=>r.json())
+
+  .then(d=>{
+
+    S.data=d;
+
+    init();
+
+  })
+
+  .catch(err=>{
+
+    document.body.innerHTML=`
+
+      <div class="empty">
+
+        Could not load data.
+
+        If opening locally, run a local web server
+        or use GitHub Pages.
+
+        <br>
+
+        ${err}
+
+      </div>
+
+    `;
+
+  });
