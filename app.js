@@ -45,6 +45,41 @@ const TEAM_CODES={
   'West Coast':'WCE'
 };
 
+const INELIGIBLE_PLAYERS = new Set([
+  'Dan Butler',
+  'Jacob Van Rooyen',
+  'Darcy Byrne-Jones',
+  'Luke Trainor',
+  'Ty Gallop',
+  'Kyle Langford',
+  'Liam Baker',
+  'Darcy Fogarty',
+  'Jason Horne-Francis',
+  'Ben Long',
+  'Sam Clohesy',
+  'Josh Weddle',
+  'Paul Curtis',
+  'Taylor Walker',
+  'Riley Thilthorpe',
+  'Dylan Moore',
+  'James Sicily',
+  'Joe Fonti',
+  'Mark O\'Connor',
+  'Angus Sheldrick',
+  'Samson Ryan',
+  'Will Hayward',
+  'Tristan Xerri',
+  'Deven Robertson',
+  'Bailey Humphrey',
+  'Jonty Faull',
+  'Harris Andrews',
+  'Zac Bailey',
+  'Darcy Gardiner',
+  'Harry Schoenberg',
+  'Jai Newcombe',
+  'Jed Walter',
+  'Mykelti Lefau'
+]);
 
 function clubLogo(team){
 
