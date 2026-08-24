@@ -1,5 +1,3 @@
-This worked perfectly 
-
 const S={
   data:null,
   metric:'human',
