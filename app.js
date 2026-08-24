@@ -1,4 +1,12 @@
-const S={data:null,metric:'human',round:24,team:'ALL',includeHalf:true,view:'overall',search:''};
+const S={
+  data:null,
+  metric:'human',
+  round:24,
+  team:'ALL',
+  includeHalf:true,
+  view:'overall',
+  search:''
+};
 
 const $=s=>document.querySelector(s);
 const $$=s=>[...document.querySelectorAll(s)];
@@ -9,8 +17,12 @@ const scoreFmt=(n,metric)=>metric==='model'?Number(n).toFixed(1):fmt(n);
 
 
 /* =========================================================
-   TEAM LOGO MAPPING
-   ========================================================= */
+   TEAM LOGOS
+   =========================================================
+   
+   These names MUST match the team names in brownlow-data.json.
+   The files are located inside the /logos/ folder.
+*/
 
 const TEAM_CODES={
   'Adelaide':'ADL',
@@ -30,40 +42,25 @@ const TEAM_CODES={
   'St Kilda':'STK',
   'Sydney':'SYD',
   'Western Bulldogs':'WBD',
-  'West Coast':'WCE',
-
-  /* Also supports abbreviated team names if your data uses them */
-  'ADL':'ADL',
-  'BRL':'BRL',
-  'CARL':'CARL',
-  'COLL':'COLL',
-  'ESS':'ESS',
-  'FREM':'FREM',
-  'GCS':'GCS',
-  'GEEL':'GEEL',
-  'GWS':'GWS',
-  'HAWK':'HAWK',
-  'MELB':'MELB',
-  'NM':'NM',
-  'PORT':'PORT',
-  'RICH':'RICH',
-  'STK':'STK',
-  'SYD':'SYD',
-  'WBD':'WBD',
-  'WCE':'WCE'
+  'West Coast':'WCE'
 };
 
 
 function clubLogo(team){
+
   const code=TEAM_CODES[team];
 
-  if(!code)return '';
+  if(!code){
+    console.warn('No logo mapping found for team:',team);
+    return '';
+  }
 
   return `logos/${code}.png`;
 }
 
 
 function clubLogoHtml(team,size='32px'){
+
   const src=clubLogo(team);
 
   if(!src)return '';
@@ -73,8 +70,12 @@ function clubLogoHtml(team,size='32px'){
       class="team-logo"
       src="${src}"
       alt="${team} logo"
-      style="width:${size};height:${size};object-fit:contain;"
-      onerror="this.style.display='none'"
+      style="
+        width:${size};
+        height:${size};
+        object-fit:contain;
+      "
+      onerror="console.error('Could not load team logo:',this.src);this.style.display='none'"
     >
   `;
 }
@@ -85,56 +86,89 @@ function clubLogoHtml(team,size='32px'){
    ========================================================= */
 
 function clubStyle(team){
+
   return S.data.clubs[team]||{
     primary:'#334155',
     secondary:'#94a3b8',
     accent:'#fff',
     text:'#fff'
   };
+
 }
 
 
 /* =========================================================
-   PLAYER / VOTE CALCULATIONS
+   PLAYER ALLOCATIONS
    ========================================================= */
 
 function playerAllocations(name,maxRound=S.round){
+
   return S.data.allocations.filter(
     a=>
       a.player===name &&
       a.roundNumber<=maxRound &&
-      (S.includeHalf||Number(a.human_vote)!==0.5)
+      (
+        S.includeHalf ||
+        Number(a.human_vote)!==0.5
+      )
   );
+
 }
 
 
+/* =========================================================
+   PLAYER SCORE
+   ========================================================= */
+
 function scoreAt(player){
+
   const as=playerAllocations(player.name);
 
   if(S.metric==='human'){
-    return as.reduce((s,a)=>s+Number(a.human_vote),0);
+
+    return as.reduce(
+      (s,a)=>s+Number(a.human_vote),
+      0
+    );
+
   }
 
-  return as.reduce((s,a)=>s+Number(a.modelEV),0);
+  return as.reduce(
+    (s,a)=>s+Number(a.modelEV),
+    0
+  );
+
 }
 
 
+/* =========================================================
+   SORT PLAYERS
+   ========================================================= */
+
 function sortedPlayers(team=null){
+
   const q=S.search.trim().toLowerCase();
 
   return S.data.players
+
     .filter(p=>
       (!team||p.team===team) &&
       (S.team==='ALL'||p.team===S.team) &&
       (!q||p.name.toLowerCase().includes(q))
     )
-    .map(p=>({...p,currentScore:scoreAt(p)}))
+
+    .map(p=>({
+      ...p,
+      currentScore:scoreAt(p)
+    }))
+
     .sort(
       (a,b)=>
         b.currentScore-a.currentScore ||
         b.modelEV-a.modelEV ||
         a.name.localeCompare(b.name)
     );
+
 }
 
 
@@ -154,15 +188,18 @@ function init(){
 
   Object.keys(S.data.clubs)
     .sort()
-    .forEach(t=>
+    .forEach(t=>{
+
       $('#teamSelect').insertAdjacentHTML(
         'beforeend',
         `<option value="${t}">${t}</option>`
-      )
-    );
+      );
+
+    });
 
 
   $('#heroKpis').innerHTML=`
+
     <div class="kpi">
       <b>${S.data.meta.players}</b>
       <span>Players</span>
@@ -177,54 +214,85 @@ function init(){
       <b>${S.data.meta.allocations}</b>
       <span>Vote signals</span>
     </div>
+
   `;
 
 
-  $$('#metricToggle button').forEach(b=>
+  $$('#metricToggle button').forEach(b=>{
+
     b.onclick=()=>{
+
       S.metric=b.dataset.metric;
 
       $$('#metricToggle button')
-        .forEach(x=>x.classList.toggle('active',x===b));
+        .forEach(x=>
+          x.classList.toggle(
+            'active',
+            x===b
+          )
+        );
 
       render();
-    }
-  );
+
+    };
+
+  });
 
 
-  $$('#viewToggle button').forEach(b=>
+  $$('#viewToggle button').forEach(b=>{
+
     b.onclick=()=>{
+
       S.view=b.dataset.view;
 
       $$('#viewToggle button')
-        .forEach(x=>x.classList.toggle('active',x===b));
+        .forEach(x=>
+          x.classList.toggle(
+            'active',
+            x===b
+          )
+        );
 
       render();
-    }
-  );
+
+    };
+
+  });
 
 
   $('#roundSelect').onchange=e=>{
+
     S.round=Number(e.target.value);
+
     render();
+
   };
 
 
   $('#teamSelect').onchange=e=>{
+
     S.team=e.target.value;
+
     render();
+
   };
 
 
   $('#halfToggle').onchange=e=>{
+
     S.includeHalf=e.target.checked;
+
     render();
+
   };
 
 
   $('#searchInput').oninput=e=>{
+
     S.search=e.target.value;
+
     render();
+
   };
 
 
@@ -232,16 +300,25 @@ function init(){
 
 
   $('#modalBackdrop').onclick=e=>{
-    if(e.target.id==='modalBackdrop')closeProfile();
+
+    if(e.target.id==='modalBackdrop'){
+      closeProfile();
+    }
+
   };
 
 
   document.addEventListener('keydown',e=>{
-    if(e.key==='Escape')closeProfile();
+
+    if(e.key==='Escape'){
+      closeProfile();
+    }
+
   });
 
 
   render();
+
 }
 
 
@@ -255,172 +332,240 @@ function renderSnapshot(ps){
 
   const score=
     leader
-      ?scoreFmt(leader.currentScore,S.metric)
+      ?scoreFmt(
+        leader.currentScore,
+        S.metric
+      )
       :'—';
+
 
   const roundLabel=
     S.round===0
       ?'Opening Round'
       :`Round ${S.round}`;
 
+
   const teamLabel=
     S.team==='ALL'
       ?'All clubs'
       :S.team;
 
+
   const candidate=
-    ps.filter(p=>p.currentScore>0).length;
+    ps.filter(
+      p=>p.currentScore>0
+    ).length;
 
 
   $('#snapshot').innerHTML=`
 
     <div class="stat-card">
-      <div class="label">Leader</div>
+
+      <div class="label">
+        Leader
+      </div>
+
       <div class="value">
         ${leader?leader.name:'—'}
       </div>
+
       <div class="sub">
-        ${score} ${S.metric==='human'?'tracker':'EV'}
+        ${score}
+        ${S.metric==='human'?'tracker':'EV'}
         after ${roundLabel}
       </div>
+
     </div>
 
+
     <div class="stat-card">
-      <div class="label">Metric</div>
+
+      <div class="label">
+        Metric
+      </div>
+
       <div class="value">
         ${S.metric==='human'?'Human':'Model EV'}
       </div>
+
       <div class="sub">
-        0.5 signals ${S.includeHalf?'included':'excluded'}
+        0.5 signals
+        ${S.includeHalf?'included':'excluded'}
       </div>
+
     </div>
 
+
     <div class="stat-card">
-      <div class="label">Scope</div>
+
+      <div class="label">
+        Scope
+      </div>
+
       <div class="value">
         ${teamLabel}
       </div>
+
       <div class="sub">
         ${ps.length} listed players
       </div>
+
     </div>
 
+
     <div class="stat-card">
-      <div class="label">Poll candidates</div>
+
+      <div class="label">
+        Poll candidates
+      </div>
+
       <div class="value">
         ${candidate}
       </div>
+
       <div class="sub">
         players above 0 at this point
       </div>
+
     </div>
+
   `;
+
 }
 
 
 /* =========================================================
-   LEADERBOARD TABLE
+   TABLE
    ========================================================= */
 
 function tableHtml(ps,title,team){
 
-  const st=team?clubStyle(team):null;
+  const st=
+    team
+      ?clubStyle(team)
+      :null;
 
 
-  const heading=team
-    ?`
-      <div class="club-heading">
+  const heading=
+    team
 
-        ${clubLogoHtml(team,'42px')}
+      ?`
 
-        <span
-          class="club-dot"
-          style="--secondary:${st.secondary};background:${st.primary}"
-        ></span>
+        <div class="club-heading">
 
-        <h2>${team}</h2>
+          ${clubLogoHtml(team,'42px')}
 
-      </div>
-    `
-    :`<h2>${title}</h2>`;
+          <h2>
+            ${team}
+          </h2>
+
+        </div>
+
+      `
+
+      :`
+
+        <h2>
+          ${title}
+        </h2>
+
+      `;
 
 
-  const rows=ps.map((p,i)=>{
+  const rows=
+    ps.map((p,i)=>{
 
-    const c=clubStyle(p.team);
+      const c=clubStyle(p.team);
 
 
-    return `
-      <tr data-player="${encodeURIComponent(p.name)}">
+      return `
 
-        <td class="rank">
-          ${i+1}
-        </td>
+        <tr data-player="${encodeURIComponent(p.name)}">
 
-        <td>
-          <div class="player-cell">
+          <td class="rank">
+            ${i+1}
+          </td>
 
-            ${clubLogoHtml(p.team,'30px')}
 
-            <span
-              class="team-chip"
-              style="--club:${c.primary};--club2:${c.secondary}"
-            ></span>
+          <td>
 
-            ${p.name}
+            <div class="player-cell">
 
-          </div>
-        </td>
+              ${clubLogoHtml(p.team,'30px')}
 
-        <td class="hide-mobile">
+              ${p.name}
 
-          <div class="team-name-cell">
+            </div>
 
-            ${clubLogoHtml(p.team,'26px')}
+          </td>
 
-            <span>${p.team}</span>
 
-          </div>
+          <td class="hide-mobile">
 
-        </td>
+            <div class="team-name-cell">
 
-        <td class="num score">
-          ${scoreFmt(p.currentScore,S.metric)}
-        </td>
+              ${clubLogoHtml(p.team,'26px')}
 
-        <td class="num hide-mobile">
-          ${p.threes}
-        </td>
+              <span>
+                ${p.team}
+              </span>
 
-        <td class="num hide-mobile">
-          ${p.twos}
-        </td>
+            </div>
 
-        <td class="num hide-mobile">
-          ${p.ones}
-        </td>
+          </td>
 
-        <td class="num hide-mobile">
-          ${p.halves}
-        </td>
 
-        <td class="num hide-mobile range">
-          ${p.low}–${p.high}
-        </td>
+          <td class="num score">
+            ${scoreFmt(
+              p.currentScore,
+              S.metric
+            )}
+          </td>
 
-        <td class="hide-mobile">
-          <span class="badge">
-            ${p.confidence}
-          </span>
-        </td>
 
-      </tr>
-    `;
+          <td class="num hide-mobile">
+            ${p.threes}
+          </td>
 
-  }).join('');
+
+          <td class="num hide-mobile">
+            ${p.twos}
+          </td>
+
+
+          <td class="num hide-mobile">
+            ${p.ones}
+          </td>
+
+
+          <td class="num hide-mobile">
+            ${p.halves}
+          </td>
+
+
+          <td class="num hide-mobile range">
+            ${p.low}–${p.high}
+          </td>
+
+
+          <td class="hide-mobile">
+
+            <span class="badge">
+              ${p.confidence}
+            </span>
+
+          </td>
+
+        </tr>
+
+      `;
+
+    })
+    .join('');
 
 
   return `
+
     <section class="table-card">
 
       <div class="table-title">
@@ -433,6 +578,7 @@ function tableHtml(ps,title,team){
 
       </div>
 
+
       <div style="overflow:auto">
 
         <table>
@@ -440,29 +586,69 @@ function tableHtml(ps,title,team){
           <thead>
 
             <tr>
-              <th>Rank</th>
-              <th>Player</th>
-              <th class="hide-mobile">Club</th>
-              <th class="num">${S.metric==='human'?'Votes':'EV'}</th>
-              <th class="num hide-mobile">3s</th>
-              <th class="num hide-mobile">2s</th>
-              <th class="num hide-mobile">1s</th>
-              <th class="num hide-mobile">0.5s</th>
-              <th class="num hide-mobile">Final range</th>
-              <th class="hide-mobile">Confidence</th>
+
+              <th>
+                Rank
+              </th>
+
+              <th>
+                Player
+              </th>
+
+              <th class="hide-mobile">
+                Club
+              </th>
+
+              <th class="num">
+                ${S.metric==='human'?'Votes':'EV'}
+              </th>
+
+              <th class="num hide-mobile">
+                3s
+              </th>
+
+              <th class="num hide-mobile">
+                2s
+              </th>
+
+              <th class="num hide-mobile">
+                1s
+              </th>
+
+              <th class="num hide-mobile">
+                0.5s
+              </th>
+
+              <th class="num hide-mobile">
+                Final range
+              </th>
+
+              <th class="hide-mobile">
+                Confidence
+              </th>
+
             </tr>
 
           </thead>
+
 
           <tbody>
 
             ${
               rows ||
-              `<tr>
-                <td colspan="10" class="empty">
-                  No matching players.
-                </td>
-              </tr>`
+
+              `
+                <tr>
+
+                  <td
+                    colspan="10"
+                    class="empty"
+                  >
+                    No matching players.
+                  </td>
+
+                </tr>
+              `
             }
 
           </tbody>
@@ -472,7 +658,9 @@ function tableHtml(ps,title,team){
       </div>
 
     </section>
+
   `;
+
 }
 
 
@@ -496,7 +684,9 @@ function render(){
         null
       );
 
-  }else{
+  }
+
+  else{
 
     const clubs=
       S.team==='ALL'
@@ -514,16 +704,25 @@ function render(){
           )
         )
         .join('');
+
   }
 
 
   $$('#leaderboard tr[data-player]')
-    .forEach(tr=>
-      tr.onclick=()=>
+    .forEach(tr=>{
+
+      tr.onclick=()=>{
+
         openProfile(
-          decodeURIComponent(tr.dataset.player)
-        )
-    );
+          decodeURIComponent(
+            tr.dataset.player
+          )
+        );
+
+      };
+
+    });
+
 }
 
 
@@ -532,11 +731,6 @@ function render(){
    ========================================================= */
 
 function sparkline(name){
-
-  const p=
-    S.data.players.find(
-      x=>x.name===name
-    );
 
   let cum=0;
 
@@ -571,10 +765,16 @@ function sparkline(name){
 
 
     vals.push(cum);
+
   }
 
 
-  const max=Math.max(...vals,1);
+  const max=
+    Math.max(
+      ...vals,
+      1
+    );
+
 
   const W=570;
   const H=140;
@@ -591,6 +791,7 @@ function sparkline(name){
 
 
   return `
+
     <svg
       class="round-chart"
       viewBox="0 0 ${W} ${H}"
@@ -614,7 +815,9 @@ function sparkline(name){
       />
 
     </svg>
+
   `;
+
 }
 
 
@@ -629,6 +832,7 @@ function openProfile(name){
       x=>x.name===name
     );
 
+
   if(!p)return;
 
 
@@ -637,7 +841,9 @@ function openProfile(name){
 
   const allA=
     S.data.allocations
-      .filter(a=>a.player===name)
+      .filter(
+        a=>a.player===name
+      )
       .sort(
         (a,b)=>
           a.roundNumber-b.roundNumber ||
@@ -662,41 +868,61 @@ function openProfile(name){
   const voteRows=
     shown
       .map(a=>`
+
         <div class="vote-row">
 
           <b>
-            ${a.round==='Round 0'?'Opening Round':a.round}
+            ${
+              a.round==='Round 0'
+                ?'Opening Round'
+                :a.round
+            }
           </b>
+
 
           <span>
             ${a.homeAway==='Home'?'vs':'@'}
             ${a.opponent}
           </span>
 
+
           <span
             class="vote-pill"
-            style="background:${c.primary};color:${c.text}"
+            style="
+              background:${c.primary};
+              color:${c.text}
+            "
           >
             ${fmt(a.human_vote)}
           </span>
 
+
           <span class="model-cell num">
-            ${Number(a.modelEV).toFixed(2)} EV
+            ${Number(a.modelEV).toFixed(2)}
+            EV
           </span>
 
         </div>
+
       `)
-      .join('') ||
-      `<div class="empty">
-        No vote signals through this round.
-      </div>`;
+      .join('')
+
+      ||
+
+      `
+        <div class="empty">
+          No vote signals through this round.
+        </div>
+      `;
 
 
   $('#profile').innerHTML=`
 
     <div
       class="profile-head"
-      style="border-top:6px solid ${c.primary}"
+      style="
+        border-top:6px solid ${c.primary}
+      "
     >
 
       <div class="profile-team">
@@ -714,16 +940,25 @@ function openProfile(name){
 
       </div>
 
+
       <h2 id="profileName">
         ${p.name}
       </h2>
 
+
       <div class="badge">
-        ${p.confidence} confidence
-        · final range ${p.low}–${p.high}
+        ${p.confidence}
+        confidence
+        · final range
+        ${p.low}–${p.high}
       </div>
 
-      ${p.note?`<div class="note">${p.note}</div>`:''}
+
+      ${
+        p.note
+          ?`<div class="note">${p.note}</div>`
+          :''
+      }
 
     </div>
 
@@ -731,25 +966,61 @@ function openProfile(name){
     <div class="profile-grid">
 
       <div class="mini">
-        <b>${scoreFmt(curr,S.metric)}</b>
+
+        <b>
+          ${scoreFmt(
+            curr,
+            S.metric
+          )}
+        </b>
+
         <span>
-          ${S.metric==='human'?'Current tracker':'Current EV'}
+          ${
+            S.metric==='human'
+              ?'Current tracker'
+              :'Current EV'
+          }
         </span>
+
       </div>
 
-      <div class="mini">
-        <b>${p.humanTotal}</b>
-        <span>Final human</span>
-      </div>
 
       <div class="mini">
-        <b>${p.modelEV.toFixed(1)}</b>
-        <span>Final model EV</span>
+
+        <b>
+          ${p.humanTotal}
+        </b>
+
+        <span>
+          Final human
+        </span>
+
       </div>
 
+
       <div class="mini">
-        <b>${p.lockedVote}</b>
-        <span>Locked vote</span>
+
+        <b>
+          ${p.modelEV.toFixed(1)}
+        </b>
+
+        <span>
+          Final model EV
+        </span>
+
+      </div>
+
+
+      <div class="mini">
+
+        <b>
+          ${p.lockedVote}
+        </b>
+
+        <span>
+          Locked vote
+        </span>
+
       </div>
 
     </div>
@@ -757,7 +1028,9 @@ function openProfile(name){
 
     <div class="profile-section">
 
-      <h3>Leaderboard progression</h3>
+      <h3>
+        Leaderboard progression
+      </h3>
 
       ${sparkline(name)}
 
@@ -766,19 +1039,23 @@ function openProfile(name){
 
     <div class="profile-section">
 
-      <h3>Where the votes came from</h3>
+      <h3>
+        Where the votes came from
+      </h3>
 
       <div class="vote-list">
         ${voteRows}
       </div>
 
     </div>
+
   `;
 
 
   $('#modalBackdrop').hidden=false;
 
   document.body.style.overflow='hidden';
+
 }
 
 
@@ -791,6 +1068,7 @@ function closeProfile(){
   $('#modalBackdrop').hidden=true;
 
   document.body.style.overflow='';
+
 }
 
 
@@ -799,19 +1077,34 @@ function closeProfile(){
    ========================================================= */
 
 fetch('brownlow-data.json')
+
   .then(r=>r.json())
+
   .then(d=>{
+
     S.data=d;
+
     init();
+
   })
+
   .catch(err=>{
+
     document.body.innerHTML=`
+
       <div class="empty">
+
         Could not load data.
+
         If opening locally, run a local web server
         or use GitHub Pages.
+
         <br>
+
         ${err}
+
       </div>
+
     `;
+
   });
