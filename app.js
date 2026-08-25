@@ -719,7 +719,234 @@ function tableHtml(ps,title,team){
 /* =========================================================
    RENDER
    ========================================================= */
+/* =========================================================
+   BY ROUND VIEW
+   ========================================================= */
 
+function renderRoundView(){
+
+  const roundNumber = S.round;
+
+  const roundAllocations =
+    S.data.allocations
+      .filter(a =>
+        a.roundNumber === roundNumber &&
+        (
+          S.includeHalf ||
+          Number(a.human_vote) !== 0.5
+        )
+      )
+      .sort((a,b) =>
+        Number(a.game) - Number(b.game) ||
+        Number(b.human_vote) - Number(a.human_vote)
+      );
+
+  const games = {};
+
+  roundAllocations.forEach(a => {
+
+    const gameKey =
+      `${a.fixtureGame || a.game}|${a.matchup || a.game_label}`;
+
+    if(!games[gameKey]){
+      games[gameKey] = [];
+    }
+
+    games[gameKey].push(a);
+
+  });
+
+  const roundLabel =
+    roundNumber === 0
+      ? 'Opening Round'
+      : `Round ${roundNumber}`;
+
+  const gameSections =
+    Object.values(games)
+      .map(gameVotes => {
+
+        const first = gameVotes[0];
+
+        const matchup =
+          first.matchup ||
+          `${first.team} v ${first.opponent}`;
+
+        const rows =
+          gameVotes
+            .map(a => {
+
+              const player = a.player;
+
+              const vote =
+                Number(a.human_vote);
+
+              const voteDisplay =
+                vote === 0.5
+                  ? '0.5'
+                  : String(vote);
+
+              return `
+
+                <tr>
+
+                  <td>
+
+                    <div class="player-cell">
+
+                      ${clubLogoHtml(a.team,'30px')}
+
+                      <div class="player-name-wrap">
+
+                        <span>
+                          ${player}
+                        </span>
+
+                        ${
+                          INELIGIBLE_PLAYERS.has(player)
+                            ? '<span class="ineligible-label">Ineligible</span>'
+                            : ''
+                        }
+
+                      </div>
+
+                    </div>
+
+                  </td>
+
+                  <td>
+                    ${a.team}
+                  </td>
+
+                  <td class="num">
+
+                    <span
+                      class="vote-pill"
+                      style="
+                        background:${clubStyle(a.team).primary};
+                        color:${clubStyle(a.team).text};
+                        display:inline-block;
+                        min-width:42px;
+                      "
+                    >
+                      ${voteDisplay}
+                    </span>
+
+                  </td>
+
+                  <td class="num">
+
+                    ${Number(a.modelEV).toFixed(2)}
+
+                  </td>
+
+                </tr>
+
+              `;
+
+            })
+            .join('');
+
+        return `
+
+          <section class="table-card">
+
+            <div class="table-title">
+
+              <div class="club-heading">
+
+                <h2>
+                  ${matchup}
+                </h2>
+
+              </div>
+
+              <span class="badge">
+                Game ${first.fixtureGame || first.game}
+              </span>
+
+            </div>
+
+            <div style="overflow:auto">
+
+              <table>
+
+                <thead>
+
+                  <tr>
+
+                    <th>
+                      Player
+                    </th>
+
+                    <th>
+                      Club
+                    </th>
+
+                    <th class="num">
+                      Vote
+                    </th>
+
+                    <th class="num">
+                      Model EV
+                    </th>
+
+                  </tr>
+
+                </thead>
+
+                <tbody>
+
+                  ${rows}
+
+                </tbody>
+
+              </table>
+
+            </div>
+
+          </section>
+
+        `;
+
+      })
+      .join('');
+
+  $('#leaderboard').innerHTML = `
+
+    <div class="table-card">
+
+      <div class="table-title">
+
+        <h2>
+          ${roundLabel} — Votes by game
+        </h2>
+
+        <span class="badge">
+          ${roundAllocations.length} vote signals
+        </span>
+
+      </div>
+
+    </div>
+
+    ${
+      gameSections ||
+      `
+        <section class="table-card">
+
+          <div class="empty">
+
+            No vote signals recorded for ${roundLabel}.
+
+          </div>
+
+        </section>
+      `
+    }
+
+  `;
+
+}
 function render(){
 
   const all=sortedPlayers();
@@ -727,16 +954,22 @@ function render(){
   renderSnapshot(all);
 
 
-  if(S.view==='overall'){
+ if(S.view==='overall'){
 
-    $('#leaderboard').innerHTML=
-      tableHtml(
-        all,
-        'Overall leaderboard',
-        null
-      );
+  $('#leaderboard').innerHTML=
+    tableHtml(
+      all,
+      'Overall leaderboard',
+      null
+    );
 
-  }
+}
+
+else if(S.view==='round'){
+
+  renderRoundView();
+
+}
 
   else{
 
