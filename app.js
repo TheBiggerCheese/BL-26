@@ -273,7 +273,15 @@ function init(){
 
   });
 
+// Add By Round button without changing index.html
+const viewToggle = $('#viewToggle');
 
+if (viewToggle && !viewToggle.querySelector('[data-view="round"]')) {
+  viewToggle.insertAdjacentHTML(
+    'beforeend',
+    '<button data-view="round">By round</button>'
+  );
+}
   $$('#viewToggle button').forEach(b=>{
 
     b.onclick=()=>{
